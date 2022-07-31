@@ -1,24 +1,22 @@
-from tkinter import CASCADE
 from django.db import models
-from django.contrib.auth.base_user import BaseUserManager
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.conf import settings
 
 # Create your models here.
 class CustomUser(AbstractUser):
     username= None
     name=models.CharField(max_length=100)
-    email=models.EmailField(unique=True)
+    email=models.EmailField(unique=True, verbose_name='Email Address', max_length=255)
     is_student=models.BooleanField(default=False)
     is_school_admin=models.BooleanField(default=False)
     is_guardian=models.BooleanField(default=False)
-    school_name=models.TextField()
+    school_name=models.CharField()
     #display_picture=models.URLField(max_length=100, default='')
 
     USERNAME_FIELD= 'email'
     REQUIRED_FIELDS= []
 
-    class Meta:
+    class Meta:  
         ordering= ['email']
         verbose_name= 'User'
 
@@ -32,7 +30,7 @@ class Debtors(models.Model):
     last_name=models.CharField(max_length=50)
     school_name=models.CharField(max_length=100)
     student_id=models.CharField(max_length=20, unique=True)
-    outstanding_fees=models.IntegerField()
+    outstanding_fees=models.PositiveIntegerField()
     is_contending_debt=models.BooleanField(default=False)
 
     def __str__(self):
@@ -59,5 +57,3 @@ class Contention(models.Model):
 
     def __str__(self):
         return self.contending_on
-
-    
