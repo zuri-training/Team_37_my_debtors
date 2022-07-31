@@ -1,0 +1,110 @@
+body{
+    background: #FCFCFC;
+    font-family: 'Poppins', sans-serif;
+    color: #1A1A1A;
+}
+
+main{
+    padding: 1.5em 4em;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+.img-container{
+    width: 40%;
+    margin: 1em;
+
+}
+
+.img-container img{
+    margin-top: 80px;
+    padding-top: 20px;
+    padding-bottom: 85px;
+    float: right;
+    width: 80%;
+    background: #CCDDF6;
+    
+}
+
+.form-container{
+    width: 55%;
+    margin: 1em;
+}
+
+.form-container h1{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 38px;
+    margin-bottom: 0.5em;
+}
+
+.form-group{
+    margin: 1em 0;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.form-group div{
+    width: 48%;
+}
+
+label{
+    display: block;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+input,select{
+    background: #F6F5F5;
+    border-radius: 10px;
+    border: none;
+    padding: 12px;
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 0.5em ;
+}   
+
+main div .privacy{
+    width: 60%;
+    display: flex;
+    margin: 1em 0;
+}
+
+main div .privacy span{
+    display: block;
+    margin: 0 1em;
+    font-size: 13px;
+    /* line-height: 1px; */
+}
+
+main div .privacy input{
+    width: 30px;  
+}
+
+button{
+    padding: 12px 24px;
+    background: #0056D2;
+    border-radius: 8px;
+    color: #F2F0F0;
+    border: none;
+}
+
+.create-account{
+    display: flex;
+    gap: 20px;
+}
+
+.create-account p{
+    margin: auto 0;
+    display: flex;
+}
+
+.create-account img{  
+    padding-left: 10px;
+}
