@@ -1,0 +1,570 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: Poppins', sans-serif;
+}
+
+
+
+/*   Header styles comes below */
+
+
+
+
+/* Main styles comes below */
+.container-fluid {
+    background: #CCDDF6;
+    width: 100%;
+    height: 500px;
+}
+.school-fees {
+    color: #00398C;
+}
+.ease {
+    background: linear-gradient(to bottom right, blue, purple);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+.display-images {
+    justify-content: space-around;
+    align-items: space-around;
+    text-align: center;
+}
+.display-images img{
+    width: 150px;
+    height: 300px;
+    border-radius: 15px;
+    padding: unset;
+    margin: 10px;
+    transition: 1s;
+    cursor: pointer;
+}
+.display-images img:hover {
+    padding: unset;
+    width: 250px;
+    height: 300px;
+/*     transition: all .4s ease-in; */
+/*     align-self: space-between; */
+    margin: 17px;
+}
+
+
+/*   What we do styles come below */
+.wwd-header {
+    padding: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+.whatwedo {
+    padding: 10px;
+    font-family: 'Poppins';
+    color: #00112A;
+}
+.wwd-boxes {
+    padding: 10px;
+    display: grid;
+    gap: 50px;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+}
+.wwd-boxes img {
+    padding: 10px 0;
+    height: 80px;
+}
+.box h5 {
+  font-weight: 600;
+}
+.box {
+    border: 1px solid blue;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    max-width: 300px;
+}
+
+
+/*   why choose us  styles come below*/
+
+  
+
+/*  Testimonial styles comes below*/
+
+
+.testimonials{
+    width:100%;
+    height: 100vh;
+    margin-bottom: 100px;
+    margin-top: 100px;
+  box-sizing: border-box;
+}
+
+.testimonials .htest{
+    text-align:center;
+    margin-bottom: 2em;
+}
+
+.testimonials .main-text{
+    font-size: 30px;
+    margin-bottom: 1rem;
+}
+
+.testimonials .text{
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 29px;
+    color: #00112a;
+    margin-bottom: 2em;
+}
+
+.testimonial-container{
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+    margin: auto;
+  
+}
+
+.testimonials .card{
+    width: 24%;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 2px 5px 5px grey;
+}
+
+.testimonials .card img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.testimonials .content{
+    padding: 1.5em;
+}
+
+.testimonials .card h3{
+    margin: 0.6em 0;
+    margin-top: 0;
+}
+
+.testimonials .card p{
+    margin: 0.6em 0;
+    margin-top: 0.2em;
+}
+
+
+.testimonials .card .read-more{
+    text-align: right;
+    color: blue;
+    margin: 1em 0
+}
+
+
+/* join .... styles comes  below*/
+.join-container{
+  top: 2957px;
+  width: 100%;
+  height: auto;
+  background-color: #CCDDF6;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 0px;
+  gap: 45px;
+  left: 0px;
+  top: 776px;
+
+}
+.jointext{
+  
+width: 587px;
+height: 154px;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 38px;
+color: #00112A;
+flex: none;
+order: 0;
+flex-grow: 0;
+/* margin-top: -360px; */
+}
+.GetStarted{
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 16px;
+color: #F2F0F0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 24px;
+    gap: 8px;
+    width: 138px;
+    height: 40px;
+    background: #0056D2;
+    border-radius: 8px;
+    margin-top: 24px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    border: none;
+}
+#handimg{
+width: 348.5px;
+height: 209.1px;
+background: url(image.png);
+border-radius: 10.3259px 10.3259px 0px 0px;
+flex: none;
+order: 0;
+flex-grow: 0;
+  float:right
+}
+.whitediv{
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 0px 0px 20.6519px;
+gap: 20.65px;
+width: 348.5px;
+height: 394.22px;
+background: #FFFFFF;
+border-radius: 10.3259px;
+flex: none;
+order: 1;
+flex-grow: 0;
+  float:right
+}
+.whitedivtext{
+  width: 270px;
+height: 116px;
+  font-family: 'Poppins';
+font-style: normal;
+font-weight: 300;
+font-size: 24px;
+line-height: 29px;
+
+
+color: #666666;
+}
+.arrowright{
+  position: absolute;
+left: 90.5%;
+right: 3.75%;
+  
+
+ 
+/* position: absolute;
+left: 90.5%;
+right: 70.5%; */
+
+}
+.arrowleft{
+  position: absolute;
+left:3.75%;
+right: 90.5%;
+  
+  
+  
+}
+.svgtext1{
+  width: 94px;
+height: 58px;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 29px;
+text-align: center;
+color: #000000;
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+.mysvg{
+  display:flex;
+  margin-top:50px;
+  justify-content:space-evenly
+  
+
+  
+}
+.svgtext{
+  display:flex;
+  justify-content:space-evenly
+}
+
+/* Contact us styles comes  below*/
+.form-container {
+    margin: 60px auto;
+}
+
+.form-text {
+    margin-top: 100px;
+}
+
+.btn-contact{
+    background-color:  #0056D2;
+    outline: none;
+    color:#F2F0F0;
+}
+.btn-contact:hover{
+    background-color:  #0056D2;
+    color:#F2F0F0;
+}
+
+.contact-icon{
+    border: 1px solid #D1D1D1;
+    border-radius: 8px;
+    text-align: center;
+    width: 150px;
+    padding: 10px 0px;
+}
+.contact-info{
+    display: flex;
+    justify-content: space-around;
+    align-content:center; 
+}
+.img-icon{
+    border: 1px solid #80ABE9;
+    background-color: #80ABE9;
+    border-radius: 4px;
+    margin: 0px 5px;
+    padding: 5px;
+    color: #000;
+}
+.img-icon-big{
+    color: #000;
+    margin-left: 25px;
+}
+.contact-address{
+    font-size: 10px;
+    margin: 5px;
+    width: 100px;
+    text-align: center;
+}
+.contact-ul li{
+font-size: 10px;
+list-style-type: none;
+}
+
+
+
+/* faq styles come  below*/
+.faq{
+  padding: 3em;
+  padding-bottom: 200px;
+}
+.faq .container{
+  width: 65%;
+}
+.faq, .faq > *{
+  background-color: #F5F5FB !important;
+}
+
+.faq h1{
+  text-align: center;
+}
+
+.accordion-item{
+  background-color: #F5F5FB;
+}
+  
+
+/*   footer styles come below*/
+
+h2 {
+    margin-top: 2px;
+}
+.subscribe p {
+    margin-top: -30px;
+}
+form {
+    display: flex;
+}
+input {
+    border: 1px solid hsl(243, 87%, 12%);
+    border-radius: 2px;
+    font-size: 14px;
+    flex: 0.7;
+    padding: 15px;
+}
+input::placeholder {
+    color: hsl(0, 0%, 75%);
+}
+button {
+    border: 1px solid #0056D2;
+    background: #0056D2;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    font-size: 14px;
+    flex: 0.3;
+    color: #fff;
+    padding: 15px;
+}
+footer {
+    background: #0056D2;
+    color: #fff;
+}
+.subscribe {
+    display: flex;
+    color: black;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    gap: 24px;
+    margin: 0 auto;
+    max-width: 542.9px;
+    width: 100%;
+    background: #FFFFFF;
+
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    top: -125px;
+}
+footer ul {
+    list-style-type: none;
+}
+.footer-content img {
+    margin-top: -100px;
+}
+footer ul li {
+    margin-bottom: 10px;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+}
+.copyright-socials {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+.social-media {
+    display: flex;
+    list-style-type: none;
+    gap: 40px;
+}
+.social-media li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.social-media li img {
+    display: block;
+}
+.copyright-socials p {
+    color: #fff;
+}
+
+/* ----------------------------------------------------------------- */
+
+/* Enter your tablet to mobile styles below (find your space) */
+
+@media screen and (max-width: 1000px){
+
+/*   Header styles comes below */
+
+
+
+
+/* Main styles comes below */
+
+
+
+/*   What we do styles come below */
+
+
+
+/*   why choose us  styles come below */
+
+  
+
+/*  Testimonial styles comes below */
+.testimonials{
+    width:100%;
+    height: auto;
+    margin-bottom: 100px;
+    margin-top: 100px;
+  box-sizing: border-box;
+}  
+
+.testimonials .htest{
+    margin: auto;
+    text-align:center;
+    margin-bottom: 2em;
+    width: 85%;
+  
+}
+
+.testimonial-container{
+    display: block;
+    
+    width: 85%;
+    margin: auto;
+  
+}
+
+.testimonials .card{
+    width: 80%;
+  margin: auto;
+    overflow: hidden;
+    border-radius: 10px;
+  margin-top: 1em;
+    box-shadow: 2px 5px 5px grey;
+}
+
+.testimonials .card img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.testimonials .content{
+    padding: 1.5em;
+}
+
+.testimonials .card h3{
+    margin: 0.6em 0;
+    margin-top: 0;
+}
+
+.testimonials .card p{
+    margin: 0.6em 0;
+    margin-top: 0.2em;
+}
+
+
+.testimonials .card .read-more{
+    text-align: right;
+    color: blue;
+    margin: 1em 0
+}
+
+
+/* join .... styles comes below */
+
+
+
+/* Contact us styles comes below */
+
+
+
+/* faq styles come below */
+.faq{
+  padding: 0.5em;
+}
+.faq .container{
+  width: 90%;
+}
+
+/*   footer styles come below */
+  
+  
+}
