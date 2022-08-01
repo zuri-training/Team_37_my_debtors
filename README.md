@@ -8,17 +8,17 @@ Before you continue, ensure you have met the following requirements:
 * You have a basic understanding of python.
 
 Workflow 🍃
-Clone the repo and open the project on your prefered code editor git clone https://github.com/zuri-training/Team_37_my_debtors
+Clone the repo and open the project on your prefered code editor _git clone https://github.com/zuri-training/Team_37_my_debtors_
 
-Change directory to the frontend directory cd dma_frontend
+Change directory to the CoDebt directory cd CoDebt
 
-Using your terminal set your remote connection to the main repo git remote add origin https://github.com/zuri-training/Team_37_my_debtors
+Using your terminal set your remote connection to the main repo git remote add origin _https://github.com/zuri-training/Team_37_my_debtors_
 
-Create a new branch for your work git checkout -b <type_your_new_branch_name_here>
+Create a new branch for your work _git checkout -b <type_your_new_branch_name_here>_
 
 Create a virtual environment for your project
 
-Install all dependencies for the project pip install -r requirements.txt
+Install all dependencies for the project _pip install -r requirements.txt_
 
 
 Contribution🛂
@@ -26,13 +26,13 @@ First create an issue using one of the specified templates. Please describe in c
 
 On your laptop stage all your changes and commit them to the zuri repo
 
-git add .
+_git add .
 git commit -m "A short message here"
-git pull origin main
+git pull origin main_
 /*
-The above step will update your current files and folders
+The above steps will update your current files and folders
 with any changes that might have been merged on main repo.
 In case you have merge conflicts, see the next step
 on how you can resolve them
 */
-git push origin <type_your_new_branch_name_here>
+_git push origin <type_your_new_branch_name_here>_
