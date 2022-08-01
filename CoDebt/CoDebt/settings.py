@@ -132,4 +132,7 @@ AUTH_USER_MODEL = 'core.CustomUser'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-# MEDIA_URL = MEDIA_ROOT = STATIC_ROOT
+MEDIA_URL = 'images/'
+
+MEDIA_ROOT = 'static/images'
+# STATIC_ROOT =
