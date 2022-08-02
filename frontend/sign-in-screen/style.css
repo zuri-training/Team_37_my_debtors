@@ -1,90 +1,105 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap');
-body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    font-family: 'Manrope', sans-serif;
-}
-header {
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-}
-header div a {
-    padding: 10px;
-    color: #666666;
-    font-weight: 500;
-    text-decoration: none;
-    font-weight: 700; 
-    font-size: 18px;           
-}
-.middle {
-    font-weight: 700;
-    margin: 25vh 0;
-    padding: 0 20px;
-}
-.sign-in {
-    color: #666666;
-    line-height: 8px;
-    padding-bottom: 10px;
-}
-.email-pass {
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-}
-input {
-    padding-top: 20px;
-    border: 0;
-    width: 90%;
-    outline: 0;
-    font-size: 15px;
-    background-color: #E5E4E4;
-    font-weight: 400;
-    border-bottom: 2px solid #558EE1;
-}
-i {
-    cursor: pointer;
-    margin-top: -25px;
-    margin-left: 86.5%;
-    font-weight: 700;
-    color: #666666;
-}
-button, a {
-    cursor: pointer;
-}
-a:hover {
-    color: #0048AF;
-}
-button {
-    background-color: #0048AF;
-    margin-top: 60px;
-    outline: 0;
-    font-size: 15px;
-    text-align: center;
-    padding: 15px;
-    width: 90%;
-    border: 0;
-    border-radius: 5px;
-    color: white;
-}
-.split {
-    width: 50%;
-    height: 100vh;
-}
-.left {
-    left: 0;
-    background-color: #E5E4E4;;
-}
-.right {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    right: 0;
-    background-color: #0048AF;
-    text-align: center;
-}
-.right img {
-    max-width: 100%;
-}
+        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap');
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+            font-family: 'Manrope', sans-serif;
+        }
+        header {
+            padding: 10px 0 0 20px;
+            position: fixed;
+            top: 0;
+        }
+        .middle {
+            font-weight: 700;
+            margin: 0;
+            padding: 0 20px;
+        }
+        .sign-in {
+            margin: 0;
+            color: #666666;
+            padding-bottom: 30px;
+        }
+        .sign-in h1 {
+            color: black;
+            margin: 0;
+        }
+        .sign-in p {
+            margin-top: 10px;
+        }
+        .email-pass {
+            padding-bottom: 0px;
+            display: flex; 
+            width: 60%;
+            flex-direction: column;
+        }
+        .email-pass label {
+            padding: 20px 0;
+        }
+        input {
+            border: 2px solid #B3B3B3;
+            border-radius: 10px;
+            padding: 10px;
+            outline: 0;
+            font-size: 15px;
+            background-color:white;            
+            font-weight: 400;
+        }
+        .middle a {
+            text-decoration: none;
+            color: #0048AF;
+            text-align: end;
+            padding: 20px 0;    
+        }
+        .bi {
+            text-align: center;
+            color: black;
+        }
+        span {
+            cursor: pointer;
+            margin-top: -33px;
+            margin-left: 88%;
+            font-weight: 700;
+        }
+        button, a {
+            cursor: pointer;
+        }
+        .sub-button {
+            display: flex;
+            justify-content: center;
+        } 
+        button {
+            background-color: #0048AF;
+            margin-top: 40px;
+            outline: 0;
+            font-size: 15px;
+            text-align: center;
+            padding: 15px;
+            width: 50%;
+            border: 0;
+            border-radius: 5px;
+            color: white;
+        }
+        .split {
+            width: 50%;
+            height: 100vh;
+        }
+        .left {
+            left: 0;
+            background-color: #E5E4E4;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            right: 0;
+            background-color: #0048AF;
+            text-align: center;
+        }
+        .right img {
+            max-width: 100%;
+        }
