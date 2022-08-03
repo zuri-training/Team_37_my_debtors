@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core.apps.CoreConfig',
     #3rd party app
-    'django_extensions'
+    'django_extensions',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -108,7 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'Africa/Lagos'
+LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
 
@@ -128,3 +129,10 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'core.CustomUser'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+MEDIA_URL = 'images/'
+
+MEDIA_ROOT = 'static/images'
+# STATIC_ROOT =
