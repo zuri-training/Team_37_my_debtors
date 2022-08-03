@@ -1,13 +1,20 @@
 html, body {
   height: 100%;
   width: 100%;
-  font-family: Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 
 
 /*   Header styles comes below */
-
+header nav{
+    width: 90%;
+    margin: auto;
+  }
+  header .dropdown-menu{
+    margin-left: -20px;
+  }
+  
 
 
 
@@ -297,15 +304,21 @@ flex-grow: 0;
   justify-content:space-evenly
 }
 
+
+
+
 /* Contact us styles comes  below*/
+
+
 .form-container {
-    margin: 60px auto;
+    margin: 3.75rem auto;
+
 }
 
 .form-text {
-    margin-top: 100px;
+    margin: 6.25rem 3.125rem;
+  width:20%
 }
-
 .btn-contact{
     background-color:  #0056D2;
     outline: none;
@@ -315,42 +328,42 @@ flex-grow: 0;
     background-color:  #0056D2;
     color:#F2F0F0;
 }
-
-.contact-icon{
-    border: 1px solid #D1D1D1;
-    border-radius: 8px;
-    text-align: center;
-    width: 150px;
-    padding: 10px 0px;
-}
 .contact-info{
     display: flex;
     justify-content: space-around;
     align-content:center; 
 }
-.img-icon{
-    border: 1px solid #80ABE9;
-    background-color: #80ABE9;
-    border-radius: 4px;
-    margin: 0px 5px;
-    padding: 5px;
-    color: #000;
-}
-.img-icon-big{
-    color: #000;
-    margin-left: 25px;
-}
-.contact-address{
-    font-size: 10px;
-    margin: 5px;
-    width: 100px;
+.contact-icon{
+    border: 1px solid #D1D1D1;
+    border-radius: 0.5rem;
     text-align: center;
-}
-.contact-ul li{
-font-size: 10px;
-list-style-type: none;
+    width: 90%;
+    padding: 0.625rem 0px;
 }
 
+.fa-solid{
+    border: 1px solid #80ABE9;
+    background-color: #80ABE9;
+    border-radius:0.25rem;
+    margin: 0px 0.125rem;
+    padding:0.1875rem;
+    color: #000;
+}
+
+.contact-address{
+    font-size: 0.625rem;
+    margin: 0.3215rem;
+    width: 70%;
+    text-align: center;
+}
+
+.contact-ul{
+    padding-left: 0;
+}
+.contact-ul li{
+font-size: 0.625rem;
+list-style-type: none;
+}
 
 
 /* faq styles come  below*/
@@ -374,7 +387,7 @@ list-style-type: none;
 }
   
 
-/*   footer styles come below*/
+/* subscribe and  footer styles come below*/
 
 h2 {
     margin-top: 2px;
@@ -382,7 +395,7 @@ h2 {
 .subscribe p {
     margin-top: -30px;
 }
-form {
+.subscribe form {
     display: flex;
 }
 input {
@@ -405,10 +418,6 @@ button {
     color: #fff;
     padding: 15px;
 }
-footer {
-    background: #0056D2;
-    color: #fff;
-}
 .subscribe {
     display: flex;
     color: black;
@@ -426,6 +435,15 @@ footer {
     border-radius: 8px;
     top: -125px;
 }
+
+ /* Footer Styles */
+
+footer {
+    background: #0056D2;
+    color: #fff;
+}
+
+
 footer ul {
     list-style-type: none;
 }

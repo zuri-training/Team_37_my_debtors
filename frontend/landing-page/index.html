@@ -6,18 +6,21 @@
   <meta name="viewport" content="width=device-width">
   <title>replit</title>
 
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
     rel="stylesheet">
 
 
+  <script src="https://kit.fontawesome.com/f1061e8afa.js" crossorigin="anonymous"></script>
+
+
   <link href="style.css" rel="stylesheet" type="text/css" />
-
-
 </head>
 
 <body>
@@ -25,7 +28,7 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding: 1rem">
       <a class="navbar-brand" href="#">
-        <img src="CodebitLogo.jpg" alt="Logo">
+        <img src="./img/CodebitLogo.jpg" alt="Logo">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,7 +52,17 @@
         </ul>
         <div>
           <a href="#" class="btn btn-outline-primary" role="button" aria-pressed="true">Login</a>
-          <a href="#" class="btn btn-primary" role="button" aria-pressed="true">Sign up</a>
+          <!-- single dropdown button -->
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              Sign Up
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">As Guardian</a>
+              <a class="dropdown-item" href="#">As School Admin</a>
+            </div>
+          </div>
         </div>
 
       </div>
@@ -72,13 +85,13 @@
     <div class="d-sm-flex display-images">
 
       <div class="flex-fill">
-        <img src="image 4.jpg" alt="">
+        <img src="./img/image4.jpg" alt="">
       </div>
       <div class="flex-fill img5">
-        <img src="image 5.jpg" alt="">
+        <img src="./img/image5.jpg" alt="">
       </div>
       <div class="flex-fill">
-        <img src="image 6.jpg" alt="">
+        <img src="./img/image6.jpg" alt="">
       </div>
     </div>
 
@@ -96,32 +109,32 @@
 
     <div class="wwd-boxes">
       <div class="box">
-        <img src="img/finance.png" alt="">
+        <img src="./img/finance.png" alt="">
         <h5>Finance</h5>
         <p>We make sure you don't experience deficits</p>
       </div>
       <div class="box">
-        <img src="img/debtor.png" alt="">
+        <img src="./img/debtor.png" alt="">
         <h5>Debtors</h5>
         <p>Worry less about debtors, we make them pay twice</p>
       </div>
       <div class="box">
-        <img src="img/theft.svg" alt="">
+        <img src="./img/theft.svg" alt="">
         <h5>Theft</h5>
         <p>Track individual debt profile and curb debt evasion</p>
       </div>
       <div class="box">
-        <img src="img/school.svg" alt="">
+        <img src="./img/school.svg" alt="">
         <h5>School fees</h5>
         <p>Recover all your school fees</p>
       </div>
       <div class="box">
-        <img src="img/directory.svg" alt="">
+        <img src="./img/directory.svg" alt="">
         <h5>Directory</h5>
         <p>Make debt listing a breeze with Codebt</p>
       </div>
       <div class="box">
-        <img src="img/books.svg" alt="">
+        <img src="./img/books.svg" alt="">
         <h5>Books</h5>
         <p>Books and other tuitions are not included</p>
       </div>
@@ -146,7 +159,7 @@
 
     <div class="testimonial-container">
       <div class="card">
-        <img class="images-testimonial" src="img1.jpg" srcset="" />
+        <img class="images-testimonial" src="./img/img1.jpg" />
         <div class="content">
 
           <h3>Jane Doe</h3>
@@ -154,13 +167,13 @@
           <p>
             Codebt has saved my school from going backrupt. thanks for all you do.
           </p>
-          <p class="read-more">Read more ></p>
+          <!-- <p class="read-more">Read more ></p> -->
         </div>
 
 
       </div>
       <div class="card">
-        <img class="images-testimonial" src="img2.jpg" alt="image" srcset="" />
+        <img class="images-testimonial" src="./img/img2.jpg" alt="image" srcset="" />
         <div class="content">
 
           <h3>Segun Kayode</h3>
@@ -169,11 +182,11 @@
             With the help of Codebt,we have been able to recover over 40 students
             unpaid debt.
           </p>
-          <p class="read-more">Read more ></p>
+          <!-- <p class="read-more">Read more ></p> -->
         </div>
       </div>
       <div class="card">
-        <img class="images-testimonial" src="img3.jpg" alt="image" srcset="" />
+        <img class="images-testimonial" src="./img/img3.jpg" alt="image" srcset="" />
 
         <div class="content">
 
@@ -183,11 +196,11 @@
             The rate of debtors leaving our school has reduced drastically with
             the help of Codebt.
           </p>
-          <p class="read-more">Read more ></p>
+          <!-- <p class="read-more">Read more ></p> -->
         </div>
       </div>
       <div class="card">
-        <img class="images-testimonial" src="im4.jpg" alt="image" srcset="" />
+        <img class="images-testimonial" src="./img/im4.jpg" alt="image" srcset="" />
         <div class="content">
 
           <h3>Smith Blake</h3>
@@ -196,7 +209,7 @@
             Debtors listing hasn't been a lot more easier than it is with Codebt
             thanks to Codebt.
           </p>
-          <p class="read-more">Read more ></p>
+          <!-- <p class="read-more">Read more ></p> -->
         </div>
       </div>
     </div>
@@ -211,7 +224,7 @@
 
 
     <div class="whitediv">
-      <img src="joinimage.png" id="handimg" alt="" />
+      <img src="./img/joinimage.png" id="handimg" alt="" />
 
 
       <p class="whitedivtext">
@@ -362,7 +375,7 @@
         </div>
         <div>
           <div class="contact-icon">
-            <img src="./img/Vector1.png" alt="Email-icon" class="img-icon img-icon-big">Email
+            <i class="fa-solid fa-envelope"></i>Email
           </div>
           <p>
           <ul class="contact-ul">
@@ -373,7 +386,7 @@
         </div>
         <div>
           <div class="contact-icon">
-            <img src="./img/Vector.png" alt="Phone-icon" class="img-icon img-icon-big">PHONE
+            <i class="fa-solid fa-phone-volume"></i>PHONE
           </div>
           <p>
           <ul class="contact-ul">
@@ -463,7 +476,7 @@
       </div>
 
       <div class="footer-content">
-        <img src="./images/logo.svg" alt="logo" />
+        <img src="./img/logo.svg" alt="logo" />
         <ul>
           <li>
             <b>Company</b>
@@ -550,22 +563,22 @@
         <ul class="social-media">
           <li>
             <a class="circle" href="#">
-              <img src="./images/facebook.svg" alt="facebook" />
+              <img src="./img/facebook.svg" alt="facebook" />
             </a>
           </li>
           <li>
             <a class="circle" href="#">
-              <img src="./images/linkdein.svg" alt="linkdein" />
+              <img src="./img/linkdein.svg" alt="linkdein" />
             </a>
           </li>
           <li>
             <a href="#">
-              <img src="./images/Twitter.svg" alt="Twitter" />
+              <img src="./img/Twitter.svg" alt="Twitter" />
             </a>
           </li>
           <li>
             <a class="circle" href="#">
-              <img src="./images/Instagram.svg" alt="Instagram" />
+              <img src="./img/Instagram.svg" alt="Instagram" />
             </a>
 
           </li>
@@ -580,11 +593,15 @@
 
 
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
-
-  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
 
 </body>
 
