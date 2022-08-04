@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-
+import os
 from pathlib import Path
 from decouple import config
 
@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'core.apps.CoreConfig',
     #3rd party app
     'django_extensions',
-    'crispy_forms',
+    #'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -136,3 +136,11 @@ MEDIA_URL = 'images/'
 
 MEDIA_ROOT = 'static/images'
 # STATIC_ROOT =
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR,'static')
+]
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_URL = '/static/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# MEDIA_URL = '/media/'
