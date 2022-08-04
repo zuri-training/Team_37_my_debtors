@@ -13,7 +13,7 @@ def index(request):
 
 def register(request):
     if request.method == 'POST':
-     form == RegisterForm()
+     form = RegisterForm()
      if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
