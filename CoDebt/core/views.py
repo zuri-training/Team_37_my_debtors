@@ -5,6 +5,7 @@ from django.contrib.auth import login, authenticate
 from .forms import UserCreationForm, RegisterForm
 from django.contrib import messages
 
+
 # Create your views here.
 
 def index(request):
@@ -27,3 +28,7 @@ def register(request):
         messages.error(request, 'Error Processing Your Request')
         form = RegisterForm()
         return render (request, './signup.html', {'form': form})  
+
+    else:
+        return render(request, './signup.html')   
+
