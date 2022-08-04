@@ -1,0 +1,91 @@
+{% extends 'main.html' %}
+{% load static %}
+{%  block head%}
+<title>Sign Up</title>
+<link href="{% static 'styles/register.css' %}" rel="stylesheet" type="text/css" />
+<script src="https://kit.fontawesome.com/f1061e8afa.js" crossorigin="anonymous"></script>
+{% endblock head %}
+{% block content %}
+<main>
+    <div class="wrapper">
+
+
+        <div class="img-container">
+            <img src="{% static 'images/bro.png' %}" alt="illustration of woman on a sign up its free post sign">
+        </div>
+
+        <div class="form-container">
+            <h1>Create An Account (School)</h1>
+            <form action="">
+
+                <div class="form-group">
+                    <div>
+                        <label for="f-name">First Name</label>
+                        <input type="text" name="f-name" placeholder="Daniel" required>
+                    </div>
+
+                    <div>
+                        <label for="l-name">Last Name</label>
+                        <input type="text" name="l-name" placeholder="James" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                    <div>
+                        <label for="status">Status</label>
+                        <select name="status" id="">
+                            <option>School Admin</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="name-school">Name of School</label>
+                        <input type="text" name="name-school" placeholder="Amazing Grace Int College" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div>
+                        <label for="email">Email Address</label>
+                        <input type="email" name="email" placeholder="danieljames@email.com" required>
+                    </div>
+
+                    <div class="copy">
+                        <label for="cac">Copy of CAC</label>
+                        <input type="file" name="file" id="my-file" required>
+                        <i></i>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div>
+                        <label for="password">Password</label>
+                        <input type="password" name="password" placeholder="M9SuisdfiX123" required>
+                    </div>
+
+                    <div>
+                        <label for="c-password">Confirm Password</label>
+                        <input type="password" name="c-password" placeholder="M9SuisdfiX123" required>
+                    </div>
+                </div>
+
+                <div class="privacy">
+                    <input type="checkbox" name="privacy" id="privacy">
+                    <span>I have read and agree with the terms of service and privacy policy</span>
+                </div>
+                <div class="create-account">
+                    <button>Create Account</button>
+                    <p>Or sign up with <img src="{% static 'images/google.png' %}"> <img src="{% static 'images/fb.png' %}">
+                    </p>
+                </div>
+            </form>
+
+            <div>
+                <p>Already have an account? <a href="#">Sign In</a></p>
+            </div>
+        </div>
+
+    </div>
+</main>
+{% endblock content %}
