@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* html, body {
+    height: 100%;
+    width: 100%;
+    font-family: Poppins', sans-serif;
+  } */
+
+
+/* --------------------HEADER DESIGN-------------------------- */
+
+.header-img {
+    width: 100vw;
+    height: 90vh;
+    background-image: url(./img/bgcntct1.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* --------------------CONTACT CODEBT TEAM SECTON-------------------------- */
+
+.contct-heading2 h2 {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 40px;
+}
+
+.cntct-form {
+    width: 60%;
+    margin: 40px auto;
+}
+.contact-btn{
+    display:block;
+    margin:0 auto;
+    padding:10px 60px;
+}
+/* --------------------CONTACT CODEBT TEAM SECTON-------------------------- */
+.debtor-locate-section{
+    background-color:#fefefe;
+    height: 80vh;
+}
+
+.locate-debtor1 h2{
+    text-align: center;
+    margin-top: 50px;
+    font-size: 40px;
+    padding-bottom: 50px;
+
+}
+.debtor-locator2{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    margin:10px 80px;
+}
+.email-client .check-guide{
+    width: 40%;
+}
+ .icons .icon-contact{
+    font-size: 80px;
+    color: red;
+    margin-left: 130px;
+}
+.contact-text{
+    width: 400px;
+}
+
+/* footer */
+h2 {
+    margin-top: 2px;
+}
+.subscribe p {
+    margin-top: -30px;
+}
+.newsletter-form {
+    display: flex;
+}
+input {
+    border: 1px solid hsl(243, 87%, 12%);
+    border-radius: 2px;
+    font-size: 14px;
+    flex: 0.7;
+    padding: 15px;
+}
+input::placeholder {
+    color: hsl(0, 0%, 75%);
+}
+button {
+    border: 1px solid #0056D2;
+    background: #0056D2;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    font-size: 14px;
+    flex: 0.3;
+    color: #fff;
+    padding: 15px;
+}
+footer {
+    background: #0056D2;
+    color: #fff;
+}
+.subscribe {
+    display: flex;
+    color: black;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    gap: 24px;
+    margin: 0 auto;
+    max-width: 542.9px;
+    width: 100%;
+    background: #FFFFFF;
+
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    top: -125px;
+}
+footer ul {
+    list-style-type: none;
+}
+.footer-content img {
+    margin-top: -100px;
+}
+footer ul li {
+    margin-bottom: 10px;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+}
+.copyright-socials {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+.social-media {
+    display: flex;
+    list-style-type: none;
+    gap: 40px;
+}
+.social-media li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.social-media li img {
+    display: block;
+}
+.copyright-socials p {
+    color: #fff;
+}
