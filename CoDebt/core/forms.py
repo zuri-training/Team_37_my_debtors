@@ -53,4 +53,4 @@ class RegisterForm(UserCreationForm):
         'school_name', 
         'email', 
         'password1',
-         'password2', )    
+        'password2', )    
