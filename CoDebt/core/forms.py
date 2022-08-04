@@ -1,6 +1,8 @@
 from dataclasses import field
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from core.models import CustomUser
+from django.contrib.auth.models import User
+from django import forms
 
 class CustomUserCreationForm(UserCreationForm):
     class Meta:
@@ -32,7 +34,7 @@ class CustomUserChangeForm(UserChangeForm):
             'school_name',
             'avatar',
             )
-
+    
 class RegisterForm(UserCreationForm):
     first_name = forms.CharField(max_length=50, required=True, help_text='Enter First Name')
     last_name = forms.CharField(max_length=50, required=True, help_text='Enter Last Name')
