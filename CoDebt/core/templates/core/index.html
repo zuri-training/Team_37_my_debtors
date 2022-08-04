@@ -1,5 +1,11 @@
+
 {% extends 'main.html' %}
 {% load static %}
+{%  block head%}
+<title>CoDebt</title>
+<link href="{% static 'styles/style.css' %}" rel="stylesheet" type="text/css" />
+{% endblock head %}
+{% block navbar %}{% include 'navbar.html' %}{% endblock navbar %}
 {% block content %}
   <div class="d-lg-flex p-5 bd-highlight align-items-center justify-content-center container-fluid">
     <div class="mr-5">
@@ -53,7 +59,7 @@
         <p>Track individual debt profile and curb debt evasion</p>
       </div>
       <div class="box">
-        <img src="{% static 'images/school.jpg' %}" alt="School Picture">
+        <img src="{% static 'images/school.svg' %}" alt="School Picture">
         <h5>School fees</h5>
         <p>Recover all your school fees</p>
       </div>
@@ -94,9 +100,8 @@
           <h3>Jane Doe</h3>
           <p>Proprietress</p>
           <p>
-            Codebt has saved my school from going backrupt. thanks for all you do.
+            CoDebt has saved my school from going backrupt. Thanks for all you do.
           </p>
-          <p class="read-more">Read more ></p>
         </div>
 
 
@@ -108,10 +113,9 @@
           <h3>Segun Kayode</h3>
           <p>Proprietor</p>
           <p>
-            With the help of Codebt,we have been able to recover over 40 students
+            With the help of CoDebt, we have been able to recover over 40 students
             unpaid debt.
           </p>
-          <p class="read-more">Read more ></p>
         </div>
       </div>
       <div class="card">
@@ -125,7 +129,6 @@
             The rate of debtors leaving our school has reduced drastically with
             the help of Codebt.
           </p>
-          <p class="read-more">Read more ></p>
         </div>
       </div>
       <div class="card">
@@ -138,7 +141,6 @@
             Debtors listing hasn't been a lot more easier than it is with Codebt
             thanks to Codebt.
           </p>
-          <p class="read-more">Read more ></p>
         </div>
       </div>
     </div>
@@ -262,29 +264,29 @@
         <div class="col-4 form-text">
           <h3>Get in Touch</h3>
           <p>
-            FOr further enquires and Question , you can always contact through the provided form
+            For further enquiries and question , you can always contact through the provided form
           </p>
         </div>
         <div class="col-8">
           <div class="contact-text text-center">
-            <h2>Contact US</h2>
-            <p>Lets talk heart to heart</p>
+            <h2>Contact Us</h2>
+            <p>Let's chat heart to heart</p>
           </div>
           <div class="mt-5">
             <form action="">
               <div class="row">
                 <div class=" col-6 mb-3">
-                  <input type="text" class="form-control" id="fullname" placeholder="Your fullname" />
+                  <input type="text" class="form-control" id="fullname" placeholder="Full Name" />
                 </div>
                 <div class="col-6 mb-3">
-                  <input type="email" class="form-control" id="email" placeholder="Email address" />
+                  <input type="email" class="form-control" id="email" placeholder="Email Address" />
                 </div>
 
               </div>
 
               <div class="mb-3">
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                  placeholder="enter your message"></textarea>
+                  placeholder="Enter Your Message"></textarea>
 
               </div>
               <button type="submit" class="btn btn-contact p-2"><img src="{% static 'images/play.png' %}" alt="play-icon"
@@ -297,14 +299,14 @@
       <div class="contact-info mt-5">
         <div>
           <div class="contact-icon">
-            <img src="{% static 'images/address.png' %}" alt="address-icon" class="img-icon">ADDRESS
+            <img src="{% static 'images/address.png' %}" alt="address-icon" class="img-icon"><strong>ADDRESS</strong>
           </div>
           <p class="contact-address">18 Brooks street, Alausa Lagos,Nigeria</p>
 
         </div>
         <div>
           <div class="contact-icon">
-            <img src="{% static 'images/Vector1.png' %}" alt="Email-icon" class="img-icon img-icon-big">Email
+            <img src="{% static 'images/Vector1.png' %}" alt="Email-icon" class="img-icon img-icon-big"><strong>EMAIL</strong>
           </div>
           <p>
           <ul class="contact-ul">
@@ -315,7 +317,7 @@
         </div>
         <div>
           <div class="contact-icon">
-            <img src="{% static 'images/Vector.png' %}" alt="Phone-icon" class="img-icon img-icon-big">PHONE
+            <img src="{% static 'images/Vector.png' %}" alt="Phone-icon" class="img-icon img-icon-big"><strong>PHONE</strong>
           </div>
           <p>
           <ul class="contact-ul">
@@ -389,3 +391,4 @@
   </section>
 
   {% endblock content %}
+  {% block footer %}{% include 'footer.html' %}{% endblock footer %}
