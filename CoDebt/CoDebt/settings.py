@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'core.apps.CoreConfig',
     #3rd party app
     'django_extensions',
-    'crispy_forms',
+    #'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -59,7 +59,7 @@ ROOT_URLCONF = 'CoDebt.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
