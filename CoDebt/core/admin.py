@@ -2,8 +2,9 @@ from django.contrib import admin
 
 # Register your models here.
 from django.contrib.auth.admin import UserAdmin
-from core.models import CustomUser, Debtor, Comment, Contention
-from core.forms import CustomUserCreationForm, CustomUserChangeForm
+from .models import CustomUser, Debtor, Comment, Contention
+from .forms import CustomUserCreationForm, CustomUserChangeForm
+
 
 # Register your models here.
 
@@ -21,10 +22,11 @@ class CustomUserAdmin(UserAdmin):
         (None, {
             'classes': ('wide',),
             'fields': ('email', 'password1', 'password2', 'is_staff', 'is_active')}
-        ),
+         ),
     )
     search_fields = ('email', 'first_name', 'last_name',)
     ordering = ('email',)
+
 
 admin.site.register(CustomUser, CustomUserAdmin)
 admin.site.register(Debtor)

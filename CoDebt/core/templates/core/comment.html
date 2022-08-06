@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoDebt</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container mt-5">
+        <form method="post" style="margin-top: 1.3em;">
+          {{ comment_form.as_p }}
+          {% csrf_token %}
+          <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
+        </form>
+{#        <label>#}
+{#            <textarea rows="4" cols="50" name="comment" form="usrform" placeholder="Enter text here...">#}
+{#            </textarea>#}
+{#        </label>#}
+{#        <br>#}
+{#        <form action="" id="usrform">#}
+{#          Name: <input type="text" name="username" >#}
+{#          Post: <input type="number" name="post" >#}
+{#          <input type="submit">#}
+{#        </form>#}
+    </div>
+</body>
