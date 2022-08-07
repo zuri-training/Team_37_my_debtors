@@ -1,0 +1,146 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://kit.fontawesome.com/c80bc35158.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="{% static 'styles/about.css' %}">
+<title>About Us</title>
+{% endblock head %}
+{% block navbar %}{% include 'navbar.html' %}{% endblock navbar %}
+{% block content %}
+<main>
+
+    <div class="about-us-image">
+        <img src="{% static 'images/about-us.jpg' %}" alt="About Us">
+    </div>
+
+    <div class="why-box ">
+        <h1 class="text-center"> Why are we different? </h1>
+        <p>Codebt was established in 2022 to assist schools in the listing directory of students owing
+            fees. We are a trusted debt listing directory agency across
+            the state and are proud to maintain a reputation as a debt listing agency.
+            We utilize the most up-to-date technology in order to curb the spread of debtors going to other schools.
+            </pre>
+
+        <p> At Codebt, we understand that life happens and we believe in finding solutions that simultaneously
+            assist schools to enhance their financial performance in order to thrive and grow.</p>
+    </div>
+
+    <div class="d-sm-flex justify-content-center align-items-center users-box text-center">
+        <div class="flex-fill">
+            <h1 style="color:green;">24</h1>
+            <p>Teammates</p>
+        </div>
+        <div class="flex-fill">
+            <h1 style="color:red;">2</h1>
+            <p>Countries</p>
+        </div>
+        <div class="flex-fill">
+            <h1 style="color:blue">500,000+</h1>
+            <p>Users</p>
+        </div>
+    </div>
+
+    <div class="d-sm-flex justify-content-between our-target">
+        <div class="no-name">
+            <svg width="51" height="54" class="center" viewBox="0 0 51 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M31.2069 4.20001H15.7935C14.7269 4.20001 13.8735 3.34668 13.8735 2.28001C13.8735 1.21334 14.7269 0.333344 15.7935 0.333344H31.2069C32.2735 0.333344 33.1269 1.18668 33.1269 2.25334C33.1269 3.32001 32.2735 4.20001 31.2069 4.20001Z" fill="#F2F0F0"/>
+                <path d="M28.8332 48.2533V40.4133C28.8332 35.5867 32.0865 32.3333 36.9132 32.3333H44.7532C45.3665 32.3333 45.9532 32.3867 46.5132 32.4933C46.5665 31.8533 46.6199 31.2133 46.6199 30.5467C46.6199 17.7733 36.2465 7.39999 23.4999 7.39999C10.7532 7.39999 0.379883 17.7733 0.379883 30.5467C0.379883 43.2933 10.7532 53.6667 23.4999 53.6667C25.7665 53.6667 27.9265 53.2933 30.0065 52.7067C29.2599 51.4533 28.8332 49.96 28.8332 48.2533ZM25.4999 29.6667C25.4999 30.76 24.5932 31.6667 23.4999 31.6667C22.4065 31.6667 21.4999 30.76 21.4999 29.6667V16.3333C21.4999 15.24 22.4065 14.3333 23.4999 14.3333C24.5932 14.3333 25.4999 15.24 25.4999 16.3333V29.6667Z" fill="#F2F0F0"/>
+                <path d="M44.7533 35H36.94C33.5267 35 31.5 37.0267 31.5 40.4133V48.2533C31.5 51.64 33.5267 53.6667 36.94 53.6667H44.7533C48.14 53.6667 50.1667 51.64 50.1667 48.2533V40.4133C50.1667 37.0267 48.14 35 44.7533 35ZM39.2867 48.4933C39.2867 49.3467 38.5933 50.04 37.7133 50.04C36.86 50.04 36.1667 49.3467 36.1667 48.4933V40.1733C36.1667 39.32 36.86 38.6267 37.7133 38.6267C38.5933 38.6267 39.2867 39.32 39.2867 40.1733V48.4933ZM45.5 48.4933C45.5 49.3467 44.8067 50.04 43.9533 50.04C43.1 50.04 42.38 49.3467 42.38 48.4933V40.1733C42.38 39.32 43.1 38.6267 43.9533 38.6267C44.8067 38.6267 45.5 39.32 45.5 40.1733V48.4933Z" fill="#F2F0F0"/>
+                </svg>
+            <h3 class="text-center">OUR MISSION</h3>
+            <p>We are building a debt-free
+                educational sector for every
+                small and big private schools
+                to reduce the rate at which
+                schools close down due to
+                debts from students.</p>
+        </div>
+        <div class="no-name">
+            <svg width="49" height="54" class="center" viewBox="0 0 49 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M32.0734 24.0667L47.1667 13.96C48.6867 12.9467 49.0867 10.8667 48.0734 9.37332L43.22 2.14666C42.2067 0.626658 40.1267 0.226658 38.6334 1.23999L23.54 11.3467L32.0734 24.0667Z" fill="#F2F0F0"/>
+                <path d="M31.2198 22.7867L26.5265 25.9333L19.4065 30.7067L18.4732 31.32L18.0465 30.68L12.0732 21.7733L11.6465 21.1333L24.3932 12.6L31.2198 22.7867Z" fill="#F2F0F0"/>
+                <path d="M7.53993 37.72L18.0733 30.68L12.0999 21.7733L1.5666 28.8133C0.339935 29.64 0.019935 31.2933 0.846602 32.52L3.85994 37C4.65994 38.2267 6.31327 38.5467 7.53993 37.72Z" fill="#F2F0F0"/>
+                <path d="M36.6602 53.16C36.3935 53.2667 36.1002 53.3467 35.8335 53.3467C35.0602 53.3467 34.3402 52.8934 33.9935 52.1467L24.0469 30.1733L13.9669 52.1734C13.6202 52.8934 12.9002 53.3467 12.1269 53.3467C11.8602 53.3467 11.5669 53.2667 11.3002 53.16C10.3135 52.68 9.86021 51.5067 10.3135 50.4933L19.4069 30.7067L26.5269 25.9333L37.6469 50.52C38.1002 51.5067 37.6469 52.7067 36.6602 53.16Z" fill="#F2F0F0"/>
+                </svg>
+                
+            <h3 class="text-center">OUR GOALS</h3>
+            <p>To help schools recover their
+                money and also make wise
+                decisions to help improve the
+                school financial situation.</p>
+        </div>
+        <div class="no-name">
+            <svg width="55" height="54" class="center" viewBox="0 0 55 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19.5002 0.333435C12.5135 0.333435 6.8335 6.01344 6.8335 13.0001C6.8335 19.8534 12.1935 25.4001 19.1802 25.6401C19.3935 25.6134 19.6068 25.6134 19.7668 25.6401C19.8202 25.6401 19.8468 25.6401 19.9002 25.6401C19.9268 25.6401 19.9268 25.6401 19.9535 25.6401C26.7802 25.4001 32.1402 19.8534 32.1668 13.0001C32.1668 6.01344 26.4868 0.333435 19.5002 0.333435Z" fill="#F2F0F0"/>
+                <path d="M33.0466 32.7331C25.6066 27.7731 13.4732 27.7731 5.9799 32.7331C2.59323 34.9998 0.726562 38.0665 0.726562 41.3465C0.726562 44.6265 2.59323 47.6665 5.95323 49.9065C9.68656 52.4131 14.5932 53.6665 19.4999 53.6665C24.4066 53.6665 29.3132 52.4131 33.0466 49.9065C36.4066 47.6398 38.2732 44.5998 38.2732 41.2931C38.2466 38.0131 36.4066 34.9731 33.0466 32.7331Z" fill="#F2F0F0"/>
+                <path d="M48.806 14.5737C49.2326 19.747 45.5526 24.2804 40.4593 24.8937C40.4326 24.8937 40.4326 24.8937 40.406 24.8937H40.326C40.166 24.8937 40.006 24.8937 39.8726 24.947C37.286 25.0804 34.9126 24.2537 33.126 22.7337C35.8726 20.2804 37.446 16.6004 37.126 12.6004C36.9393 10.4404 36.1926 8.46703 35.0726 6.78703C36.086 6.28037 37.2593 5.96037 38.4593 5.8537C43.686 5.40037 48.3526 9.2937 48.806 14.5737Z" fill="#F2F0F0"/>
+                <path d="M54.1405 39.2398C53.9271 41.8264 52.2738 44.0664 49.5005 45.5864C46.8338 47.0531 43.4738 47.7464 40.1405 47.6664C42.0605 45.9331 43.1805 43.7731 43.3938 41.4798C43.6605 38.1731 42.0871 34.9998 38.9405 32.4664C37.1538 31.0531 35.0738 29.9331 32.8071 29.1064C38.7005 27.3998 46.1138 28.5464 50.6738 32.2264C53.1271 34.1998 54.3805 36.6798 54.1405 39.2398Z" fill="#F2F0F0"/>
+                </svg>
+                
+            <h3 class="text-center">OUR VALUES</h3>
+            <p>Our Core Values guide every
+                decision and interaction on
+                how we conduct an ethical
+                debt issue,and to make a
+                difference and promote
+                change.</p>
+        </div>
+    </div>
+
+    <div class="d-sm-flex register-section">
+        <div class="d-flex flex-column justify-content-between">
+            <div>
+                <h2>Register for free now!
+                It is your responsibility
+                to recover your debt</h2>
+            </div>
+            <div>
+                <button class="btn btn-lg">Get Started</button>
+            </div>
+            
+        </div>
+        <div>
+            <img src="{% static 'images/register-pic.png' %}" alt="Register Picture">
+        </div>
+    </div>
+
+    <div class="team-box">
+        <div>
+            <h3>Team</h3>
+            <p>We're dedicated to creating a diverse team and an environment at work that welcomes individuals
+                from all backgrounds. Learn more about the wonderful team that is building our product,
+                providing customer support, and producing informative content.</p>
+        </div>
+        <div class="d-sm-flex align-items-center team-pics">
+            <div>
+                <img src="{% static 'images/Frame_53022.png' %}" alt="Frame 1" height="560px" width="500px">
+            </div>
+            <div class="d-flex flex-column column-pics">
+                <div>
+                    <img src="{% static 'images/Frame_53023.png' %}" alt="" height="520px" width="480px">
+                </div>
+                <div>
+                    <img src="{% static 'images/Frame_53024.png' %}" alt="" height="520px" width="480px">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</main>
+
+{% endblock content %}
+{% block footer %}{% include 'footer.html' %}{% endblock footer %}
+{% block scripts %}
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+{% endblock scripts %}

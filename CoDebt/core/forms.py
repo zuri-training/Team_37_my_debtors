@@ -1,28 +1,8 @@
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from core.models import CustomUser
-
-class CustomUserCreationForm(UserCreationForm):
-    class Meta:
-        model = CustomUser
-        fields = (
-            'email',
-            'first_name',
-            'last_name',
-            'school_name',
-            'avatar',
-            'password1',
-            'password2',
-        )
+from django import forms
 
 
-class CustomUserChangeForm(UserChangeForm):
-    class Meta:
-        model = CustomUser
-        fields = (
-            'email',
-            'first_name',
-            'last_name',
-            'school_name',
-            'avatar',
-            )
-    
+class ContactForm(forms.Form):
+    full_name = forms.CharField(max_length=100)
+    school_name = forms.CharField(max_length=100)
+    sender = forms.EmailField()
+    message = forms.CharField(widget=forms.Textarea)

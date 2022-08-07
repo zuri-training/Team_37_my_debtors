@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 from decouple import config
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -41,7 +42,9 @@ INSTALLED_APPS = [
     'core.apps.CoreConfig',
     #3rd party app
     'django_extensions',
-    'crispy_forms',
+    'django_static_fontawesome',
+    'cloudinary_storage',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -131,11 +134,17 @@ AUTH_USER_MODEL = 'core.CustomUser'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-MEDIA_URL = 'images/'
+MEDIA_URL = 'media/'
 
-MEDIA_ROOT = 'static/images'
+MEDIA_ROOT = BASE_DIR / 'media'
 # STATIC_ROOT =
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'static'
+    BASE_DIR / 'core/static'
 ]
+
+# CLOUDINARY_STORAGE = {
+#     'CLOUD_NAME': 'dbx29ikpb',
+#     'API_KEY': '161252689559565',
+#     'API_SECRET': 'icXh1c1-d1Mrhdd8ZO-KU9SgTW0'
+# }

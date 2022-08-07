@@ -1,0 +1,42 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block head %}
+<title>Sign In</title>
+<link rel="stylesheet" href="{% static 'styles/login.css' %}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+{% endblock head %}
+{% block content %}
+
+    <div class="split left">
+        <header>
+            <img src="{% static 'images/CoDebt.svg' %}" alt="">
+        </header>
+        <form method="post" class="middle" action="">
+            {% csrf_token %}
+            <div class="sign-in">
+                <h1>Sign In</h1>
+                <p>Sign in to recover pending debts</p>
+            </div>
+            <div class="email-pass">
+                <label for="email">Email Address</label>
+                <input type="email" name="email" id="email" placeholder="Email Address">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="**********">
+                <span class="bi bi-eye-slash" id="togglePassword" style='color:black'></span>
+                <a href="" id="forgot-password">Forgot Password?</a>
+                <div class="sub-button">
+                    <button type="submit" id="submit">Sign in</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="split right">
+        <div>
+            <img src="{% static 'images/Screenshot.png' %}" alt="">
+        </div>
+    </div>
+{% endblock content %}
+{% block scripts %}
+<script src="{% static 'js/login.js' %}"></script>
+{% endblock scripts %}

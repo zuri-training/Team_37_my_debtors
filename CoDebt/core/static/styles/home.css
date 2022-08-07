@@ -1,3 +1,4 @@
+
 html, body {
   height: 100%;
   width: 100%;
@@ -223,7 +224,6 @@ color: #F2F0F0;
 #handimg{
 width: 348.5px;
 height: 209.1px;
-background: url(image.png);
 border-radius: 10.3259px 10.3259px 0px 0px;
 flex: none;
 order: 0;

@@ -2,7 +2,7 @@
 {% load static %}
 {%  block head%}
 <title>Sign Up</title>
-<link href="{% static 'styles/register.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'styles/register-school.css' %}" rel="stylesheet" type="text/css" />
 <script src="https://kit.fontawesome.com/f1061e8afa.js" crossorigin="anonymous"></script>
 {% endblock head %}
 {% block content %}
@@ -16,7 +16,7 @@
 
         <div class="form-container">
             <h1>Create An Account (School)</h1>
-            <form action="">
+             <form action="">
 
                 <div class="form-group">
                     <div>
@@ -31,13 +31,11 @@
                 </div>
 
                 <div class="form-group">
-
                     <div>
-                        <label for="status">Status</label>
-                        <select name="status" id="">
-                            <option>School Admin</option>
-                        </select>
+                        <label for="email">Email Address</label>
+                        <input type="email" name="email" placeholder="danieljames@email.com" required>
                     </div>
+
 
                     <div>
                         <label for="name-school">Name of School</label>
@@ -46,15 +44,9 @@
                 </div>
 
                 <div class="form-group">
-                    <div>
-                        <label for="email">Email Address</label>
-                        <input type="email" name="email" placeholder="danieljames@email.com" required>
-                    </div>
-
                     <div class="copy">
                         <label for="cac">Copy of CAC</label>
                         <input type="file" name="file" id="my-file" required>
-                        <i></i>
                     </div>
                 </div>
 
@@ -76,13 +68,13 @@
                 </div>
                 <div class="create-account">
                     <button>Create Account</button>
-                    <p>Or sign up with <img src="{% static 'images/google.png' %}"> <img src="{% static 'images/fb.png' %}">
+                    <p>Or sign up with <img src="{% static 'images/google.png' %}">
                     </p>
                 </div>
             </form>
 
             <div>
-                <p>Already have an account? <a href="#">Sign In</a></p>
+                <p class="create-account">Already have an account? <a href="{% url 'core:login' %}"><button>Sign In</button></a></p>
             </div>
         </div>
 
