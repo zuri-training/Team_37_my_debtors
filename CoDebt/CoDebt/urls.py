@@ -23,7 +23,8 @@ from core import views as core_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls')),
-    path('register/', core_views.register, name='register')
+    path('register/', core_views.register, name='register'),
+    path('guardian/', core_views.guardian, name= 'guardian'),
 ]
 
 if settings.DEBUG:
