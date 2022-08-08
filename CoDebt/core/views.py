@@ -2,26 +2,18 @@ from django.shortcuts import redirect, render
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from .models import CustomUser
 
 # Create your views here.
 
 def index(request):
     return render(request, 'core/index.html')
 
-def register(request):
-    # form = CustomUserCreationForm()
-    # if request.method == 'POST':
-    #     form = CustomUserCreationForm(request.POST)
-    #     if form.is_valid():
-    #         user = form.save()
-    #         messages.info(request, 'Thanks for registering. You are now logged in')
-    #         user = authenticate(email=form.cleaned_data['email'], password=form.cleaned_data['password1'])
-    #         login(request, user)
-    #         return redirect('core:home')
+def register_admin(request):
+    return render(request, 'core/register-guardian.html')
 
-    # ctx = {'form':form}
-    print(request)
-    return render(request, 'core/register.html')
+def register_school(request):
+    return render(request, 'core/register-school.html')
 
 def login_user(request):
     if request.user.is_authenticated:
@@ -41,12 +33,23 @@ def login_user(request):
         return redirect('core:login')    
     return render(request, 'core/login.html')
 
+@login_required()
 def logout_user(request):
     if not request.user.is_authenticated:
-       return redirect('core:home')
+        messages.info(request, 'You are already logged in')
+        return redirect('core:home')
     logout(request)
-    messages.success(request, 'Successfully signed out')
+    messages.success(request, 'You have successfully signed out')
     return redirect('core:home')
 
 def contact_us(request):
+    if request.method == 'POST':
+        pass
+
     return render(request, 'core/contact.html')
+
+def about_us(request):
+    return render(request, 'core/about-us.html')
+
+def password_reset(request):
+    pass

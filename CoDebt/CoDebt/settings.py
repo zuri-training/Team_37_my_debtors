@@ -14,6 +14,13 @@ from pathlib import Path
 from decouple import config
 import os
 
+from dotenv import load_dotenv
+load_dotenv()
+
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -39,8 +46,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #base app 
     'core.apps.CoreConfig',
-    #3rd party app
+    #3rd party extensions
     'django_extensions',
     'django_static_fontawesome',
     'cloudinary_storage',
@@ -81,12 +89,24 @@ WSGI_APPLICATION = 'CoDebt.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE':'django.db.backends.postgresql_psycopg2',
+        'NAME': os.getenv('DB_NAME'),
+        'USER':os.getenv('DB_USERNAME'),
+        'PASSWORD':os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': '5432',
     }
 }
+
 
 
 # Password validation
@@ -113,7 +133,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Africa/Lagos'
 
 USE_I18N = True
 
@@ -132,19 +152,17 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'core.CustomUser'
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
-
 MEDIA_URL = 'media/'
 
 MEDIA_ROOT = BASE_DIR / 'media'
-# STATIC_ROOT =
 
 STATICFILES_DIRS = [
     BASE_DIR / 'core/static'
 ]
 
-# CLOUDINARY_STORAGE = {
-#     'CLOUD_NAME': 'dbx29ikpb',
-#     'API_KEY': '161252689559565',
-#     'API_SECRET': 'icXh1c1-d1Mrhdd8ZO-KU9SgTW0'
-# }
+cloudinary.config( 
+  cloud_name = os.getenv('CLOUDINARY_CLOUD_NAME'),
+  api_key = os.getenv('CLOUDINARY_API_KEY'), 
+  api_secret = os.getenv('CLOUDINARY_API_SECRET')
+)
+
