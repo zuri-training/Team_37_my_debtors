@@ -40,7 +40,7 @@ class RegisterForm(UserCreationForm):
     last_name = forms.CharField(max_length=50, required=True, help_text='Enter Last Name')
     school_name = forms.CharField(max_length= 50, required=True)
     email = forms.EmailField(max_length=50, help_text='Required. Input a valid email address.')
-    Copy_of_CAC = forms.CharField()
+    CAC = forms.CharField()
     password1 = forms.CharField(help_text='Enter Password',required = True,widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Password'}),)
     password2 = forms.CharField(help_text='Enter Password Again',required = True,widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Password'}),)
 
@@ -52,6 +52,26 @@ class RegisterForm(UserCreationForm):
         'last_name',
         'school_name', 
         'email', 
-        'Copy_of_CAC',
+        'CAC',
         'password1',
         'password2', )    
+
+class GuardianForm(UserCreationForm):
+    first_name = forms.CharField(max_length=50, required=True, help_text='Enter First Name')
+    last_name = forms.CharField(max_length=50, required=True, help_text='Enter Last Name')
+    email = forms.EmailField(max_length=50, help_text='Required. Input a valid email address.')
+    password1 = forms.CharField(help_text='Enter Password',required = True,widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Password'}),)
+    password2 = forms.CharField(help_text='Enter Password Again',required = True,widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Password'}),)
+
+
+    class Meta:
+        model = User
+        fields = ( 
+        'first_name', 
+        'last_name',
+        'email', 
+        'password1',
+        'password2', )    
+
+
+
