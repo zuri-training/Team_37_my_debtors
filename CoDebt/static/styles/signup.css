@@ -37,9 +37,9 @@ main{
 .form-container h1{
     font-style: normal;
     font-weight: 600;
-    font-size: 25px;
+    font-size: 35px;
     line-height: 38px;
-    margin-bottom: 0.5em;
+    margin-bottom: 1.5em;
 }
 
 .form-group{
