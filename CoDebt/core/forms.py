@@ -40,17 +40,18 @@ class RegisterForm(UserCreationForm):
     last_name = forms.CharField(max_length=50, required=True, help_text='Enter Last Name')
     school_name = forms.CharField(max_length= 50, required=True)
     email = forms.EmailField(max_length=50, help_text='Required. Input a valid email address.')
-    username = forms.CharField(max_length=200,required = True, help_text='Enter Username', widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Username'}),)
+    Copy_of_CAC = forms.CharField()
     password1 = forms.CharField(help_text='Enter Password',required = True,widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Password'}),)
     password2 = forms.CharField(help_text='Enter Password Again',required = True,widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Password'}),)
 
     
     class Meta:
         model = User
-        fields = ('username', 
+        fields = ( 
         'first_name', 
         'last_name',
         'school_name', 
         'email', 
+        'Copy of CAC',
         'password1',
         'password2', )    
