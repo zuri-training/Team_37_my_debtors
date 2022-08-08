@@ -52,6 +52,6 @@ class RegisterForm(UserCreationForm):
         'last_name',
         'school_name', 
         'email', 
-        'Copy of CAC',
+        'Copy_of_CAC',
         'password1',
         'password2', )    
