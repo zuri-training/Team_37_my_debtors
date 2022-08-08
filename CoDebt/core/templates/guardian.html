@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="{% static 'styles/guardian.css'%}" />
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+</head>
+<body>
+    {% block content %} 
+    
+    <div class="container">
+        <header>
+            <div class="logo">
+                <nav>
+                    <img src="{% static 'images/CoDebt Logo.svg'%}" alt="logo" />
+                </nav>
+            </div> 
+        </header>
+        <img src="{% static 'images/rafiki.svg'%}" alt="rafiki" />
+        <div class="content">
+            
+            <form method='POST'class="box" action="#">
+                {% csrf_token %}
+                <div class="title">Create An Account</div>
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">First Name</span>
+                        <input type="text" required>
+                        {{form.first_name}}
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Last Name</span>
+                        <input type="text" required>
+                        {{form.last_name}}
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Status</span>
+                        <select class="select">
+                            <option disabled selected></option>
+                            <option value="single">Single</option>
+                            <option value="married">Married</option>
+                            <option value="divorced">Divorced</option>
+                            <option value="prefer not to say">Prefer not to say</option>
+                        </select>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Email Address</span>
+                        <input type="text" required>
+                        {{form.email}}
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Password</span>
+                        <div class="toggle-eye open">
+                            <ion-icon name="eye-outline"></ion-icon>
+                            {{form.password1}}    
+                        </div>
+                        <input type="password" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Confirm Password</span>
+                        <div class="toggle-eye close">
+                            <ion-icon name="eye-off-outline"></ion-icon>
+                            {{form.password2}}
+                        </div>
+                        <input type="password" required>
+                    </div>
+                </div>
+                <label class="checkbox" for="myCheckboxId">
+                    <input class="checkbox__input" type="checkbox" name="myCheckboxName" id="myCheckboxId">
+                    <div class="checkbox__box"></div>
+                    <small>
+                      I have read and agree with the<a href="#"> terms of Services</a> and <a href="#">privacy policy</a>
+                    </small>
+                  </label>
+                <div class="btn">
+                    <button class="button">Create Account</button>
+                </div>
+                
+                <div class="last">
+                    <small>
+                        <strong>Already have an account?</strong>
+                        <a href="#">Sign in</a>
+                    </small>
+                </div>
+          </form>
+        </div>
+      </div>
+      {% endblock content%}
+</body>
+</html>
