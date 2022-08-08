@@ -37,11 +37,13 @@
                         <div>
                             <label for="f-name">First Name</label>
                             <input type="text" name="f-name" placeholder="Daniel" required>
+                            {{form.first_name}}
                         </div>
 
                         <div>
                             <label for="l-name">Last Name</label>
                             <input type="text" name="l-name" placeholder="James" required>
+                            {{form.last_name}}
                         </div>
                     </div>
 
@@ -57,6 +59,7 @@
                         <div>
                             <label for="name-school">Name of School</label>
                             <input type="text" name="name-school" placeholder="Amazing Grace Int College" required>
+                            {{form.school_name}}
                         </div>
                     </div>
 
@@ -64,12 +67,14 @@
                         <div>
                             <label for="email">Email Address</label>
                             <input type="email" name="email" placeholder="danieljames@email.com" required>
+                            {{form.email}}
                         </div>
 
                         <div class="copy">
                             <label for="cac">Copy of CAC</label>
                             <input type="file" name="file" id="my-file" required>
                             <i></i>
+                            {{form.CAC}}
                         </div>
                     </div>
 
@@ -77,11 +82,13 @@
                         <div>
                             <label for="password">Password</label>
                             <input type="password" name="password" placeholder="M9SuisdfiX123" required>
+                            {{form.password1}}
                         </div>
 
                         <div>
                             <label for="c-password">Confirm Password</label>
                             <input type="password" name="c-password" placeholder="M9SuisdfiX123" required>
+                            {{form.password2}}
                         </div>
                     </div>
 
@@ -90,7 +97,7 @@
                         <span>I have read and agree with the terms of service and privacy policy</span>
                     </div>
                     <div class="create-account">
-                        <button>Create Account</button>
+                        <button type='sumbit request'>Create Account</button>
                         <p>Or sign up with <img src="{% static 'images/google.png'%}"> <img src="{% static 'images/fb.png'%}">
                         </p>
                     </div>
