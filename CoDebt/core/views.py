@@ -22,7 +22,7 @@ def register(request):
             messages.success(request, 'Account was created for ' + username)
             user = authenticate(username=username, password=password)
             #login(request,user)
-            return redirect('index')
+            return redirect('core/index.html')
      else:
         print('Form is not valid')
         messages.error(request, 'Error Processing Your Request')
