@@ -2,7 +2,7 @@ from multiprocessing import context
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.contrib.auth import login, authenticate
-from .forms import UserCreationForm, RegisterForm
+from .forms import GuardianForm, UserCreationForm, RegisterForm
 from django.contrib import messages
 
 
@@ -30,5 +30,26 @@ def register(request):
         return render (request, './signup.html', {'form': form})  
 
     else:
-        return render(request, './signup.html')   
+        return render(request, './signup.html')
+
+
+def guardian(request):
+    if request.method == 'POST':
+     form = GuardianForm()
+     if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password1')
+            messages.success(request, 'Account was created for ' + username)
+            user = authenticate(username=username, password=password)
+            #login(request,user)
+            return redirect('core/index.html')
+     else:
+        print('Form is not valid')
+        messages.error(request, 'Error Processing Your Request')
+        form = GuardianForm()
+        return render (request, './guardian.html', {'form': form})  
+
+    else:
+        return render(request, './guardian.html')           
 
