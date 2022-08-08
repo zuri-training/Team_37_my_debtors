@@ -20,74 +20,58 @@
         <div class="wrapper">
 
 
-            <div class="img-container">
-                <img src="./assets/bro.png" alt="illustration of woman on a sign up its free post sign">
-            </div>
 
             <div class="form-container">
+                <img src="./assets/CodebitLogo.jpg" alt="Codebit Logo">
                 <h1>Create An Account (School)</h1>
                 <form action="">
 
-                    <div class="form-group">
-                        <div>
-                            <label for="f-name">First Name</label>
-                            <input type="text" name="f-name" placeholder="Daniel" required>
-                        </div>
-
-                        <div>
-                            <label for="l-name">Last Name</label>
-                            <input type="text" name="l-name" placeholder="James" required>
-                        </div>
+                    <div>
+                        <label for="f-name">Full Name</label>
+                        <input type="text" name="f-name" placeholder="Daniel James" required>
                     </div>
 
-                    <div class="form-group">
 
-                        <div>
-                            <label for="status">Status</label>
-                            <select name="status" id="">
-                                <option>School Admin</option>
-                            </select>
-                        </div>
 
-                        <div>
-                            <label for="name-school">Name of School</label>
-                            <input type="text" name="name-school" placeholder="Amazing Grace Int College" required>
-                        </div>
+                    <div>
+                        <label for="name-school">Name of School</label>
+                        <input type="text" name="name-school" placeholder="Amazing Grace Int College" required>
                     </div>
 
-                    <div class="form-group">
-                        <div>
-                            <label for="email">Email Address</label>
-                            <input type="email" name="email" placeholder="danieljames@email.com" required>
-                        </div>
 
-                        <div class="copy">
-                            <label for="cac">Copy of CAC</label>
+                    <div>
+                        <label for="email">Email Address</label>
+                        <input type="email" name="email" placeholder="danieljames@email.com" required>
+                    </div>
+
+                    <div>
+                        <label for="password">Password</label>
+                        <input type="password" name="password" placeholder="M9SuisdfiX123" required>
+                    </div>
+
+                    <div>
+                        <label for="c-password">Confirm Password</label>
+                        <input type="password" name="c-password" placeholder="M9SuisdfiX123" required>
+                    </div>
+
+
+                    <div class="copy">
+                        <label>Copy of CAC</label>
+                        <label for="cac" class="copyLabel">Copy of CAC
                             <input type="file" name="file" id="my-file" required>
-                            <i></i>
-                        </div>
+                            <i class="fa-solid fa-cloud-arrow-up"></i>
+                        </label>
+
                     </div>
 
-                    <div class="form-group">
-                        <div>
-                            <label for="password">Password</label>
-                            <input type="password" name="password" placeholder="M9SuisdfiX123" required>
-                        </div>
-
-                        <div>
-                            <label for="c-password">Confirm Password</label>
-                            <input type="password" name="c-password" placeholder="M9SuisdfiX123" required>
-                        </div>
-                    </div>
 
                     <div class="privacy">
+
                         <input type="checkbox" name="privacy" id="privacy">
                         <span>I have read and agree with the terms of service and privacy policy</span>
                     </div>
                     <div class="create-account">
                         <button>Create Account</button>
-                        <p>Or sign up with <img src="./assets/google.png"> <img src="./assets/fb.png">
-                        </p>
                     </div>
                 </form>
 
