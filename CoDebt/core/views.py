@@ -41,7 +41,7 @@ def guardian(request):
             form.save()
             email = form.cleaned_data.get('email')
             password = form.cleaned_data.get('password1')
-            messages.success(request, 'Account was created for ' + username)
+            messages.success(request, 'Account was created for ' + email)
             user = authenticate(email=email, password=password)
             login(request,user)
             return redirect(request,'core/index.html')
