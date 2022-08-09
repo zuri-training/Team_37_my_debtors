@@ -9,6 +9,8 @@ body {
     height: 100vh;
 }
 .main-section {
+    width: 60%;
+    margin: auto;
     padding: 15px 20px;
 }
 header {
