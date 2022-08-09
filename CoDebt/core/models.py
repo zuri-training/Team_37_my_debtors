@@ -3,7 +3,7 @@ from django.contrib.auth.models import AbstractUser
 from core.managers import CustomUserManager
 from django.conf import settings
 from cloudinary.models import CloudinaryField
-from django.core.validators import MinLengthValidator
+from django.core.validators import MinLengthValidator, MaxLengthValidator
 
 # Create your models here.
 class CustomUser(AbstractUser):
@@ -46,6 +46,12 @@ class Debtor(models.Model):
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
     outstanding_fees = models.PositiveIntegerField()
     is_contending_debt = models.BooleanField(default=False)
+    age = models.PositiveSmallIntegerField(
+        validators=[
+            MinLengthValidator(5),
+            MaxLengthValidator(25)]
+        )
+    academic_session = models.CharField(max_length=10)
     #student_picture = models.ImageField(upload_to='student/')
     student_picture = CloudinaryField('student_pictures', blank=True, null=True)
 
@@ -85,7 +91,6 @@ class SchoolDetail(models.Model):
         max_length=10,
         validators=[MinLengthValidator(10, 'CAC Number must be 10 digits')]
     )
-    pending_debts = models.ForeignKey(Debtor, on_delete=models.CASCADE)
     
     def __str__(self):
         return self.school_name

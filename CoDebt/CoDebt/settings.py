@@ -49,10 +49,11 @@ INSTALLED_APPS = [
     #base app 
     'core.apps.CoreConfig',
     #3rd party extensions
-    'django_extensions',
-    'django_static_fontawesome',
+    # 'django_extensions',
+    # 'django_static_fontawesome',
     'cloudinary_storage',
     'cloudinary',
+    'fontawesomefree'
 ]
 
 MIDDLEWARE = [
