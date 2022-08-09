@@ -57,3 +57,97 @@ python manage.py runserver
 
 > ⚠ Then, the development server will be started at http://127.0.0.1:8000/
 
+
+### Contributors
+
+Okafor Chidinma (Team Lead)
+* Github: https://github.com/Agbani123
+* Track: Backend(Python)
+
+Ekeru Onyeka James (Asst. Team Lead)
+* Github: https://github.com/Ekeru-jay
+* Track: Backend(Python)
+
+Madumere Goodness
+* Github: https://github.com/Iamsiglar
+* Track: Product Design
+
+Franklin Ifeanyi
+* Github: https://github.com/Frankoboss
+* Track: Full Stack
+
+Masturah Moshood
+* Github: https://github.com/Mhastuurhah
+* Track: Full Stack
+
+Christiana Immabong Matthew
+* Github: https://github.com/Imma-B
+* Track: Product Design
+
+Lucky Nkwocha
+* Github: https://github.com/gitwithlucky
+* Track: Backend(Python)
+
+Ibeh Joy Chinwendu
+* Github: https://github.com/joyibeh93
+* Track: Full Stack
+
+Adedayo Ibikunle
+* Github: https://github.com/Ibk2022
+* Track: Product Design
+
+Peter Oyelegbin
+* Github: https://github.com/PeterOyelegbin
+* Track: Backend(Python)
+
+Omolola Adesanya
+* Github: https://github.com/techylolaa
+* Track: Product Design
+
+Omoregbe Daniel
+* Github: https://github.com/dansie-crown
+* Track: Full Stack
+
+Stephen George 
+* Github: https://github.com/boss-man22
+* Track: Full Stack
+
+Innocent Ekweogu 
+* Github: https://github.com/Innocent-Ogesiano
+* Track: Backend(Python)
+
+Nwoko Mercy Olekanma 
+* Github: https://github.com/olekanma
+* Track: Full Stack
+
+Nonyelim Isioma
+* Github: https://github.com/Frankassy
+* Track: Product Design
+
+Sharon Agwah
+* Github: https://github.com/Sharonij
+* Track: Full Stack
+
+Ajasa Fatimah
+* Github: https://github.com/Derbyz
+* Track: Product Design
+
+Onuoha Possible Kelechi
+* Github: https://github.com/Kcee-Ai
+* Track: Product Design
+
+Kosi Okwuosah
+* Github: https://github.com/Toria-code
+* Track: Product Design
+
+Offor Ebubechukwu Naomi 
+* Github: https://github.com/12Naomi
+* Track: Product Design
+
+Halima Ibrahim
+* Github: https://github.com/Limallah
+* Track: Product Design
+
+Chikwado Ugochukwu
+* Github: https://github.com/Steinini
+* Track: Product Design

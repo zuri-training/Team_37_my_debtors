@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'student-profile/style.css' %}">
+    <title>Student Profile</title>
+</head>
+<body>
+    <header class="profile-img">
+        <div class="prof-name">
+            <h1>Student Profile</h1>
+        </div>
+        <div class="prof-img">
+            <div class="img-circle">
+                <img id="prof-pic" src="{{user_profile.student_picture.url}}" alt="">
+                <img id="ellipse" src="{% static 'student-profile/img/ellipse.png' %}" alt="">
+            </div>
+            <h1>Full Name: {{user_profile.user.first_name}}</h1>
+        </div>
+    </header>
+    <section class="profile-info">
+        <span id="straight-line"></span>
+        <div class="ward-info">
+            <div>
+                <h3>Ward</h3>
+                <p><span class="bold">Student ID:</span> {{user_profile.student_id}}</p>
+                <p><span class="bold">Class:</span> {{user_profile.current_class}}</p>
+                <p><span class="bold">Age:</span>{{user_profile.age}}</p>
+                <p><span class="bold">Current School:</span> {{user_profile.school_name}}</p>
+            </div>
+            <div>
+                <h3>General Information</h3>
+                <p><span class="bold">Academic Session:</span> 2022</p>
+                <p><span class="bold">Gender:</span> Female</p>
+                <p><span class="bold">Address:</span> 15, William Street Ilorin, Kwara State.</p>
+                <p><span class="bold">Guardian:</span> St Charles High School</p></div>
+        </div>
+        <div class="school-info">
+            <div>
+                <h3>Schools attended</h3>
+                <h3>Outstanding debt</h3>
+            </div>
+            <div class="info-white">
+                <p>Hassan College</p>
+                <p>9,000</p>
+            </div>
+            <div class="info-white">
+                <p>Penny Int'l College</p>
+                <p>9,000</p>
+            </div>
+            <div class="info-white">
+                <p>Hassan College</p>
+                <p>9,000</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
