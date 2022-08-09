@@ -1,3 +1,4 @@
+import email
 from multiprocessing import context
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
@@ -17,12 +18,12 @@ def register(request):
      form = RegisterForm()
      if form.is_valid():
             form.save()
-            username = form.cleaned_data.get('username')
+            email = form.cleaned_data.get('email')
             password = form.cleaned_data.get('password1')
-            messages.success(request, 'Account was created for ' + username)
-            user = authenticate(username=username, password=password)
-            #login(request,user)
-            return redirect('core/index.html')
+            messages.success(request, 'Account was created for ' + email)
+            user = authenticate(email=email, password=password)
+            login(request,user)
+            return redirect(request,'core/index.html')
      else:
         print('Form is not valid')
         messages.error(request, 'Error Processing Your Request')
@@ -38,12 +39,12 @@ def guardian(request):
      form = GuardianForm()
      if form.is_valid():
             form.save()
-            username = form.cleaned_data.get('username')
+            email = form.cleaned_data.get('email')
             password = form.cleaned_data.get('password1')
             messages.success(request, 'Account was created for ' + username)
-            user = authenticate(username=username, password=password)
-            #login(request,user)
-            return redirect('core/index.html')
+            user = authenticate(email=email, password=password)
+            login(request,user)
+            return redirect(request,'core/index.html')
      else:
         print('Form is not valid')
         messages.error(request, 'Error Processing Your Request')
