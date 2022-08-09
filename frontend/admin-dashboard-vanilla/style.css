@@ -1,0 +1,392 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: 'Poppins';
+}
+
+
+main{
+    display: flex;
+}
+
+
+
+
+/* sidebar stylings */
+
+
+.sidebar{
+    background-color: #0048AF;
+    width: 15%;
+    height: 100vh;
+    border-radius: 0 10px 10px 0;
+    color: white;
+    font-weight: 300;
+    font-size: 15px;
+    position: fixed;
+}
+
+.container-fluid{
+    width: 90%;
+    margin: auto;
+    padding-top: 40px;
+}
+
+.container-fluid img{
+    width: 60%;
+    margin-bottom: 50px;
+}
+
+.side-nav{
+    margin-bottom:100px;
+}
+
+.side-nav div{
+    margin-top: 15px;
+    padding: 5px;
+    padding-left: 20px;
+}
+
+.side-nav div:hover{
+    cursor: pointer;
+}
+
+.side-nav span{
+    padding-left: 8px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+#active{
+    padding: 5px;
+    padding-left: 20px;
+    border-radius: 15px;
+    background-color: white;
+    color: #0048AF;
+    font-size: 13px;
+    font-weight: 500;
+
+}
+
+#active a{
+    text-decoration: none;
+    color: #0048AF;
+}
+
+
+.side-nav i{
+    width: 12%;
+    padding-right: 8px;
+
+}
+
+.support{
+    padding: 5px;
+    text-align: center;
+    border-radius: 15px;
+    background-color: white;
+    color: #0048AF;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.support a{
+    text-decoration: none;
+    color: #0048AF;
+}
+
+.logout{
+    margin-top: 15px;
+    padding: 5px;
+    padding-left: 20px;
+}
+
+.logout:hover{
+    cursor: pointer;
+}
+
+.logout i{
+    width: 12%;
+    padding-right: 8px;
+}
+
+
+.main{
+    width: 80%;
+    margin-left: auto;
+    padding: 2em;
+
+}
+/* header section */
+
+nav{
+    width: 100%;
+    margin:auto;
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+}
+
+nav button{
+    padding: 2px 8px;
+    width: 14%;
+    border: none;
+    border-radius: 20px;
+    background-color: #0048AF;
+    color: white;
+}
+nav button i{
+    padding-left: 8px;
+   
+}
+
+nav .search{
+    width: 30%;
+    margin: auto;
+    padding-left: 2em;
+}
+
+.search i{
+    margin: auto;
+    margin-right: -30px;
+    color: rgba(128, 128, 128, 0.616);
+   
+}
+
+.search input{
+    width: 90%;
+    background: transparent;
+    padding: 8px;
+    padding-left: 30px;
+    border: 1px solid rgba(128, 128, 128, 0.616);
+    border-radius: 8px;
+}
+
+.space{
+    width: 20%;
+}
+nav .notifs{
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    font-size: 1.5em;
+    color: grey;
+}
+
+.notifs i{
+    margin: auto;
+}
+.profile{
+    display: flex;
+}
+
+.profile img{
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    margin: auto;
+}
+
+.profile i{
+    font-size: 15px;
+    padding: 5px;
+    margin: auto;
+}
+
+
+.container{
+    width: 100%;
+}
+
+.welcome{
+    display: flex;
+    gap: 10px;
+}
+
+
+.welcome h1{
+    margin-top: 1.5em;
+    margin-bottom: 0;
+}
+.welcome span{
+
+    margin-top: auto;
+
+}
+
+.container > h3{
+    margin-top: 5em;
+    font-size: 1em;
+}
+
+.cards{
+    width: 95%;
+    display:flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    
+}
+
+
+.left{
+    width: 40%;
+}
+
+
+.top, .bottom{
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    border-radius: 12px;
+    box-shadow: 0px 5px 5px rgba(128, 128, 128, 0.308);
+}
+
+.bottom {
+    margin-top: 4em;
+}
+.cards .text{
+    margin: auto 0;
+}
+
+.top p{
+    color: green;
+    font-size: 1.5em;
+}
+
+.bottom p{
+    color: red;
+    font-size: 1.5em;
+}
+
+.cards img{
+    margin: auto;
+}
+
+.right{
+    background-color: #CCDDF6;
+    padding: 2em;
+    border-radius: 1em;
+    text-align: center;
+    width: 50%;
+    box-shadow:0px 5px 5px rgba(128, 128, 128, 0.144);
+    box-sizing: border-box;
+}
+
+.charts{
+    display: flex;
+    justify-content: space-between;
+}
+
+.right span{
+    font-size: 1.5em;
+    font-weight: 100px;
+    text-align: center;
+}
+
+
+.pie-chart{
+    width: 85%;
+
+    margin-left: -80px;
+    box-sizing: border-box;
+}
+
+canvas{
+    height: auto;
+    width: 100%;
+
+
+}
+
+.progress-chart {
+    width: 45%;
+    margin-left: -50px;
+    padding-right: 30px;
+}
+.progress-chart .container{
+    width: 100%;
+    padding: 0;
+    text-align: left;
+}
+
+.progress-chart h2{
+    font-size: 1em;
+    text-align: left;
+}
+
+.progress{
+    height: 10px;
+    display: block;
+}
+.progress-bar{
+    height: 10px;
+    background-color: green;
+    display: block;
+}
+
+
+.progress-bar2{
+    height: 10px;
+    background-color: red;
+}
+
+
+.container span{
+    font-size: 1em;
+    
+    padding: 4px;
+}
+
+.avatars{
+    margin-top: 1em;
+}
+
+.avatars img{
+    width: 40%;
+}
+
+
+hr{
+    margin: 0;
+    margin-top: 5em;
+    width: 90%;
+}
+
+
+.recent{
+    width: 94%;
+    
+}
+.act{
+    display: flex;
+    justify-content: space-between;
+    background-color: #CCDDF6;
+    padding: 0.5em 1em;
+    border-radius: 10px;
+
+}
+
+.act p{
+    margin: 0;
+    padding: 2px;
+}
+
+.act h5{
+    font-size: 0.9em;
+    margin: 0;
+    padding: 0;
+}
+
+.act button{
+    width: 10%;
+    background-color:#0048AF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
