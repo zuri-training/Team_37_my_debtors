@@ -9,34 +9,28 @@
     <title>Sign In</title>
 </head>
 <body>
-    <div class="split left">
+    <section class="main-section">
         <header>
-            <img src="img/CoDebt.svg" alt="">
+            <img src="/img/CoDebt.svg" alt="">
         </header>
-        <form method="post" class="middle">
+        <form method="post" class="form-section">
             <div class="sign-in">
                 <h1>Sign In</h1>
                 <p>Sign in to recover pending debts</p>
             </div>
             <div class="email-pass">
-                <label for="username">Username</label>
-                <input type="text" name="username" id="username" placeholder="Daniel James">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="danieljames@gmail.com">
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" placeholder="**********">
                 <span class="bi bi-eye-slash" id="togglePassword" style='color:black'></span>
                 <a href="" id="forgot-password">Forgot Password?</a>
-                <div class="sub-button">
-                    <button type="submit" id="submit">Sign in</button>
-                </div>
+                <button type="submit" id="submit">Sign in</button>
+                <p>Don't have an account? <a href="" id="signuplink"> Sign up</a></p>
             </div>
         </form>
-    </div>
+    </section>
 
-    <div class="split right">
-        <div>
-            <img src="img/Screenshot .png" alt="">
-        </div>
-    </div>
     <script src="script.js"></script>
 </body>
 </html>
