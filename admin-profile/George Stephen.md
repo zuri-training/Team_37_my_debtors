@@ -12,5 +12,5 @@ https://github.com/zuri-training/Team_37_my_debtors/tree/static/frontend/logout-
 
 ### 3. The Admin Profile
 
-https://github.com/zuri-training/Team_37_my_debtors/tree/static/frontend/admin-profile
+https://github.com/zuri-training/Team_37_my_debtors/tree/static/admin-profile
 
