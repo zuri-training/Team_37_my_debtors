@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/password_reset.css'%}">
+    <title>Check-Your-mail</title>
+</head>
+<body>
+    {% block content %}
+    <header>
+        <div class="header-image">
+<img src="{% static 'images/header2 (2).png'%}" alt="Forgotten-password
+">
+        </div> 
+    </header>
+    <main>
+        <div class="forgotten-main">
+            <div class="inner-mail">
+                <h2> Check Your Mail</h2>
+                <p>A reset link has been sent to your mail  <a href="#">michaelHardy@gmail.com</a>  </p>
+                <p>didn't recieve the email? <a href="{% url 'reset_password' %}"> click to resend Link</a></p>
+
+            </div>
+        </div>
+        {% endblock content%}
+    </main>
+    
+</body>
+</html>
