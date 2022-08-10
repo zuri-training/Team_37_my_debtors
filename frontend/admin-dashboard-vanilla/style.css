@@ -61,6 +61,11 @@ a{
     color: white;
 }
 
+a:hover{
+    text-decoration: none;
+    color: orange;
+}
+
 #active{
     padding: 5px;
     padding-left: 20px;
@@ -389,4 +394,169 @@ hr{
     color: white;
     border: none;
     border-radius: 5px;
+}
+
+#ham{
+    display: none;
+}
+
+.fa-xmark{
+    display: none;
+}
+.mobile-nav{
+    display: none;
+}
+
+
+
+@media screen and (max-width: 1090px){
+
+
+.sidebar{
+    display:none;
+    background-color: #0048AF;
+    width: 10%;
+    height: 100vh;
+    border-radius: 0 10px 10px 0;
+    color: white;
+    font-weight: 300;
+    font-size: 15px;
+    position: fixed;
+}
+
+
+.main{
+    width: 90%;
+    margin: auto;
+}
+
+
+nav button{
+    width: 18%;
+}
+
+.space{
+    width: 10%;
+}
+.fa-bars{
+    padding: 5px;
+    margin: auto;
+}
+
+.fa-xmark{
+    font-size: 2em;
+    display: block;
+    color: white;
+    margin-bottom: 1em;
+}
+.sidebar{
+    width: 30%;
+}
+
+.mobile-nav{
+    display: none;
+}
+
+#ham{
+    display: block;
+}
+
+
+}
+
+
+@media screen and (max-width:900px){
+    
+
+.sidebar{
+    display:none;
+    background-color: #0048AF;
+    width: 60%;
+    height: 100vh;
+    border-radius: 0 10px 10px 0;
+    color: white;
+    font-weight: 300;
+    font-size: 15px;
+    position: fixed;
+}
+
+
+.main{
+    width: 95%;
+    margin: auto;
+}
+
+
+nav button{
+    width: 18%;
+}
+
+.space{
+    width: 10%;
+}
+.fa-bars{
+    padding: 5px;
+    margin: auto;
+}
+
+.fa-xmark{
+    font-size: 2em;
+    display: block;
+    color: white;
+    margin-bottom: 1em;
+}
+
+
+nav{
+    display: none;
+}
+
+.mobile-nav{
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+}
+
+.mobile-nav #mham{
+    width: 20%;
+    margin: 0 auto;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.mobile-nav img{
+    margin: auto;
+}
+
+.welcome{
+    display:block;
+
+}
+
+.cards{
+    display:block;
+}
+
+.left{
+    width: 100%;
+}
+
+.right{
+    margin-top: 2em;
+    width: 100%;
+}
+
+.charts{
+    display:block;
+
+}
+.pie-chart{
+    width:100%;
+    margin: auto;
+}
+
+.progress-chart{
+    width: 70%;
+    margin: auto;
+}
 }
