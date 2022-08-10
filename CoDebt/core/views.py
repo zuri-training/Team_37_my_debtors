@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from .models import CustomUser, Debtor
 from django.contrib import messages, auth
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import get_user_model
+from .forms import DebtorForm
 
 # Create your views here.
 
@@ -38,8 +38,17 @@ def signout(request):
     messages.success(request, "Successfully signed out")
     return redirect('core/index.html')
 
-def posts(request):
-    pass
+def addDebtor(request):
+    form = DebtorForm()
+    if request.method=='post':
+        form = DebtorForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('admin_dashboard')
+    
+    ctx = {'form': form}
+    return render(request, 'core:adddebtor.html', ctx)
+
 
 def studentprofile(request, pk):
     user_object = Debtor.objects.get(email=pk)

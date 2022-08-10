@@ -1,12 +1,32 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-from core.managers import CustomUserManager
+from core.managers import CustomUserManager, SoftDeleteManager
 from django.conf import settings
 from cloudinary.models import CloudinaryField
-from django.core.validators import MinLengthValidator
-
+from django.core.checks.messages import Error
+from django.core.validators import MinLengthValidator, MaxValueValidator, MinValueValidator
 
 # Create your models here.
+class SoftDeleteModel(models.Model):
+    is_deleted = models.BooleanField(default=False)
+
+    all_objects = models.Manager()
+    objects = SoftDeleteManager()
+
+    def soft_delete(self):
+        self.is_deleted = True
+        self.save()
+
+    def restore(self):
+        self.is_deleted = False
+        self.save()
+
+    def delete(self):
+        raise Error()
+
+    class Meta:
+        abstract = True
+
 class CustomUser(AbstractUser):
     username = None
     first_name = models.CharField(max_length=50)
@@ -29,17 +49,30 @@ class CustomUser(AbstractUser):
     def __str__(self):
         return "%s %s" % (self.first_name, self.last_name)
 
+class SchoolDetail(models.Model):
+    school = models.ForeignKey(settings.AUTH_USER_MODEL, limit_choices_to={'is_school_admin':True}, on_delete=models.CASCADE)
+    school_name = models.CharField(max_length=50)
+    # copy_of_CAC = models.FileField(upload_to='proof_of_cac/')
+    copy_of_CAC = CloudinaryField('proof_of_CAC')
+    CAC_number = models.CharField(
+        unique=True,
+        max_length=10,
+        validators=[MinLengthValidator(10, 'CAC Number must be 10 digits')]
+    )
+    
+    def __str__(self):
+        return self.school_name
 
-class Debtor(models.Model):
+
+class Debtor(SoftDeleteModel):
     GENDER_CHOICES = (
         ('M', 'Male'),
         ('F', 'Female'),
     )
-    posted_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='school')
-    guardian = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, related_name='guardian', null=True, default=None)
+    posted_by = models.ForeignKey(settings.AUTH_USER_MODEL, limit_choices_to={'is_school_admin':True}, on_delete=models.CASCADE, related_name='school_admin')
+    guardian = models.OneToOneField(settings.AUTH_USER_MODEL, limit_choices_to={'is_guardian':True}, on_delete=models.SET_NULL, related_name='guardian', null=True, default=None)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
-    school_name = models.CharField(max_length=100)
     current_class = models.CharField(max_length=3)
     student_id = models.CharField(max_length=20, unique=True)
     address = models.CharField(max_length=100)
@@ -47,6 +80,12 @@ class Debtor(models.Model):
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
     outstanding_fees = models.PositiveIntegerField()
     is_contending_debt = models.BooleanField(default=False)
+    age = models.PositiveSmallIntegerField(
+        validators=[
+            MinValueValidator(5),
+            MaxValueValidator(25)]
+        )
+    academic_session = models.CharField(max_length=10)
     #student_picture = models.ImageField(upload_to='student/')
     student_picture = CloudinaryField('student_pictures', blank=True, null=True)
 
@@ -66,7 +105,7 @@ class Comment(models.Model):
 
 
 class Contention(models.Model):
-    guardian_contending = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    guardian_contending = models.ForeignKey(settings.AUTH_USER_MODEL, limit_choices_to={'is_guardian':True}, on_delete=models.CASCADE)
     reason = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
     #evidence = models.FileField(upload_to='proof_of_contention/')
@@ -74,22 +113,3 @@ class Contention(models.Model):
 
     def __str__(self):
         return self.reason[:50]
-
-
-class SchoolDetail(models.Model):
-    school = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    school_name = models.CharField(max_length=50)
-    # copy_of_CAC = models.FileField(upload_to='proof_of_cac/')
-    copy_of_CAC = CloudinaryField('proof_of_CAC')
-    CAC_number = models.CharField(
-        unique=True,
-        max_length=10,
-        validators=[MinLengthValidator(10, 'CAC Number must be 10 digits')]
-    )
-    pending_debts = models.ForeignKey(Debtor, on_delete=models.CASCADE)
-    
-    def __str__(self):
-        return self.school_name
-
-
-

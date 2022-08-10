@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth. forms import UserCreationForm
-from .models import CustomUser, SchoolDetail
+from .models import CustomUser, SchoolDetail, Debtor
 
 
 class ContactForm(forms.Form):
@@ -38,4 +38,23 @@ class SchoolRegistration(forms.ModelForm):
             'copy_of_CAC': 'Copy Of CAC',
             'school_name': 'School Name',
             'CAC_number': 'CAC Number'
+        }
+
+class DebtorForm(forms.ModelForm):
+    class Meta:
+        model = Debtor
+        fields =  ['first_name', 'last_name', 'student_id', 'current_class', 'age', 'gender', 'academic_session', 'posted_by', 'guardian', 'student_picture', 'outstanding_fees']
+        widgets = {
+
+        }
+        labels = {
+            'student_id':'Student ID',
+            'current_class':'Class',
+            'age':'Age',
+            'gender':'Gender',
+            'academic_session':'Academic Session',
+            'posted_by':'School name',
+            'guardian':'Guardian',
+            'student_picture':'Student Image',
+            'outstanding_fees':'Outstanding Debt'
         }
