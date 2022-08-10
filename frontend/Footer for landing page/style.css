@@ -1,0 +1,127 @@
+.test {
+    background: purple;
+    height: 500px;
+}
+.subscribe {
+    display: flex;
+    color: black;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 48px 48px;
+    gap: 24px;
+    margin: 0 auto;
+    width: 70%;
+    height: 210.62px;
+    background: #FFFFFF;
+    border: 1px solid #646464;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    top: -125px;
+}
+h2 {
+    margin-top: 2px;
+    font-size: 30px;
+}
+.subscribe p {
+    margin-top: -30px;
+    font-size: 20px;
+}
+form {
+    display: flex;
+}
+input {
+    border: 1px solid hsl(243, 87%, 12%);
+    border-radius: 2px;
+    font-size: 14px;
+    flex: 0.7;
+    padding: 15px 100px;
+}
+input::placeholder {
+    color: hsl(0, 0%, 75%);
+}
+button {
+    border: 1px solid #0056D2;
+    background: #0056D2;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    font-size: 14px;
+    flex: 0.3;
+    color: #fff;
+    padding: 15px 80px;
+}
+footer {
+    background: #0056D2;
+    color: #fff;
+}
+
+footer ul {
+    list-style-type: none;
+}
+.footer-content img {
+    margin-top: -115px;
+}
+footer ul li {
+    margin-bottom: 10px;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin-left: 300px;
+}
+.copyright-socials {
+    display: inline-block;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+.social-media {
+    display: flex;
+    list-style-type: none;
+    gap: 100px;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.social-media li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.social-media li img {
+    display: block;
+}
+.copyright-socials p {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 100px;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        text-align: center;
+    }
+    footer {
+        justify-content: flex-end;
+    }
+    .subscribe {
+        width: 60%;
+    }
+    button {
+        padding: 10px 30px;
+    }
+    h2 {
+        font-size: 25px;
+    }
+    .subscribe p {
+        font-size: 18px;
+    }
+    input {
+        padding: 10px 20px;
+    }
+    .footer-content {
+        display: inline-block;
+        margin: 0 auto;
+        margin-top: 10px;
+    }
+}
