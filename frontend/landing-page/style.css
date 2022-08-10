@@ -58,37 +58,53 @@ header nav{
 
 /*   What we do styles come below */
 .wwd-header {
-    padding: 20px;
+    padding: 0px;
     text-align: center;
-    font-weight: 600;
+    font-weight: 400;
+}
+.wwd-header h1 {
+    font-size: 40px;
+    padding-bottom: 10px;
 }
 .whatwedo {
-    padding: 10px;
+    padding: 50px;
+    background-color: #ECF1F5;
     font-family: 'Poppins';
     color: #00112A;
 }
 .wwd-boxes {
-    padding: 10px;
-    display: grid;
+    padding: 50px 0 0 0;
+    display: flex;
+    flex-direction: row;
     gap: 50px;
     grid-template-columns: auto auto auto;
     justify-content: center;
 }
 .wwd-boxes img {
+    padding: 0;
+    width: 72px;
+    height: 72px;
+}
+.wwd-boxes .box h3 {
+    font-weight: 600;
     padding: 10px 0;
-    height: 80px;
 }
-.box h5 {
-  font-weight: 600;
-}
-.box {
-    border: 1px solid blue;
-    border-radius: 5px;
-    padding: 5px;
+.wwd-boxes .box {
+    background-color: #F9F8F8;;
+    border-radius: 8px;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    max-width: 300px;
+    max-width: 285px;
+    height: 370px;
 }
-
+.wwd-boxes .box:hover {
+    background: #FFFFFF;
+    box-shadow: -10px -10px 30px #F3F3F3, 10px 10px 30px rgba(0, 0, 0, 0.06);
+}
 
 /*   why choose us  styles come below*/
 
@@ -498,7 +514,30 @@ footer ul li {
 
 
 /*   What we do styles come below */
-
+    .wwd-header h1 {
+        font-size: 30px;
+    }
+    .wwd-boxes {
+        padding: 50px 0 0 0;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+    .wwd-boxes img {
+        padding: 0;
+        width: 52px;
+        height: 52px;
+    }
+    .wwd-boxes .box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        max-width: 285px;
+        height: 300px;
+    }
 
 
 /*   why choose us  styles come below */
