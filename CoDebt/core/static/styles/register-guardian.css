@@ -36,7 +36,11 @@ a {
     justify-content: space-between;
     margin: 20px 0 12px 0;
 }
-
+img {
+  margin-left: 200px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
 form .user-details .input-box {
     margin-bottom: 15px;
 }

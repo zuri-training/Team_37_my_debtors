@@ -1,2 +1,212 @@
 {% extends 'main.html' %} {% load static %} {% block head%}
 <title>{{request.user}}'s Dashboard</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+
+    <!-- Fonts links -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/5d3fc22e6c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'styles/admin-dashboard.css' %}">
+
+{% endblock head %}
+{% block content %}
+
+<main>
+
+    <!-- sidebar -->
+    <div class="sidebar">
+        <div class="container-fluid">
+            <img src="{% static 'images/logo.svg' %}" alt="">
+            <div class="side-nav">
+
+                <div class="dashboard" id="active">
+                    <a href="#"><i class="fa-solid fa-table-columns"></i><span>Dashboard</span></a>
+                </div>
+
+                <div class="debtors">
+                    <a href="#">
+                        <i class="fa-solid fa-user-ninja"></i><span>Debtors</span>
+                    </a>
+                </div>
+                <div class="posts">
+                    <a href="#">
+                        <i class="fa-solid fa-indent"></i><span>Posts</span>
+                    </a>
+                </div>
+                <div class="contends">
+                    <a href="#">
+                        <i class="fa-solid fa-message"></i><span>Contends</span>
+                    </a>
+                </div>
+
+                <div class="comments">
+                    <a href="#">
+                        <i class="fa-solid fa-comments"></i><span>Comments</span>
+                    </a>
+                </div>
+
+                <div class="profile">
+                    <a href="#">
+                        <i class="fa-solid fa-id-badge"></i><span>Profile</span>
+                    </a>
+                </div>
+            </div>
+            <div class="support">
+                <a href="#">
+                    <span>Get Support Now</span>
+                </a>
+            </div>
+            <div class="logout">
+                <a href="{% url 'core:logout' %}">
+                    <i class="fa-solid fa-right-from-bracket"></i><span>Logout</span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="main">
+
+        <!-- header section -->
+
+        <nav>
+            <button>New debtor<i class="fa-solid fa-plus"></i></button>
+            <div class="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <form action="{% url 'core:search' %}" method="get">
+                    <input type="text" name="q" placeholder="Search by Student ID">
+                </form>
+
+            </div>
+            <div class="space"></div>
+            <div class="notifs">
+                <i class="fa-solid fa-bell"></i>
+                <i class="fa-solid fa-envelope"></i>
+                <div class="profile">
+                    <img src="{% static 'images/profile.png' %}">
+                    <i class="fa-solid fa-angle-down"></i>
+                </div>
+            </div>
+        </nav>
+
+
+        <!-- Main body  -->
+        <div class="body">
+            <div class="container">
+                <div class="welcome">
+                    <h1>Welcome Back {{user.first_name}}</h1>
+                    <span>Let's track some debtors today!</span>
+                </div>
+
+                <h3>Overview</h3>
+                <div class="cards">
+                    <div class="left">
+                        <div class="top">
+                            <div class="text">
+                                <h2>{{recovered}}</h2>
+                                <p>Debts recovered</p>
+                            </div>
+                            <img src="{% static 'images/Icon-done.png' %}" alt="An image done">
+                        </div>
+
+                        <div class="bottom">
+                            <div class="text">
+                                <h2>{{count}}</h2>
+                                <p>Pending debts</p>
+                            </div>
+                            <img src="{% static 'images/Icon-pulse.png' %}" alt="A pulse icon">
+                        </div>
+                    </div>
+
+                    <div class="right">
+                        <span><strong>Progress Analysis</strong></span>
+
+                        <div class="charts">
+                            <div class="pie-chart">
+                                <canvas id="myChart"></canvas>
+                            </div>
+
+                            <div class="progress-chart">
+                                <div class="container">
+                                    <h2>Recovery Process</h2>
+
+                                    <span class="push">{{indebted_percent}}% pending debts</span>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="70"
+                                            aria-valuemin="0" aria-valuemax="100" style="width:{{indebted_percent}}%">
+
+                                        </div>
+                                    </div>
+                                    <span>{{recovered_percent}}% recovered debts</span>
+                                    <div class="progress">
+                                        <div class="progress-bar2" role="progressbar" aria-valuenow="70"
+                                            aria-valuemin="0" aria-valuemax="100" style="width:{{recovered_percent}}%">
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <div class="avatars">
+                            <img src="{% static 'images/grooup-images.png' %}" alt="group of images as avatars">
+                            <span><strong>students enrolled</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="recent">
+                <h2>Recent Activity</h2>
+
+                <div class="act">
+                    <div>
+                        <p>You successfully added Brandy Blakes to your Debtors list</p>
+                        <h5>11:35am</h4>
+                    </div>
+                    <button><a href="">View</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</main>
+{% endblock %}
+{% block scripts %}
+    <!-- script for progress bar -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- script for pie-chart -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script>
+        const yValues = [{{recovered}}, {{count}}];
+const barColors = [
+    "#b91d47",
+    "#00aba9",
+];
+
+new Chart("myChart", {
+    type: "doughnut",
+    data: {
+        datasets: [{
+            backgroundColor: barColors,
+            data: [yValues[0]+1, yValues[0]+1]
+        }],
+        labels:['Recovered', 'Indebted']
+    },
+});
+    </script>
+{% endblock %}

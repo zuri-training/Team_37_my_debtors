@@ -23,12 +23,13 @@
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" placeholder="**********">
                 <span class="bi bi-eye-slash" id="togglePassword" style='color:black'></span>
-                <a href="{% url 'password-reset' %}" id="forgot-password">Forgot Password?</a>
+                <a href="#" id="forgot-password">Forgot Password?</a>  
+                <!-- {% url 'core:password-reset' %} -->
                 <div class="sub-button">
                     <button type="submit" id="submit">Sign in</button>
                 </div>
             </div>
-        </form>
+        </form> 
     </div>
 
     <div class="split right">
