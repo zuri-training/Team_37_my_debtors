@@ -38,3 +38,11 @@ on how you can resolve them
 */
 git push origin <type_your_new_branch_name_here>
 ```
+
+##MY CONTRIBUTIONS
+- New User Registration
+* View.py - https://github.com/zuri-training/Team_37_my_debtors/blob/e6986bed0be2b06321b6d0198dee6d0e35440109/CoDebt/core/views.py
+*Form.py - https://github.com/zuri-training/Team_37_my_debtors/blob/e6986bed0be2b06321b6d0198dee6d0e35440109/CoDebt/core/forms.py
+*url.py- https://github.com/zuri-training/Team_37_my_debtors/blob/e6986bed0be2b06321b6d0198dee6d0e35440109/CoDebt/CoDebt/urls.py
+
+- Password Rest (working on it)
