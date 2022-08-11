@@ -18,7 +18,7 @@ class DebtorForm(forms.ModelForm):
             'is_contending_debt':forms.NullBooleanSelect(attrs={'class': 'form-control'})
         }
 
-# JavaScript for the widget - "posted_by", to automatically generate the author of the post from loggedin credentials
+# In-line html JavaScript for the widget - "posted_by", to automatically generate the author of the post from loggedin credentials
 '''
     <!-- Automatically generate the autors name based on logged in -->
     <script>

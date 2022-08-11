@@ -2,20 +2,13 @@ from django.shortcuts import render
 from django.views import generic
 from .models import Debtors
 from .form import DebtorForm
+from django.contrib import messages
 from django.urls import reverse_lazy
 
 
 # Create your views here.
 class HomePage(generic.TemplateView):
     template_name = 'index.html'
-
-
-# search debtors by first or last name
-def searchDebtor(request):
-    q = request.GET.get('q') if request.GET.get('q') != None else ''
-    debtors_list = Debtors.objects.filter(first_name__icontains=q, last_name__icontains=q).order_by('-student_id')
-    context = {'debtors_list': debtors_list}
-    return render(request, 'home.html', context)
 
 
 # Update data of added debtors - only by the school admin who initially added it
@@ -31,3 +24,21 @@ class DeleteDebtor(generic.DeleteView):
     template_name = 'delete_post.html'
     success_url = reverse_lazy('home')
 
+
+# List all debtors or search debtors by first or last name
+def debtorsList(request):
+    q = request.GET.get('q') if request.GET.get('q') != None else ''
+    debtors_list = Debtors.objects.filter(first_name__icontains=q, last_name__icontains=q).order_by('-student_id')
+    context = {'debtors_list': debtors_list}
+    return render(request, 'adminDebtor.html', context)
+
+
+# Guardian contend by searching for specific name inorder to contend
+def guardianContend(request):
+    q = request.GET.get('q')
+    if request.GET.get('q') != None:
+        debtors_search = Debtors.objects.filter(first_name__icontains=q, last_name__icontains=q)
+        context = {'debtors_search': debtors_search}
+    else:
+        messages.info(request, 'No match for search found!')
+    return render(request, 'guardianContend.html', context)
