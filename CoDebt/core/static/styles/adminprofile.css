@@ -1,0 +1,166 @@
+*{padding: 0;
+margin: 0;}
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+body{font-family: 'Poppins', sans-serif;}
+.container{
+    display: grid;
+    width: 1440px;
+    height: 1024px;
+    grid-template-columns: 10% auto;
+    grid-gap: .5em;
+ 
+}
+.sidebar{
+    background: #0048AF;
+    border-radius: 0px 8px 8px 0px;
+    margin-left: -200px;
+    height: 100%;
+}
+.mainbar{
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 20px;
+}
+.hero{
+    
+   width: 100%;
+   margin-left: 2em;
+   margin-top: .8em;
+    
+   
+    
+}
+p{
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 'poppins', sans-serif;
+}
+.profileimage{
+width:15%;
+margin-top: -3em;
+margin-left:3em;
+}
+.text-box{
+    float: right;
+   margin-right: 32em;
+   font-family: 'Poppins', sans-serif;
+}
+.name{
+    font-weight: 500px;
+}
+svg{
+width: 200px;
+margin-left: 1.8em;
+margin-top: .7em;}
+
+.personal{
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.2em;
+    line-height: 29px;
+    color: #000000;
+    text-decoration: none;
+    margin-left: 64px;
+    border: none;
+    background: none;
+ 
+}
+.switch{
+    margin-top: 92px;
+}
+.school{
+font-family: 'Poppins', sans-serif;
+font-style: normal;
+font-weight: 500;
+font-size: 1.2em;
+line-height: 29px;
+text-decoration: none;
+margin-left: 116px;
+
+color: rgba(0, 0, 0,0.5 );
+}
+#rectangle{
+    width: 3em;
+    height:.4em;
+    background-color: #0048AF;
+    margin-left: 4em;
+}
+form{
+    margin-left: 83px;
+    
+}
+input{
+    width: 70%;
+height: 2em;
+border: 1px solid #1A1A1A;
+border-radius: 10px;
+}
+
+.school:hover{
+    color: #000000;
+}
+label{
+    margin-top: 1em;
+    font-family: 'Poppins', sans-serif;
+}
+.link{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+.Dashboardtext{
+    color: #FFFFFF;
+    margin-left: 10em;
+    margin-top: -1.5em;
+    text-decoration: none;
+}
+.svgclass{
+    margin-top: 5em;
+}
+.logo{
+    width:40%;
+    margin-left: 8em;
+    margin-top: 3em;
+}
+.comment{
+    background-color: #FFFFFF;
+    padding: 2px 32px;
+    color: #0048AF;
+    text-decoration: none;
+    margin-left: 7em;
+    margin-bottom: 12em;
+    border-radius: 8px;
+    
+   
+}
+#contends{
+    margin-bottom: 2em;
+}
+.bluerect{
+    width: 
+    100%;
+    height: 66px;
+    margin-left: 4em;
+    background-color:  rgba(255, 255, 255, 0.2);
+    margin-top: 150px;
+    margin-bottom: 5em;
+}
+
+.supportbtn{
+    background-color: #979292;
+    padding: 4px 34px;
+    color: #00112A;
+    text-decoration: none;
+    /* width: 160px;
+    height: 27px; */
+    margin-left: 6em;
+    margin-bottom: 2em;
+   
+    border-radius: 8px;
+    
+    
+   
+}
+#logout{
+    margin-top: 2em;
+    color:#F2F0F0
+}

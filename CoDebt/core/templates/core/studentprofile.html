@@ -1,5 +1,5 @@
 {% extends 'main.html' %} {% load static %} {% block head %}
-<title>Student Profile</title>
+<title>{{student.first_name}}'s Profile</title>
 <link rel="stylesheet" href="{% static 'styles/studentprofile.css' %}" />
 {% endblock head %} {% block content %}
 <header class="profile-img">
@@ -15,7 +15,7 @@
         alt="Ellipse picture"
       />
     </div>
-    <h1>Full Name: {{student.full_name}}</h1>
+    <h1>Full Name: {{student}}</h1>
   </div>
 </header>
 <section class="profile-info">

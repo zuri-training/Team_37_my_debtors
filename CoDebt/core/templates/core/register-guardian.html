@@ -7,82 +7,6 @@
   src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
 ></script>
 {% endblock head %} {% block content %}
-<!-- <div class="container">
-  <div class="title">
-    <div><img src="{% static 'images/CoDebtLogo.svg' %}" alt="logo" /></div>
-    <div>Create An Account</div>
-  </div>
-
-  <div class="content">
-    <form class="box" action="" method="post">
-      {% csrf_token %}
-      <div class="title">
-              <div><img src="{% static 'images/CoDebtLogo.svg' %}" alt="logo" /></div>
-              <div>Create An Account</div>
-          </div> -->
-      
-      <!-- <div class="user-details">
-              <div class="input-box">
-                  <span class="details">First Name</span>
-                  <input type="text" required>
-              </div>
-              <div class="input-box">
-                  <span class="details">Last Name</span>
-                  <input type="text" required>
-              </div>
-              <div class="input-box">
-                  <span class="details">Email Address</span>
-                  <input type="text" required>
-              </div>
-              <div class="input-box">
-                  <span class="details">Password</span>
-                  <div class="toggle-eye open">
-                      <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <input type="password" required>
-              </div>
-              <div class="input-box">
-                  <span class="details">Confirm Password</span>
-                  <div class="toggle-eye close">
-                      <ion-icon name="eye-off-outline"></ion-icon>
-                  </div>
-                  <input type="password" required>
-              </div>
-          </div> -->
-      <!-- <label class="checkbox" for="myCheckboxId">
-        <input
-          class="checkbox__input"
-          type="checkbox"
-          name="myCheckboxName"
-          id="myCheckboxId"
-          required
-        />
-        <div class="checkbox__box"></div>
-        <small>
-          I have read and agree with the<a href="#"> terms of Services</a> and
-          <a href="#">privacy policy</a>
-        </small>
-      </label>
-      <div class="btn">
-        <button class="button">Create Account</button>
-      </div>
-  
-    </form>
-    <div class="last">
-      <small>
-        <strong>Already have an account?</strong>
-        <a href="{% url 'core:login' %}">Sign in</a>
-      </small>
-    </div>
-    {% if messages %}
-    <ul>
-        {% for message in messages %}
-        <li>{{message}}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
-  </div>
-</div> -->
 <div class="container">
 
   <div class="content">
@@ -128,7 +52,7 @@
         {% if messages %}
         <ul>
             {% for message in messages %}
-            <li>{{message}}</li>
+            <li style="list-style: none;"><strong style="color: red;">{{message}}</strong></li>
             {% endfor %}
         </ul>
         {% endif %}

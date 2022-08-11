@@ -50,7 +50,7 @@ class CustomUser(AbstractUser):
         return "%s %s" % (self.first_name, self.last_name)
 
 class SchoolDetail(models.Model):
-    school = models.ForeignKey(settings.AUTH_USER_MODEL, limit_choices_to={'is_school_admin':True}, on_delete=models.CASCADE)
+    school = models.OneToOneField(settings.AUTH_USER_MODEL, limit_choices_to={'is_school_admin':True}, on_delete=models.CASCADE)
     school_name = models.CharField(max_length=50)
     # copy_of_CAC = models.FileField(upload_to='proof_of_cac/')
     copy_of_CAC = CloudinaryField('proof_of_CAC')

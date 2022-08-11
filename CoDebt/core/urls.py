@@ -1,18 +1,24 @@
 from django.urls import path
-from core import views
+from django.contrib.auth import views as auth_views
+from . import views
 
 app_name = "core"
 
 urlpatterns = [
     path('', views.index, name='home'),
     path('register/school/', views.register_school, name='register_school'),
-    path('register/guardian/', views.register_admin, name='register_guardian'),
+    path('register/guardian/', views.register_users, name='register_guardian'),
     path('accounts/login/', views.login_user, name='login'),
     path('accounts/logout/', views.logout_user, name='logout'),
     path('contact/', views.contact_us, name='contact'),
     path('about/', views.about_us, name='about'),
-    path('password-reset/', views.password_reset, name='password-reset'),
     path('my-dashboard/', views.dashboard, name='dashboard'),
-    path('profiles/<str:student_id>/', views.studentprofile, name='profile'),
+    path('students/profiles/<str:pk>/', views.studentprofile, name='profile'),
+    path('schools/profiles/<str:pk>/', views.schoolprofiles, name='school_profile'),
     path('search/', views.search, name='search'),
+    path('testimonials/', views.testimonials, name='testimonials'),
+    path('reset_password/', auth_views.PasswordResetView.as_view(), name='reset_password'),
+    path('reset_password_sent/', auth_views.PasswordResetDoneView.as_view(), name='password_reset_done'),
+    path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(),name='password_reset_confirm'),
+    path('reset_password_complete/', auth_views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
 ]

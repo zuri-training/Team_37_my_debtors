@@ -49,8 +49,6 @@ INSTALLED_APPS = [
     #base app 
     'core.apps.CoreConfig',
     #3rd party extensions
-    # 'django_extensions',
-    # 'django_static_fontawesome',
     'cloudinary_storage',
     'cloudinary',
     'fontawesomefree'
@@ -167,3 +165,10 @@ cloudinary.config(
   api_secret = os.getenv('CLOUDINARY_API_SECRET')
 )
 
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = os.getenv('EMAIL')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_PASSWORD')

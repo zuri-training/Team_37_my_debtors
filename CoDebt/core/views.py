@@ -3,24 +3,36 @@ from django.shortcuts import redirect, render
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .models import CustomUser, SchoolDetail, Debtor
+from .models import SchoolDetail, Debtor
 from .forms import RegistrationForm, SchoolRegistration
+from django.core.mail import send_mail
+from django.conf import settings
 
 # Create your views here.
 
 def index(request):
     return render(request, 'core/index.html')
 
-def register_admin(request):
+def email_sender(user):
+    subject = 'We are glad to have you at CoDebt'
+    recipient_list = [user.email,]
+    email_from = settings.EMAIL_HOST_USER
+    content = f'Hi {user}. Thank you for signing up on CoDebet. We promise to help you recover your debts easily and promptly. Cheers'
+
+    send_mail(subject, content, email_from, recipient_list)
+
+def register_users(request):
     form = RegistrationForm()
     ctx ={'form': form}
     if request.method =='POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
-            form.save()
+            user = form.save(commit=False)
+            email_sender(user)
+            user.save()
             return redirect('core:home')
         else:
-            messages.error(request, 'Please retry')
+            messages.error(request, 'An error occured, Please retry')
     return render(request, 'core/register-guardian.html', ctx)
 
 def register_school(request):
@@ -31,6 +43,7 @@ def register_school(request):
         school_form = SchoolRegistration(request.POST, request.FILES)
         if form.is_valid() and school_form.is_valid():
             user = form.save(commit=False)
+            email_sender(user)
             user.save()
             SchoolDetail.objects.create(
                 school=user,
@@ -57,19 +70,18 @@ def login_user(request):
         if user is not None:
             login(request, user)
             return redirect('core:dashboard')
-        else:
-            messages.error(request, 'Invalid credentials')
+        
+        messages.error(request, 'Invalid credentials')
         return redirect('core:login')    
     return render(request, 'core/login.html')
 
 
 def logout_user(request):
     if not request.user.is_authenticated:
-        messages.info(request, 'You are already signed out')
-
+        messages.info(request, 'You are not signed in')
         return redirect('core:home')
+
     logout(request)
-    messages.success(request, 'You have successfully signed out')
     return redirect('core:home')
 
 def contact_us(request):
@@ -78,11 +90,11 @@ def contact_us(request):
 
     return render(request, 'core/contact.html')
 
+def testimonials(request):
+    pass
+
 def about_us(request):
     return render(request, 'core/about-us.html')
-
-def password_reset(request):
-    pass
 
 @login_required()
 def dashboard(request):
@@ -104,14 +116,23 @@ def dashboard(request):
         }
     return render(request, 'core/admin-dashboard.html',ctx)
 
-def studentprofile(request, student_id):
-    student = Debtor.objects.get(student_id=student_id)
+def studentprofile(request, pk):
+    student = Debtor.objects.get(id=pk)
 
     ctx = {
         'school': SchoolDetail.objects.get(school=student.posted_by.id),
         'student': student,
     }
     return render(request, 'core/studentprofile.html', ctx)
+
+def schoolprofiles(request, pk):
+    school = SchoolDetail.objects.get(id=pk)
+    school_admin = school.school
+    ctx = {
+        'school':school,
+        'school_admin': school_admin
+    }
+    return render(request, 'core/adminprofile.html', ctx)
 
 def search(request):
     q = request.GET.get('q') if request.GET.get('q') else ''

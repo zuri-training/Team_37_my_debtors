@@ -17,58 +17,7 @@
 <main>
 
     <!-- sidebar -->
-    <div class="sidebar">
-        <div class="container-fluid">
-            <img src="{% static 'images/logo.svg' %}" alt="">
-            <div class="side-nav">
-
-                <div class="dashboard" id="active">
-                    <a href="#"><i class="fa-solid fa-table-columns"></i><span>Dashboard</span></a>
-                </div>
-
-                <div class="debtors">
-                    <a href="#">
-                        <i class="fa-solid fa-user-ninja"></i><span>Debtors</span>
-                    </a>
-                </div>
-                <div class="posts">
-                    <a href="#">
-                        <i class="fa-solid fa-indent"></i><span>Posts</span>
-                    </a>
-                </div>
-                <div class="contends">
-                    <a href="#">
-                        <i class="fa-solid fa-message"></i><span>Contends</span>
-                    </a>
-                </div>
-
-                <div class="comments">
-                    <a href="#">
-                        <i class="fa-solid fa-comments"></i><span>Comments</span>
-                    </a>
-                </div>
-
-                <div class="profile">
-                    <a href="#">
-                        <i class="fa-solid fa-id-badge"></i><span>Profile</span>
-                    </a>
-                </div>
-            </div>
-            <div class="support">
-                <a href="#">
-                    <span>Get Support Now</span>
-                </a>
-            </div>
-            <div class="logout">
-                <a href="{% url 'core:logout' %}">
-                    <i class="fa-solid fa-right-from-bracket"></i><span>Logout</span>
-                </a>
-            </div>
-        </div>
-
-    </div>
-
-
+ {% include 'sidebar.html' %}
     <div class="main">
 
         <!-- header section -->

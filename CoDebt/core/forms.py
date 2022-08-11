@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth. forms import UserCreationForm
-from .models import CustomUser, SchoolDetail
+from .models import CustomUser, SchoolDetail, Debtor
 
 
 class ContactForm(forms.Form):
@@ -38,4 +38,39 @@ class SchoolRegistration(forms.ModelForm):
             'copy_of_CAC': 'Copy Of CAC',
             'school_name': 'School Name',
             'CAC_number': 'CAC Number'
+        }
+
+class DebtorForm(forms.ModelForm):
+    class Meta:
+        GENDER_CHOICES = (
+        ('M', 'Male'),
+        ('F', 'Female'),
+        )
+        model = Debtor
+        fields =  ['first_name', 'last_name', 'student_id', 'current_class', 'age', 'gender', 'academic_session', 'address', 'debt_type', 'student_picture', 'outstanding_fees']
+        widgets = {
+            'first_name': forms.TextInput(attrs={'required':'required', 'placeholder':'First Name'}),
+            'last_name': forms.TextInput(attrs={'required':'required', 'placeholder': 'Last Name'}),
+            'student_id': forms.TextInput(attrs={'required':'required', 'placeholder': 'Student ID'}),
+            'current_class': forms.TextInput(attrs={'required':'required', 'placeholder': 'Class'}),
+            'age': forms.NumberInput(attrs={'required':'required', 'placeholder': 'Age'}),
+            'gender': forms.RadioSelect(attrs={'required':'required'}, choices=GENDER_CHOICES),
+            'academic_session': forms.TextInput(attrs={'required':'required', 'placeholder': 'Academic Session'}),
+            'address': forms.TextInput(attrs={'required':'required', 'placeholder': 'Address'}),
+            'debt_type': forms.TextInput(attrs={'required':'required', 'placeholder': 'Nature of debt(School fees, books etc.'}),
+            'student_picture': forms.TextInput(attrs={'required':'required', 'placeholder': 'Student Photo'}),
+            'outstanding_fees': forms.TextInput(attrs={'required':'required', 'placeholder': 'Amount Owed'}),
+        }
+        labels = {
+            'first_name': 'First Name',
+            'last_name': 'Last Name',
+            'student_id':'Student ID',
+            'current_class':'Class',
+            'age':'Age',
+            'gender':'Gender',
+            'academic_session':'Academic Session',
+            'debt_type':'Payment For',
+            'address':'Address',
+            'student_picture':'Student Image',
+            'outstanding_fees':'Outstanding Debt'
         }
