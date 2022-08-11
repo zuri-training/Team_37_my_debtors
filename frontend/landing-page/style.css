@@ -1,3 +1,8 @@
+:root {
+    --primary: hsla(216, 70%, 51%, 0.8);
+    --secondary: hsla(216, 70%, 88%, 0);
+}
+
 html, body {
   height: 100%;
   width: 100%;
@@ -20,39 +25,55 @@ header nav{
 
 /* Main styles comes below */
 .container-fluid {
-    background: #CCDDF6;
     width: 100%;
-    height: 500px;
+    height: 720px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary)),
+                url('./img/landing-page-main.png') no-repeat center center / cover;
 }
-.school-fees {
-    color: #00398C;
+
+.main-content {
+    margin: 20px 0 0 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
-.ease {
-    background: linear-gradient(to bottom right, blue, purple);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
+
+.main-h1 {
+    width: 27%;
 }
-.display-images {
-    justify-content: space-around;
-    align-items: space-around;
+
+.main-p {
+    width: 35%;
+    margin-top: 40px;
+}
+
+.main-content h1 {
+    font-size: 50px;
+    font-weight: 500;
+}
+
+.main-content p {
+    font-size: 27px;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+
+.white {
+    color: #FFFFFF;
+}
+
+.main-content button {
+    margin-top: 80px;
+    min-width: 200px;
+    max-width: 40%;
+    height: 55px;
     text-align: center;
-}
-.display-images img{
-    width: 150px;
-    height: 300px;
-    border-radius: 15px;
-    padding: unset;
-    margin: 10px;
-    transition: 1s;
-    cursor: pointer;
-}
-.display-images img:hover {
-    padding: unset;
-    width: 250px;
-    height: 300px;
-/*     transition: all .4s ease-in; */
-/*     align-self: space-between; */
-    margin: 17px;
+    border-radius: 10px;
+    border: none;
+    color: #F2F0F0;
+    background: #0056D2;
+    padding: 2px 5px;
+    font-size: 1.5rem;
 }
 
 
@@ -510,7 +531,17 @@ footer ul li {
 
 
 /* Main styles comes below */
+    .main-h1 {
+        width: 37%;
+    }
 
+    .main-p {
+        width: 47%;
+    }
+    .main-content button {
+        font-size: 1.3rem;
+        height: 50px;
+    }
 
 
 /*   What we do styles come below */
@@ -624,4 +655,124 @@ footer ul li {
 /*   footer styles come below */
   
   
+}
+
+
+/*For screens smaller than tab*/
+@media (max-width:880px) {
+    .main-h1 {
+        width: 43%;
+    }
+
+    .main-p {
+        width: 58%;
+    }
+
+    .main-content h1 {
+        font-size: 48px;
+    }
+
+    .main-content p {
+        font-size: 26px;
+    }
+    .main-content button {
+        margin-top: 80px;
+    }
+}
+
+
+@media (max-width:710px) {
+    .main-h1 {
+        width: 57%;
+    }
+
+    .main-p {
+        width: 62%;
+    }
+}
+
+
+@media (max-width:600px) {
+    .container-fluid {
+        width: 100%;
+        height: 480px;
+        background: linear-gradient(90deg, var(--primary), var(--secondary)),
+            url('./img/landing-page-mobile.png') no-repeat center center / cover;
+    }
+
+    .main-content {
+        margin: 0;
+    }
+
+    .main-h1 {
+        width: 45%;
+    }
+
+    .main-p {
+        width: 75%;
+    }
+
+    .main-content h1 {
+        font-size: 2rem;
+    }
+
+    .main-content p {
+        font-size: 1rem;
+    }
+
+    .main-content button {
+        margin-top: 40px;
+        width: 50%;
+        align-self: center;
+        font-size: 1.3rem;
+    }
+}
+
+@media(max-width: 480px) {
+    .container-fluid {
+        height: 380px;
+    }
+    .main-h1 {
+        width: 50%;
+    }
+    .main-p {
+        width: 85%;
+    }
+
+    .main-content h1 {
+        font-size: 1.7rem;
+    }
+
+    .main-content p {
+        font-size: 0.85rem;
+    }
+    .main-h1 {
+        width: 50%;
+    }
+    .main-content button {
+        margin-top: 25px;
+        font-size: 1.2rem;
+    }
+}
+
+
+@media (max-width:430px) {
+    .main-h1 {
+        width: 57%;
+    }
+
+    .main-p {
+        width: 80%;
+    }
+    .main-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .main-content p {
+        font-size: 0.75rem;
+    }
+    .main-content button {
+        height: 40px;
+        font-size: 1rem;
+    }
 }
