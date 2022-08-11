@@ -1,3 +1,4 @@
+from random import choices
 from django import forms
 from django.contrib.auth. forms import UserCreationForm
 from .models import CustomUser, SchoolDetail, Debtor
@@ -45,7 +46,13 @@ class DebtorForm(forms.ModelForm):
         model = Debtor
         fields =  ['first_name', 'last_name', 'student_id', 'current_class', 'age', 'gender', 'academic_session', 'posted_by', 'guardian', 'student_picture', 'outstanding_fees']
         widgets = {
-
+            'student_id',
+            'current_class',
+            'age',
+            'gender': forms.Select(choices=GENDER_CHOICES),
+            'academic_session',
+            'student_picture',
+            'outstanding_fees',
         }
         labels = {
             'student_id':'Student ID',
