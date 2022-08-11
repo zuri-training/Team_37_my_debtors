@@ -1,0 +1,356 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: 'Poppins';
+}
+
+
+main{
+    display: flex;
+}
+
+
+
+
+/* sidebar stylings */
+
+
+.sidebar{
+    background-color: #0048AF;
+    width: 15%;
+    height: 100vh;
+    border-radius: 0 10px 10px 0;
+    color: white;
+    font-weight: 300;
+    font-size: 15px;
+    position: fixed;
+}
+
+.container-fluid{
+    width: 90%;
+    margin: auto;
+    padding-top: 40px;
+}
+
+.container-fluid img{
+    width: 60%;
+    margin-bottom: 50px;
+}
+
+.side-nav{
+    margin-bottom:100px;
+}
+
+.side-nav div{
+    margin-top: 15px;
+    padding: 5px;
+    padding-left: 20px;
+}
+
+.side-nav div:hover{
+    cursor: pointer;
+}
+
+.side-nav span{
+    padding-left: 8px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover{
+    text-decoration: none;
+    color: orange;
+}
+
+#active{
+    padding: 5px;
+    padding-left: 20px;
+    border-radius: 15px;
+    background-color: white;
+    color: #0048AF;
+    font-size: 13px;
+    font-weight: 500;
+
+}
+
+#active a{
+    text-decoration: none;
+    color: #0048AF;
+}
+
+
+.side-nav i{
+    width: 12%;
+    padding-right: 8px;
+
+}
+
+.support{
+    padding: 5px;
+    text-align: center;
+    border-radius: 15px;
+    background-color: white;
+    color: #0048AF;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.support a{
+    text-decoration: none;
+    color: #0048AF;
+}
+
+.logout{
+    margin-top: 15px;
+    padding: 5px;
+    padding-left: 20px;
+}
+
+.logout:hover{
+    cursor: pointer;
+}
+
+.logout i{
+    width: 12%;
+    padding-right: 8px;
+}
+
+
+.main{
+    width: 80%;
+    margin-left: auto;
+    padding: 2em;
+
+}
+/* header section */
+
+
+
+
+.search{
+    width: 60%;
+    padding-left: 2em;
+    margin-top: 1em;
+}
+
+.search i{
+    margin: auto;
+    margin-right: -30px;
+    color: rgba(128, 128, 128, 0.616);
+   
+}
+
+.search input{
+    width: 90%;
+    background: transparent;
+    padding: 8px;
+    padding-left: 30px;
+    border: 1px solid rgba(128, 128, 128, 0.616);
+    border-radius: 8px;
+}
+
+
+table{
+    margin-top: 3em;
+    width: 100%;
+    border-spacing: 0 2em;
+}
+
+table{
+    border-spacing: 0 2em;
+    border-collapse: separate;
+}
+
+
+table img{
+    width: 25px;
+    border-radius: 20px;
+    padding: 4px;
+}
+
+
+
+.deep{
+    background-color:#0048AF;
+    color: white;
+    border: none;
+    padding: 0.5em;
+    border-radius: 5px;
+}
+
+.light{
+    color:#0048AF;
+    background-color: white;
+    border: 1px solid #0048AF;
+    padding: 0.5em;
+    border-radius: 5px;
+}
+
+#ham{
+    display: none;
+}
+
+.fa-xmark{
+    display: none;
+}
+.mobile-nav{
+    display: none;
+}
+
+
+
+@media screen and (max-width: 1090px){
+
+
+.sidebar{
+    display:none;
+    background-color: #0048AF;
+    width: 10%;
+    height: 100vh;
+    border-radius: 0 10px 10px 0;
+    color: white;
+    font-weight: 300;
+    font-size: 15px;
+    position: fixed;
+}
+
+
+.main{
+    width: 90%;
+    margin: auto;
+}
+
+
+nav button{
+    width: 18%;
+}
+
+.space{
+    width: 10%;
+}
+.fa-bars{
+    padding: 5px;
+    margin: auto;
+}
+
+.fa-xmark{
+    font-size: 2em;
+    display: block;
+    color: white;
+    margin-bottom: 1em;
+}
+.sidebar{
+    width: 30%;
+}
+
+.mobile-nav{
+    display: none;
+}
+
+#ham{
+    display: block;
+}
+
+
+}
+
+
+@media screen and (max-width:900px){
+    
+
+.sidebar{
+    display:none;
+    background-color: #0048AF;
+    width: 60%;
+    height: 100vh;
+    border-radius: 0 10px 10px 0;
+    color: white;
+    font-weight: 300;
+    font-size: 15px;
+    position: fixed;
+}
+
+
+.main{
+    width: 95%;
+    margin: auto;
+}
+
+
+nav button{
+    width: 18%;
+}
+
+.space{
+    width: 10%;
+}
+.fa-bars{
+    padding: 5px;
+    margin: auto;
+}
+
+.fa-xmark{
+    font-size: 2em;
+    display: block;
+    color: white;
+    margin-bottom: 1em;
+}
+
+
+nav{
+    display: none;
+}
+
+.mobile-nav{
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+}
+
+.mobile-nav #mham{
+    width: 20%;
+    margin: 0 auto;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.mobile-nav img{
+    margin: auto;
+}
+
+.welcome{
+    display:block;
+
+}
+
+.cards{
+    display:block;
+}
+
+.left{
+    width: 100%;
+}
+
+.right{
+    margin-top: 2em;
+    width: 100%;
+}
+
+.charts{
+    display:block;
+
+}
+.pie-chart{
+    width:100%;
+    margin: auto;
+}
+
+.progress-chart{
+    width: 70%;
+    margin: auto;
+}
+}

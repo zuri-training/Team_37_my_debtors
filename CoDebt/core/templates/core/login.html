@@ -19,13 +19,12 @@
     </div>
     <div>
       {% if messages %}
-      <ul>
         {% for message in messages %}
-        <li style="list-style: none">
-          <strong style="color: red">{{message}}</strong>
-        </li>
+        <div class="alert alert-warning alert dismissible fade show" role="alert">
+          <center><strong style="color: green;">{{message}}</strong></center>
+          <!-- <button style="..." type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> -->
+        </div>
         {% endfor %}
-      </ul>
       {% endif %}
     </div>
     <div class="email-pass">

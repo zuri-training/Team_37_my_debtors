@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     #base app 
     'core.apps.CoreConfig',
     #3rd party extensions
+    'widget_tweaks',
     'cloudinary_storage',
     'cloudinary',
     'fontawesomefree'

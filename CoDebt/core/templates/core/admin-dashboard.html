@@ -1,8 +1,6 @@
-{% extends 'main.html' %} {% load static %} {% block head%}
+{% extends 'main.html' %}{% load static %} {% block head%}
 <title>{{request.user}}'s Dashboard</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
-
     <!-- Fonts links -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
@@ -21,26 +19,74 @@
     <div class="main">
 
         <!-- header section -->
-
         <nav>
-            <button>New debtor<i class="fa-solid fa-plus"></i></button>
-            <div class="search">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <form action="{% url 'core:search' %}" method="get">
-                    <input type="text" name="q" placeholder="Search by Student ID">
-                </form>
+            <i class="fa-solid fa-bars" id="ham"></i>
+            <button data-toggle="modal" data-target="#exampleModalLong">New debtor<i
+                    class="fa-solid fa-plus"></i></button>
 
-            </div>
-            <div class="space"></div>
-            <div class="notifs">
-                <i class="fa-solid fa-bell"></i>
-                <i class="fa-solid fa-envelope"></i>
-                <div class="profile">
-                    <img src="{% static 'images/profile.png' %}">
-                    <i class="fa-solid fa-angle-down"></i>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Add New Debtor</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="" method="post">
+<!--  
+                        <div class="copy">
+                            <label>Student image</label>
+                            <label for="cac" class="copyLabel">Student image
+                                <input type="file" name="file" id="my-file" required>
+                                <i class="fa-solid fa-cloud-arrow-up"></i>
+                            </label>
+
+                        </div> -->
+                        {% csrf_token %}
+                        {{form}}
+                        <button>Upload to debtors list</button>
+
+
+                    </form>
                 </div>
             </div>
-        </nav>
+        </div>
+    </div>
+
+
+
+
+<div class="search">
+    
+    <form action="{% url 'core:search' %}" method="get">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" name="q" placeholder="Search by Student ID">
+    </form>
+</div>
+<div class="space"></div>
+<div class="notifs">
+    <i class="fa-solid fa-bell"></i>
+    <i class="fa-solid fa-envelope"></i>
+    <div class="profile">
+        <img src="{% static 'images/profile.png' %}">
+        <i class="fa-solid fa-angle-down"></i>
+    </div>
+</div>
+</nav>
+
+<div class="mobile-nav">
+<i class="fa-solid fa-bars" id="mham"></i>
+<img src="{% static 'images/CodebitLogo.jpg' %}" alt="logo">
+
+<div class="profile">
+    <img src="{% static 'images/profile.png' %}">
+    <i class="fa-solid fa-angle-down"></i>
+</div>
+</div>
 
 
         <!-- Main body  -->
@@ -103,8 +149,6 @@
 
                             </div>
                         </div>
-
-
                         <div class="avatars">
                             <img src="{% static 'images/grooup-images.png' %}" alt="group of images as avatars">
                             <span><strong>students enrolled</strong></span>
@@ -116,17 +160,27 @@
             <hr>
 
             <div class="recent">
-                <h2>Recent Activity</h2>
+                <h2>Contends (3)</h2>
 
                 <div class="act">
-                    <div>
-                        <p>You successfully added Brandy Blakes to your Debtors list</p>
-                        <h5>11:35am</h4>
-                    </div>
-                    <button><a href="">View</a></button>
+                    <table>
+                        <thead>
+                            <th>Student Name</th>
+                            <th>Student ID</th>
+                            <th class="none"></th>
+                        </thead>
+                        <tr>
+                            <td>Dayo Victoria</td>
+                            <td>000011</td>
+                            <td class="none">
+                                <button>View</button>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
+
     </div>
 
 
@@ -140,22 +194,6 @@
 
     <!-- script for pie-chart -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-    <script>
-        const yValues = [{{recovered}}, {{count}}];
-const barColors = [
-    "#b91d47",
-    "#00aba9",
-];
-
-new Chart("myChart", {
-    type: "doughnut",
-    data: {
-        datasets: [{
-            backgroundColor: barColors,
-            data: [yValues[0]+1, yValues[0]+1]
-        }],
-        labels:['Recovered', 'Indebted']
-    },
-});
-    </script>
+    {% include 'core/js-admin-dashboard.html' %}
+    <script src="{% static 'js/admin-dashboard.css' %}"></script>
 {% endblock %}

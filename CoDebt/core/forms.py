@@ -54,11 +54,11 @@ class DebtorForm(forms.ModelForm):
             'student_id': forms.TextInput(attrs={'required':'required', 'placeholder': 'Student ID'}),
             'current_class': forms.TextInput(attrs={'required':'required', 'placeholder': 'Class'}),
             'age': forms.NumberInput(attrs={'required':'required', 'placeholder': 'Age'}),
-            'gender': forms.RadioSelect(attrs={'required':'required'}, choices=GENDER_CHOICES),
+            'gender': forms.TextInput(attrs={'required':'required', 'placeholder': 'M/F'}),
             'academic_session': forms.TextInput(attrs={'required':'required', 'placeholder': 'Academic Session'}),
             'address': forms.TextInput(attrs={'required':'required', 'placeholder': 'Address'}),
-            'debt_type': forms.TextInput(attrs={'required':'required', 'placeholder': 'Nature of debt(School fees, books etc.'}),
-            'student_picture': forms.TextInput(attrs={'required':'required', 'placeholder': 'Student Photo'}),
+            'debt_type': forms.TextInput(attrs={'required':'required', 'placeholder': 'Nature of debt(School Fees, Books etc.)'}),
+            'student_picture': forms.FileInput(attrs={'required':'required',}),
             'outstanding_fees': forms.TextInput(attrs={'required':'required', 'placeholder': 'Amount Owed'}),
         }
         labels = {

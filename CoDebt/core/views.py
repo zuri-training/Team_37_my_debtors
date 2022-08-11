@@ -1,12 +1,15 @@
+from email import message
+import imp
 from django.db.models import Q
 from django.shortcuts import redirect, render
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import SchoolDetail, Debtor
-from .forms import RegistrationForm, SchoolRegistration
+from .forms import RegistrationForm, SchoolRegistration, ContactForm, DebtorForm
 from django.core.mail import send_mail
 from django.conf import settings
+from django.views.generic import FormView
 
 # Create your views here.
 
@@ -82,7 +85,8 @@ def logout_user(request):
         return redirect('core:home')
 
     logout(request)
-    return redirect('core:home')
+    messages.success(request, 'You have successfully signed out')
+    return redirect('core:login')
 
 def contact_us(request):
     if request.method == 'POST':
@@ -99,6 +103,8 @@ def about_us(request):
 @login_required()
 def dashboard(request):
     user = request.user
+    # if not request.user.is_school_admin:
+    #     return redirect('core:home')
     all_time_debt = Debtor.all_objects.all().count()
     all_time_debt = all_time_debt if all_time_debt > 0 else 1
     recovered_debts = Debtor.all_objects.filter(posted_by=user, is_deleted=True).count()
@@ -106,13 +112,14 @@ def dashboard(request):
 
     recovered_percent = (recovered_debts * 100) / all_time_debt
     indebted_percent = (debt_count * 100) / all_time_debt
-    
+    form = DebtorForm()
     ctx = {
         'user':user,
         'count': debt_count,
         'indebted_percent': indebted_percent,
         'recovered': recovered_debts,
         'recovered_percent': recovered_percent,
+        'form': form,
         }
     return render(request, 'core/admin-dashboard.html',ctx)
 
@@ -143,4 +150,12 @@ def search(request):
     )
 
     ctx = {'debtors': debtors}
-    return render(request, ctx)
+    return render(request,'core/debtor-list', ctx)
+
+def add_debtor(request):
+    if request.method == 'POST':
+     form = DebtorForm(request.POST)
+
+    return render(request)
+
+# class AddDebtorView(FormView):
