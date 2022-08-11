@@ -13,6 +13,8 @@ class CustomUser(AbstractUser):
     is_guardian = models.BooleanField(default=False)
     school_name = models.CharField(max_length=50, blank=True)
     avatar = models.ImageField(upload_to='uploads/avatar', default='avatar.svg',null=True, blank=True)
+    #forget_password_token = models.CharField(max_length=100)
+    #created_at = models.DateTimeField(auto_now_add=True)
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['name']
@@ -35,6 +37,8 @@ class Debtor(models.Model):
     student_id = models.CharField(max_length=20, unique=True)
     outstanding_fees = models.PositiveBigIntegerField()
     is_contending_debt = models.BooleanField(default=False)
+    #forget_password_token = models.CharField(max_length=100)
+    #created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return "%s %s" % (self.first_name,self.last_name)
