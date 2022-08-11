@@ -1,7 +1,7 @@
 from random import choices
 from django import forms
 from django.contrib.auth. forms import UserCreationForm
-from .models import CustomUser, SchoolDetail, Debtor
+from .models import CustomUser, SchoolDetail, Debtor, Comment
 
 
 class ContactForm(forms.Form):
@@ -65,3 +65,17 @@ class DebtorForm(forms.ModelForm):
             'student_picture':'Student Image',
             'outstanding_fees':'Outstanding Debt'
         }
+
+class UserComment(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = (
+            'comment',
+        )
+
+        widgets = {
+            # 'user_commenting': forms.TextInput(attrs= {'class': 'form-control', 'id': 'author', 'value': '',
+            # 'type': 'hidden'}), 'posted_on': forms.TextInput(attrs= {'class': 'form-control', 'id': 'debtor-post',
+            # 'value': '', 'type': 'hidden'}),
+            'comment': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Comment', 'required': 'required'})
+            }

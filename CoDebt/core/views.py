@@ -1,10 +1,10 @@
 from django.db.models import Q
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render, get_object_or_404
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import CustomUser, SchoolDetail, Debtor
-from .forms import RegistrationForm, SchoolRegistration, DebtorForm
+from .forms import RegistrationForm, SchoolRegistration, DebtorForm, UserComment
 
 # Create your views here.
 
@@ -142,7 +142,27 @@ def addDebtor(request):
     
     ctx = {'form': form}
     return render(request, 'core/adddebtor.html', ctx)
+
+def updateDebtor(request, student_id):
+    debtor = Debtor.objects.get(student_id=student_id)
+    form = DebtorForm(instance=debtor)
+
+    if request.method=='post':
+        form = DebtorForm(request.POST, instance=debtor)
+        if form.is_valid():
+            form.save()
+            return redirect('core:admin_dashboard')
+        messages.error(request, 'Unable to update debtor. Please try again.')
     
+    ctx = {'form': form}
+    return render(request, 'core/adddebtor.html', ctx)
+    
+def deleteDebtor(request, student_id):
+    debtor = Debtor.objects.get(student_id=student_id)
+    debtor.delete()
+    return redirect('core:admin_dashboard')
+
+
 def search(request):
     q = request.GET.get('q') if request.GET.get('q') else ''
     debtors = Debtor.objects.filter(
@@ -153,3 +173,21 @@ def search(request):
 
     ctx = {'debtors': debtors}
     return render(request, ctx)
+
+def make_comment(request):
+    comment_form = UserComment(request.POST or None)
+    user_commenting = request.user
+    post_commenting_on = get_object_or_404(Debtor)
+    if request.method == 'POST':
+        print(request.POST)
+        if comment_form.is_valid():
+            new_comment = comment_form.save(commit=False)
+            new_comment.user_commenting = user_commenting
+            new_comment.posted_on = post_commenting_on
+            new_comment.save()
+    context = {
+        'comment_form': comment_form,
+        'commenter': user_commenting,
+        'commenting_on': post_commenting_on
+    }
+    return render(request, 'core/comment.html', context)

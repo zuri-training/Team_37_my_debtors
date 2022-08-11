@@ -17,4 +17,7 @@ urlpatterns = [
     path('profiles/<str:student_id>/', views.studentprofile, name='profile'),
     path('search/', views.search, name='search'),
     path('addDebtor', views.addDebtor, name='addDebtor'),
+    path("comment/", views.make_comment, name="comment"),
+    path('updateDebtor/<str:student_id>/', views.updateDebtor, name='updateDebtor'),
+    path('deleteDebtor/<str:student_id>/', views.deleteDebtor, name='deleteDebtor')
 ]
