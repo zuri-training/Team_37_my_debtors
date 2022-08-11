@@ -12,11 +12,6 @@ body {
     align-items: center;
     padding: 10px;
 }
-
-a {
-  text-decoration: none;
-}
-
 .container {
     display: flex;
     align-items: center;
@@ -85,6 +80,7 @@ form .button {
 .button:hover{
     background: #265DF2;
 }
+
 .last {
     text-align: center;
 }

@@ -69,7 +69,7 @@ class Debtor(SoftDeleteModel):
         ('M', 'Male'),
         ('F', 'Female'),
     )
-    posted_by = models.ForeignKey(settings.AUTH_USER_MODEL, limit_choices_to={'is_school_admin':True}, on_delete=models.CASCADE, related_name='school_admin')
+    posted_by = models.ForeignKey(SchoolDetail, on_delete=models.CASCADE, related_name='school_admin')
     guardian = models.OneToOneField(settings.AUTH_USER_MODEL, limit_choices_to={'is_guardian':True}, on_delete=models.SET_NULL, related_name='guardian', null=True, default=None)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
@@ -87,7 +87,7 @@ class Debtor(SoftDeleteModel):
         )
     academic_session = models.CharField(max_length=10)
     #student_picture = models.ImageField(upload_to='student/')
-    student_picture = CloudinaryField('student_pictures', blank=True, null=True)
+    student_picture = CloudinaryField('student_pictures', null=True, blank=True)
 
     def __str__(self):
         return "%s %s" % (self.first_name, self.last_name)

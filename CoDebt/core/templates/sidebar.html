@@ -5,19 +5,19 @@
         <div class="side-nav">
 
             <div class="dashboard" id="active">
-                <a href="#"><i class="fa-solid fa-table-columns"></i><span>Dashboard</span></a>
+                <a href="{% url 'core:dashboard' %}"><i class="fa-solid fa-table-columns"></i><span>Dashboard</span></a>
             </div>
 
             <div class="debtors">
-                <a href="#">
+                <a href="{% url 'core:search' %}">
                     <i class="fa-solid fa-user-ninja"></i><span>Debtors</span>
                 </a>
             </div>
-            <div class="posts">
-                <a href="#">
+            <!-- <div class="posts">
+                <a href="">
                     <i class="fa-solid fa-indent"></i><span>Posts</span>
                 </a>
-            </div>
+            </div> -->
             <div class="contends">
                 <a href="#">
                     <i class="fa-solid fa-message"></i><span>Contends</span>

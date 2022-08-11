@@ -1,5 +1,11 @@
 <script>
-const yValues = [{{recovered}}, {{count}}];
+let yValues = {{recovered}};
+let xValues = {{count}};
+if (xValues == 0 && yValues == 0) {
+    xValues = 1
+    yValues = 1
+} 
+
 const barColors = [
 "#b91d47",
 "#00aba9",
@@ -10,7 +16,7 @@ type: "doughnut",
 data: {
     datasets: [{
         backgroundColor: barColors,
-        data: [yValues[0]+1, yValues[0]+1]
+        data: [yValues, xValues]
     }],
     labels:['Recovered', 'Indebted']
 },

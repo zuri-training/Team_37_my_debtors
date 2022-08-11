@@ -59,7 +59,7 @@ class DebtorForm(forms.ModelForm):
             'address': forms.TextInput(attrs={'required':'required', 'placeholder': 'Address'}),
             'debt_type': forms.TextInput(attrs={'required':'required', 'placeholder': 'Nature of debt(School Fees, Books etc.)'}),
             'student_picture': forms.FileInput(attrs={'required':'required',}),
-            'outstanding_fees': forms.TextInput(attrs={'required':'required', 'placeholder': 'Amount Owed'}),
+            'outstanding_fees': forms.NumberInput(attrs={'required':'required', 'placeholder': 'Amount Owed'}),
         }
         labels = {
             'first_name': 'First Name',

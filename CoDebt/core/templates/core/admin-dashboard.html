@@ -36,21 +36,10 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="" method="post">
-<!--  
-                        <div class="copy">
-                            <label>Student image</label>
-                            <label for="cac" class="copyLabel">Student image
-                                <input type="file" name="file" id="my-file" required>
-                                <i class="fa-solid fa-cloud-arrow-up"></i>
-                            </label>
-
-                        </div> -->
+                    <form action="{% url 'core:add_debtor' %}" method="post">
                         {% csrf_token %}
                         {{form}}
                         <button>Upload to debtors list</button>
-
-
                     </form>
                 </div>
             </div>
@@ -77,6 +66,30 @@
     </div>
 </div>
 </nav>
+<div>
+    {% if messages %}
+         {% for message in messages %}
+              {% if message.tags == 'info'%}
+                  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                  <center><strong>{{ message}}</strong></center>
+                  <button
+                  style="..."
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="alert"
+                  aria-label="Close"
+                  ></button>
+                  </div>
+              {% else %}
+                  <div class="alert alert-success alert-dismissible fade show">
+                  <center><strong>{{message}}</strong></center>
+                  <button style="..." type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+
+              {% endif %}
+          {% endfor %}    
+      {% endif %}
+  </div>
 
 <div class="mobile-nav">
 <i class="fa-solid fa-bars" id="mham"></i>
@@ -195,5 +208,5 @@
     <!-- script for pie-chart -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     {% include 'core/js-admin-dashboard.html' %}
-    <script src="{% static 'js/admin-dashboard.css' %}"></script>
+    <script src="{% static 'js/admin-dashboard.js' %}"></script>
 {% endblock %}

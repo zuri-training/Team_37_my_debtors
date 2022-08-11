@@ -20,7 +20,7 @@ def email_sender(user):
     subject = 'We are glad to have you at CoDebt'
     recipient_list = [user.email,]
     email_from = settings.EMAIL_HOST_USER
-    content = f'Hi {user}. Thank you for signing up on CoDebet. We promise to help you recover your debts easily and promptly. Cheers'
+    content = f'Hi {user}. Thank you for signing up on CoDbet. We promise to help you recover your debts easily and promptly. Cheers'
 
     send_mail(subject, content, email_from, recipient_list)
 
@@ -31,11 +31,12 @@ def register_users(request):
         form = RegistrationForm(request.POST)
         if form.is_valid():
             user = form.save(commit=False)
+            user.is_guardian = True
             email_sender(user)
             user.save()
             return redirect('core:home')
         else:
-            messages.error(request, 'An error occured, Please retry')
+            messages.info(request, 'An error occured, Please retry')
     return render(request, 'core/register-guardian.html', ctx)
 
 def register_school(request):
@@ -46,6 +47,7 @@ def register_school(request):
         school_form = SchoolRegistration(request.POST, request.FILES)
         if form.is_valid() and school_form.is_valid():
             user = form.save(commit=False)
+            user.is_school_admin = True
             email_sender(user)
             user.save()
             SchoolDetail.objects.create(
@@ -74,7 +76,7 @@ def login_user(request):
             login(request, user)
             return redirect('core:dashboard')
         
-        messages.error(request, 'Invalid credentials')
+        messages.info(request, 'Invalid credentials')
         return redirect('core:login')    
     return render(request, 'core/login.html')
 
@@ -103,12 +105,14 @@ def about_us(request):
 @login_required()
 def dashboard(request):
     user = request.user
-    # if not request.user.is_school_admin:
-    #     return redirect('core:home')
+    if not request.user.is_school_admin:
+        messages.info(request, 'Only school admins can access here!')
+        return redirect('core:home')
     all_time_debt = Debtor.all_objects.all().count()
     all_time_debt = all_time_debt if all_time_debt > 0 else 1
-    recovered_debts = Debtor.all_objects.filter(posted_by=user, is_deleted=True).count()
-    debt_count = Debtor.objects.filter(posted_by=user).count()
+    school = SchoolDetail.objects.get(school=user)
+    recovered_debts = Debtor.all_objects.filter(posted_by=school, is_deleted=True).count()
+    debt_count = Debtor.objects.filter(posted_by=school).count()
 
     recovered_percent = (recovered_debts * 100) / all_time_debt
     indebted_percent = (debt_count * 100) / all_time_debt
@@ -127,7 +131,7 @@ def studentprofile(request, pk):
     student = Debtor.objects.get(id=pk)
 
     ctx = {
-        'school': SchoolDetail.objects.get(school=student.posted_by.id),
+        'school': student.posted_by,
         'student': student,
     }
     return render(request, 'core/studentprofile.html', ctx)
@@ -148,14 +152,24 @@ def search(request):
         Q(last_name__icontains=q) |
         Q(student_id__icontains=q)
     )
+    school = SchoolDetail.objects.get(school=request.user)
 
-    ctx = {'debtors': debtors}
-    return render(request,'core/debtor-list', ctx)
+    ctx = {'debtors': debtors, 'school':school}
+    return render(request,'core/debtor-list.html', ctx)
 
 def add_debtor(request):
     if request.method == 'POST':
      form = DebtorForm(request.POST)
-
-    return render(request)
-
+     if form.is_valid():
+        debtor = form.save(commit=False)
+        debtor.posted_by = SchoolDetail.objects.get(school=request.user)
+        debtor.save()
+        messages.success(request, 'Debtor add successful')
+    else:
+        messages.info(request, 'Invalid Input')
+    return redirect('core:dashboard')
 # class AddDebtorView(FormView):
+def resolve(request, pk):
+    debtor = Debtor.objects.get(id=pk)
+    debtor.soft_delete()
+    return redirect('core:search')
