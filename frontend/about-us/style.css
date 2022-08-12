@@ -1,0 +1,556 @@
+:root {
+    --primary: hsla(212, 91%, 9%, 0.6);
+    --secondary: hsla(212, 91%, 9%, 0.6);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main {
+    width: 100%;
+}
+
+.about-us-image {
+    background: linear-gradient(90deg, var(--primary), var(--secondary)),
+        url("images/about-us.jpg") no-repeat center center / cover;
+    height: 714px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Poppins';
+    color: #FFFFFF;
+}
+
+.about-us-image h3 {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.about-us-image p {
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 22px;
+}
+
+.paragraph {
+    padding-left: 30px;
+}
+
+.who-we-are {
+    font-family: 'Inter';
+    margin: 50px auto;
+    width: 75%;
+    font-size: 20px;
+}
+
+.who-we-are h1 {
+    font-size: 30px;
+    font-family: 'Poppins';
+    font-weight: 500;
+    margin-bottom: 35px;
+}
+
+.users-box {
+    background-color: #CCDDF6;
+    width: 100%;
+    height: 230px;
+    padding: 0 50px;
+}
+
+.no-name {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.users-box h1 {
+    font-weight: 800;
+    font-size: 40px;
+}
+
+.users-box p {
+    font-family: 'Inter';
+    /* font-style: normal; */
+    font-weight: 100;
+    font-size: 36px;
+}
+
+.flex-fill {
+    padding: 15px;
+}
+
+.our-target {
+    margin: 70px auto;
+    color: #F2F0F0;
+    font-family: 'Poppins';
+    width: 75%;
+    text-align: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.purpose-box {
+    background-color: #0056D2;
+    width: 320px;
+    border-radius: 10px;
+    padding: 35px;
+    margin: 20px 0;
+    font-size: 14px;
+}
+
+.purpose-box h3 {
+    margin-bottom: 30px;
+}
+
+.center {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.team-box h3 {
+    font-weight: 500;
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.team-box p {
+    font-weight: 400;
+    font-size: 25px;
+}
+
+.team-pics {
+    margin-top: 90px;
+}
+
+.team-pics img {
+    height: 300px;
+    width: 270px;
+}
+
+.left-pics {
+    gap: 70px;
+    margin-bottom: 180px;
+}
+
+.right-pics {
+    gap: 100px;
+}
+
+.start-free {
+    background: #CCDDF6;
+    height: 246px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 30px;
+}
+
+.start-free button {
+    color: #F2F0F0;
+    background-color: #0056D2 !important;
+}
+
+.contact-info {
+    background: #00112A;
+    width: 100%;
+    height: 354px;
+    color: #F2F0F0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    padding: 40px;
+    font-family: 'Poppins'
+}
+
+.contact-info button {
+    background: transparent;
+    border: 1px solid #F2F0F0;
+    border-radius: 5px;
+    color: #F2F0F0;
+    padding: 5px;
+    height: 50px;
+    width: 150px;
+}
+
+/* Footer */
+h2 {
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.subscribe p {
+    font-family: 'Inter';
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.newsletter-form {
+    display: flex;
+}
+
+input[type="email"] {
+    font-size: 16px;
+    padding: 15px;
+    width: 60%;
+    height: 40px;
+}
+
+input::placeholder {
+    color: hsl(0, 0%, 75%);
+}
+
+.subscribe button {
+    border: 1px solid #0056D2;
+    background: #0056D2;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    font-family: 'Poppins';
+    font-weight: 300;
+    color: #fff;
+    height: 40px;
+    width: 200px;
+    font-size: 17px;
+    text-align: center;
+}
+
+footer {
+    background: #0056D2;
+    color: #fff;
+    margin-top: 150px;
+    padding-bottom: 70px;
+}
+
+.subscribe {
+    display: flex;
+    color: black;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    margin: 0 auto;
+    max-width: 90%;
+    width: 100%;
+    background: #FFFFFF;
+
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    top: -110px;
+}
+
+footer ul {
+    list-style-type: none;
+}
+
+footer ul li {
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+.footer-nav {
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    font-family: "Poppins";
+    margin-bottom: 50px;
+    font-size: 2rem;
+    flex: 1;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    margin: 20px 0;
+}
+.legal {
+    margin: 20px 0;
+    flex-basis: 20%;
+}
+.footer-nav a{
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 1rem;
+}
+
+.list-head {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.socials {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 30%;
+    margin: 0 auto;
+}
+
+.social-media {
+    display: flex;
+    list-style-type: none;
+    gap: 40px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.copyrightp {
+    margin-top: 30px;
+    color: #fff;
+}
+
+.social-media li img {
+    display: block;
+}
+
+
+
+/* Tablet screen */
+@media (max-width: 800px) {
+    .footer-nav {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .about-us-image {
+        width: 100%;
+        height: 412px;
+        background: linear-gradient(90deg, var(--primary), var(--secondary)),
+            url("images/about-us-mobile.jpg") no-repeat center center / cover;
+        display: flex;
+        padding: 10px 70px;
+        text-align: center;
+    }
+
+    .users-box h1 {
+        font-size: 35px;
+    }
+
+    .users-box p {
+
+        font-size: 30px;
+    }
+
+    .team-pics img {
+        height: 200px;
+        width: 200px;
+    }
+
+    .footer-content img {
+        margin-bottom: 50px;
+    }
+
+    .footer-options {
+        margin-bottom: 20px;
+    }
+}
+
+
+/* Mobile screen */
+@media (max-width: 600px) {
+    .about-us-image {
+        width: 100%;
+        height: 252px;
+        background: linear-gradient(90deg, var(--primary), var(--secondary)),
+            url("images/about-us-mobile.jpg") no-repeat center center / cover;
+        display: flex;
+        padding: 10px 70px;
+        text-align: center;
+    }
+
+    .about-us-image h3 {
+        font-size: 22px;
+    }
+
+    .about-us-image p {
+        font-size: 15px;
+    }
+
+    .who-we-are {
+        width: 85%;
+        font-size: 14px;
+    }
+
+    .who-we-are h1 {
+        font-size: 26px;
+
+    }
+
+    .who-we-are p {
+        font-size: 1.2rem;
+    }
+
+    .our-target {
+        margin: 20px auto;
+        width: 75%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .users-box {
+        height: 450px;
+    }
+
+    .team-box {
+        width: 85%;
+        margin: 70px auto 100px;
+    }
+
+    .team-box h3 {
+        font-weight: 600;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .team-box p {
+        font-weight: 400;
+        font-size: 18px;
+    }
+
+    /* Need to work here  */
+    .team-pics {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 90px;
+        flex-wrap: wrap;
+    }
+
+    .team-pics img {
+        width: 180;
+        height:180;
+    }
+
+    .left-pics {
+        gap: 100px;
+        margin-bottom: 250px;
+    }
+
+    .right-pics {
+        margin-top: 0;
+    }
+
+    .start-free {
+        background: #CCDDF6;
+        height: 206px;
+        padding: 40px 50px;
+        text-align: center;
+    }
+
+    .start-free button {}
+
+    .start-free h3 {}
+
+    .contact-info {
+        height: 330px;
+        padding: 40px 30px;
+        text-align: center;
+    }
+
+    .contact-info h1 {
+        font-weight: 600;
+        font-size: 26px;
+
+    }
+
+    .contact-info button {
+
+        border-radius: 9px;
+
+        padding: 5px;
+        height: 45px;
+        width: 150px;
+    }
+
+    .subscribe {
+        text-align: center;
+    }
+
+    .subscribe p {
+        font-size: 19px;
+    }
+
+    .subscribe h2 {
+        font-size: 21px;
+    }
+
+    .footer-content {
+        margin: 0 auto;
+    }
+
+    .footer-content img {}
+}
+
+@media (max-width: 470px) {
+    .left-pics {
+        gap: 30px;
+        margin-bottom: 30px;
+        flex-basis: 40%;
+        display: flex;
+    }
+    .team-box {
+        width: 85%;
+        margin: 70px auto 10px;
+    }
+    .team-pics {
+        
+        margin-top: 30px;
+    }
+
+    .team-pics img {
+        height: 130px;
+        width: 100px;
+    }
+
+    .right-pics {
+        gap: 30px;
+        flex-basis: 40%;
+        display: flex;
+    }
+
+    .start-free {
+        height: 260px;
+    }
+
+    .team-pic2 {
+        align-self: flex-end;
+    }
+
+    .team-pic4 {
+        align-self: flex-end;
+    }
+    .purpose-box {
+        width: 250px;
+        padding: 30px;
+        margin: 20px 0;
+        font-size: 14px;
+    }
+    .footer-nav {
+        
+        flex-direction: column;
+        justify-content: space-between;
+        width: 90%;
+        font-size: 1.2rem;
+        padding: 20px;
+        margin-bottom: 0;
+    }
+    .footer-content {
+        justify-content: space-between;
+        width: 100%;
+        margin: 40px 0 0 0;
+    }
+    .social-media{
+        justify-content: center;
+    }
+}
