@@ -68,6 +68,9 @@
                             &#x20A6;{{debtor.outstanding_fees}}
                         </span>
                     </td>
+                    <td>
+                        <a style="color: black;" href="{% url 'core:profile' debtor.id %}"><button class="deep">View Profile</button></a>
+                    </td>
                     {% if school == debtor.posted_by %}
                     <td>
                         <a href="{% url 'core:resolve' debtor.id %}"><button class="deep">Resolve</button></a>
