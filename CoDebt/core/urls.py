@@ -1,5 +1,5 @@
+from re import template
 from django.urls import path
-from django.contrib.auth import views as auth_views
 from . import views
 
 app_name = "core"
@@ -17,10 +17,6 @@ urlpatterns = [
     path('schools/profiles/<str:pk>/', views.schoolprofiles, name='school_profile'),
     path('search/', views.search, name='search'),
     path('search/<str:pk>/', views.resolve, name='resolve'),
-    path('testimonials/', views.testimonials, name='testimonials'),
-    path('reset_password/', auth_views.PasswordResetView.as_view(), name='reset_password'),
-    path('reset_password_sent/', auth_views.PasswordResetDoneView.as_view(), name='password_reset_done'),
-    path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(),name='password_reset_confirm'),
-    path('reset_password_complete/', auth_views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
+    # path('testimonials/', views.testimonials, name='testimonials'),
     path('debtors/add/', views.add_debtor, name='add_debtor')
 ]

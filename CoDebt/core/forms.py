@@ -30,22 +30,18 @@ class RegistrationForm(UserCreationForm):
 class SchoolRegistration(forms.ModelForm):
     class Meta:
         model = SchoolDetail
-        fields = ('school_name', 'copy_of_CAC','CAC_number')
+        fields = ('school_name','CAC_number')
         widgets = {
-            'copy_of_CAC':forms.FileInput(attrs={'id':'my-file','required':'required'})
+            # 'copy_of_CAC':forms.FileInput(attrs={'id':'my-file','required':'required'})
         }
         labels ={
-            'copy_of_CAC': 'Copy Of CAC',
+            # 'copy_of_CAC': 'Copy Of CAC',
             'school_name': 'School Name',
             'CAC_number': 'CAC Number'
         }
 
 class DebtorForm(forms.ModelForm):
     class Meta:
-        GENDER_CHOICES = (
-        ('M', 'Male'),
-        ('F', 'Female'),
-        )
         model = Debtor
         fields =  ['first_name', 'last_name', 'student_id', 'current_class', 'age', 'gender', 'academic_session', 'address', 'debt_type', 'student_picture', 'outstanding_fees']
         widgets = {

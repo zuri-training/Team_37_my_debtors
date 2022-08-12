@@ -28,7 +28,7 @@ header nav{
     width: 100%;
     height: 720px;
     background: linear-gradient(90deg, var(--primary), var(--secondary)),
-                url("/static/images/landing-page-main.png") no-repeat center center / cover;
+                url('/static/images/landing-page-main.png') no-repeat center center / cover;
 }
 
 .main-content {
@@ -93,6 +93,10 @@ header nav{
     font-family: 'Poppins';
     color: #00112A;
 }
+.join {
+    width:50rem;
+}
+
 .wwd-boxes {
     padding: 50px 0 0 0;
     display: flex;
@@ -128,7 +132,76 @@ header nav{
 }
 
 /*   why choose us  styles come below*/
-
+/*Why choose us code*/
+.why-choose-us {
+    background-color: white;
+    padding: 50px;
+    font-family: 'Poppins';
+}
+.wcu-header {
+    text-align: center;
+    font-weight: 600;
+    font-size: 25px;
+    color: #000000;
+}
+.wcu-box-1, .wcu-box-2 {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+}
+.list-col-data {
+    display: flex;
+    width: 45%;
+    flex-direction: column;
+    justify-content: center;
+    color: #1A1A1A;
+}
+.list-col-data .column {
+    padding: 16px 12px;
+    margin: 10px 0;
+    background: #FFFFFF;
+    box-shadow: -10px -10px 30px #EDEDED, 10px 10px 30px rgba(0, 0, 0, 0.06);
+    border-radius: 8px;
+    display: flex;
+}
+.list-col-data .column div {
+    padding-left: 10px;
+}
+.list-col-data .column div h3 {
+    font-size: 20px;
+}
+.wcu-container {
+    display: flex;
+    justify-content: center;
+}
+.wcu-container #img-one {
+    width: 55%;
+    margin: auto 0;
+    position: relative;
+    z-index: 1;
+    right: 30%;
+}
+.wcu-container #img-two {
+    width: 55%;
+    margin: auto 0;
+    position: relative;
+    z-index: 1;
+    left: 30%;
+}
+.wcu-container .blue-box-1 {
+    border: 2px solid blue;
+    background: linear-gradient(180deg, #558EE1 0%, #FFFFFF 100%);
+    border: 2px solid #80ABE9;
+    border-radius: 8px;
+    padding: 200px 150px;
+}
+.wcu-container .blue-box-2 {
+    border: 2px solid blue;
+    background: linear-gradient(180deg, #FFFFFF 0%, #558EE1 100%);
+    border: 2px solid #80ABE9;
+    border-radius: 8px;
+    padding: 200px 150px;
+}
   
 
 /*  Testimonial styles comes below*/
@@ -260,7 +333,7 @@ color: #F2F0F0;
 #handimg{
 width: 348.5px;
 height: 209.1px;
-background: url("/static/images/image.png");
+background: url('/static/images/image.png');
 border-radius: 10.3259px 10.3259px 0px 0px;
 flex: none;
 order: 0;
@@ -385,10 +458,6 @@ flex-grow: 0;
     margin: 0px 0.125rem;
     padding:0.1875rem;
     color: #000;
-}
-
-.join {
-    width: 60rem;
 }
 
 .contact-address{
@@ -576,6 +645,61 @@ footer ul li {
 
 
 /*   why choose us  styles come below */
+    .why-choose-us {
+        padding: 30px;
+    }
+    .wcu-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+    .wcu-container #img-one {
+        width: 60%;
+        margin: auto 0;
+        position: relative;
+        right: 20%;
+    }
+    .wcu-container #img-two {
+        width: 60%;
+        margin: auto 0;
+        position: relative;
+        left: 20%;
+    }
+    .wcu-container .blue-box-1 {
+        position: relative;
+        right: -20%;
+        width: 80%;
+        padding: 40% 30%;
+        height: 80%;
+    }
+    .wcu-container .blue-box-2 {
+        position: relative; 
+        padding: 40% 30%;
+        left: -20%;
+        padding: auto;
+    }
+    .wcu-box-1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 15px 0;
+    }
+    .wcu-box-2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column-reverse;
+        padding: 15px 0;
+    }
+    .list-col-data {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        color: #1A1A1A;
+    }
 
   
 
@@ -701,7 +825,7 @@ footer ul li {
         width: 100%;
         height: 480px;
         background: linear-gradient(90deg, var(--primary), var(--secondary)),
-            url('/static/images/landing-page-mobile.png') no-repeat center center / cover;
+            url('./img/landing-page-mobile.png') no-repeat center center / cover;
     }
 
     .main-content {

@@ -1,5 +1,3 @@
-from email import message
-import imp
 from django.db.models import Q
 from django.shortcuts import redirect, render
 from django.contrib.auth import login, logout, authenticate
@@ -20,7 +18,7 @@ def email_sender(user):
     subject = 'We are glad to have you at CoDebt'
     recipient_list = [user.email,]
     email_from = settings.EMAIL_HOST_USER
-    content = f'Hi {user}. Thank you for signing up on CoDbet. We promise to help you recover your debts easily and promptly. Cheers'
+    content = f'Hi {user}. Thank you for signing up on CoDebt. We promise to help you recover your debts easily and promptly. Cheers'
 
     send_mail(subject, content, email_from, recipient_list)
 
@@ -44,7 +42,7 @@ def register_school(request):
     school_form = SchoolRegistration()
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
-        school_form = SchoolRegistration(request.POST, request.FILES)
+        school_form = SchoolRegistration(request.POST)
         if form.is_valid() and school_form.is_valid():
             user = form.save(commit=False)
             user.is_school_admin = True
@@ -53,10 +51,9 @@ def register_school(request):
             SchoolDetail.objects.create(
                 school=user,
                 school_name=request.POST.get('school_name'),
-                copy_of_CAC=request.FILES['copy_of_CAC'],
                 CAC_number=request.POST['CAC_number'],
             )
-            return redirect('core:home')
+            return redirect('core:login')
         else:
             messages.error(request, 'An error occurred during registration, Please try again')
     ctx = {'form':form, 'school_form':school_form}
@@ -74,7 +71,9 @@ def login_user(request):
 
         if user is not None:
             login(request, user)
-            return redirect('core:dashboard')
+            if user.is_school_admin:
+                return redirect('core:dashboard')
+            return redirect('core:home')
         
         messages.info(request, 'Invalid credentials')
         return redirect('core:login')    
@@ -91,13 +90,7 @@ def logout_user(request):
     return redirect('core:login')
 
 def contact_us(request):
-    if request.method == 'POST':
-        pass
-
     return render(request, 'core/contact.html')
-
-def testimonials(request):
-    pass
 
 def about_us(request):
     return render(request, 'core/about-us.html')
@@ -168,7 +161,7 @@ def add_debtor(request):
     else:
         messages.info(request, 'Invalid Input')
     return redirect('core:dashboard')
-# class AddDebtorView(FormView):
+
 def resolve(request, pk):
     debtor = Debtor.objects.get(id=pk)
     debtor.soft_delete()

@@ -53,7 +53,7 @@ class SchoolDetail(models.Model):
     school = models.OneToOneField(settings.AUTH_USER_MODEL, limit_choices_to={'is_school_admin':True}, on_delete=models.CASCADE)
     school_name = models.CharField(max_length=50)
     # copy_of_CAC = models.FileField(upload_to='proof_of_cac/')
-    copy_of_CAC = CloudinaryField('proof_of_CAC')
+    # copy_of_CAC = CloudinaryField('proof_of_CAC', null=True, blank=True)
     CAC_number = models.CharField(
         unique=True,
         max_length=10,
@@ -65,10 +65,6 @@ class SchoolDetail(models.Model):
 
 
 class Debtor(SoftDeleteModel):
-    GENDER_CHOICES = (
-        ('M', 'Male'),
-        ('F', 'Female'),
-    )
     posted_by = models.ForeignKey(SchoolDetail, on_delete=models.CASCADE, related_name='school_admin')
     guardian = models.OneToOneField(settings.AUTH_USER_MODEL, limit_choices_to={'is_guardian':True}, on_delete=models.SET_NULL, related_name='guardian', null=True, default=None)
     first_name = models.CharField(max_length=50)
@@ -77,7 +73,7 @@ class Debtor(SoftDeleteModel):
     student_id = models.CharField(max_length=20, unique=True)
     address = models.CharField(max_length=100)
     debt_type = models.CharField(max_length=50)
-    gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
+    gender = models.CharField(max_length=1)
     outstanding_fees = models.PositiveIntegerField()
     is_contending_debt = models.BooleanField(default=False)
     age = models.PositiveSmallIntegerField(
