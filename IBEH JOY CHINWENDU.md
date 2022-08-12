@@ -12,7 +12,7 @@
     <li> I designed the contact section in the Landing page.
   <p> https://github.com/zuri-training/Team_37_my_debtors/tree/static/frontend/landing-page</p>
   </li>
-  <li>< I designed the forgot password user flow
+  <li> I designed the forgot password user flow
          <p>https://github.com/zuri-training/Team_37_my_debtors/tree/static/frontend/forgotten-password-page<p>
   
 
