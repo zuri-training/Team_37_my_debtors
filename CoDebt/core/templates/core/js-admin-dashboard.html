@@ -1,0 +1,24 @@
+<script>
+let yValues = {{recovered}};
+let xValues = {{count}};
+if (xValues == 0 && yValues == 0) {
+    xValues = 1
+    yValues = 1
+} 
+
+const barColors = [
+"#b91d47",
+"#00aba9",
+];
+
+new Chart("myChart", {
+type: "doughnut",
+data: {
+    datasets: [{
+        backgroundColor: barColors,
+        data: [yValues, xValues]
+    }],
+    labels:['Recovered', 'Indebted']
+},
+});
+</script>

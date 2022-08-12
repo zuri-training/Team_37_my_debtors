@@ -31,13 +31,13 @@ pip install virtualenv
 ```
 * Install a virtual environment for your project
 ```bash
-mkvirtulenv <environment_name>
+virtualenv <environment_name>
 ```
 
 * Activate the virtual environment
 
 ```bash
-<environment_name>\Scripts\activate
+env\scripts\activate
 
 ```
 

@@ -1,0 +1,122 @@
+body{
+    background: #FCFCFC;
+    font-family: 'Poppins', sans-serif;
+    color: #1A1A1A;
+}
+
+main{
+    padding: 1.5em 4em;
+}
+
+a {
+    text-decoration: none;
+}
+
+.form-container{
+    width: 55%;
+    margin: auto;
+    text-align: center;
+}
+
+.form-container h1{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 38px;
+    margin-bottom: 0.5em;
+}
+
+
+label{
+    display: block;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: left;
+}
+
+input,select{
+    border-radius: 10px;
+    border: 1px solid #B3B3B3;
+    padding: 12px;
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 0.5em ;
+    margin-bottom: 2em ;
+    display: block;
+}  
+
+.copyLabel{
+    border-radius: 10px;
+    border: 1px solid #B3B3B3;
+    padding: 12px;
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 0.5em ;
+    margin-bottom: 2em ;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 2em;
+    color: grey;
+
+}
+
+#my-file{
+    display: none;
+}
+
+main div .privacy{
+    width: 60%;
+    display: flex;
+    margin: 1em 0;
+}
+
+main div .privacy span{
+    display: block;
+    margin: 0 1em;
+    font-size: 13px;
+    text-align: left;
+    /* line-height: 1px; */
+}
+
+main div .privacy input{
+    width: 30px;  
+}
+
+button{
+    padding: 12px 24px;
+    background: #0056D2;
+    border-radius: 6px;
+    color: #F2F0F0;
+    border: none;
+    width: 100%;
+}
+
+
+@media screen and (max-width: 768px){
+    .form-container img{
+        width: 30%;
+    }
+
+    .form-container h1{
+        font-size: 15px;
+    }
+    .form-container{
+        width: 95%;
+        margin: auto;
+    }
+
+    main div .privacy{
+        width: 90%;
+        display: flex;
+        margin: 1em 0;
+    }
+    
+    main div .privacy span{
+        display: block;
+        margin: 0 1em;
+        font-size: 13px;
+        text-align: left;
+        /* line-height: 1px; */
+    }
+}

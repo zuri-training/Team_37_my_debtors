@@ -1,0 +1,90 @@
+{% extends 'main.html' %} {% load static %} {% block head%}
+<title>Debtors</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+
+    <!-- Fonts links -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/5d3fc22e6c.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="{% static 'styles/debtor-list.css' %}">
+{% endblock head %}
+{% block content %}
+
+{% include 'sidebar.html' %}
+<div class="main">
+
+    <!-- header section -->
+
+    <div class="mobile-nav">
+        <i class="fa-solid fa-bars" id="mham"></i>
+        <img src="{% static 'images/CodebitLogo.jpg' %}" alt="logo">
+
+        <div class="profile">
+            <!-- <img src="./img/profile.png">
+            <i class="fa-solid fa-angle-down"></i> -->
+        </div>
+    </div>
+
+
+    <!-- Main body  -->
+    <div class="body">
+        <div class="search">
+            <form action="{% url 'core:search' %}" method="get">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" name="q" placeholder="Search by Student ID">
+            </form>
+        </div>
+        {% if debtors %}
+        <table>
+            <tbody>
+                {% for debtor in debtors %}
+
+                <tr>
+                    <td>
+                        <img src="{% static 'images/profile.png' %}" alt="">
+                        <span>{{debtor}}</span>
+                    </td>
+                    <td>
+                        <span>
+                            {{debtor.posted_by}}
+                        </span>
+                    </td>
+                    <td>
+                        <span>
+                            {{debtor.debt}}
+                        </span>
+                    </td>
+                    <td>
+                        <span>
+                            {{debtor.debt_type}}
+                        </span>
+                    </td>
+                    <td>
+                        <span>
+                            &#x20A6;{{debtor.outstanding_fees}}
+                        </span>
+                    </td>
+                    {% if school == debtor.posted_by %}
+                    <td>
+                        <a href="{% url 'core:resolve' debtor.id %}"><button class="deep">Resolve</button></a>
+                    </td>
+                    {% endif %}
+
+                    {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <h3>Fortunately, No debtors match your search. <br> The world would be better if we all paid our debts</h3>
+{% endif %}
+    </div>
+
+</div>
+
+
+
+</main>
+{% endblock %}

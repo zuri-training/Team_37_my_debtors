@@ -1,0 +1,54 @@
+{% extends 'main.html' %} {% load static %} {% block head %}
+<title>{{student.first_name}}'s Profile</title>
+<link rel="stylesheet" href="{% static 'styles/studentprofile.css' %}" />
+{% endblock head %} {% block content %}
+<header class="profile-img">
+  <div class="prof-name">
+    <h1>Student Profile</h1>
+  </div>
+  <div class="prof-img">
+    <div class="img-circle">
+      <img id="prof-pic" src="{{student.student_picture.url}}" width="250px" height="250px" style="border-radius:400px ;" alt="Profile pic" />
+      <img
+        id="ellipse"
+        src="{% static 'images/ellipse.png' %}"
+        alt="Ellipse picture"
+      />
+    </div>
+    <h1>Full Name: {{student}}</h1>
+  </div>
+</header>
+<section class="profile-info">
+  <span id="straight-line"></span>
+  <div class="ward-info">
+    <div>
+      <h3>Ward</h3>
+      <p><span class="bold">Student ID:</span> {{student.student_id}}</p>
+      <p><span class="bold">Class:</span> {{student.current_class}}</p>
+      <p><span class="bold">Age:</span> {{student.age}}</p>
+      <p><span class="bold">School:</span> {{school}}</p>
+    </div>
+    <div>
+      <h3>General Information</h3>
+      <p>
+        <span class="bold">Academic Session:</span> {{student.academic_session}}
+      </p>
+      <p><span class="bold">Gender:</span> {{student.get_gender_display}}</p>
+      <p><span class="bold">Address:</span> {{student.address}}</p>
+      {% if student.guardian %}
+      <p><span class="bold">Guardian:</span> {{student.guardian}}</p>
+      {% endif %}
+    </div>
+  </div>
+  <div class="school-info">
+    <div>
+      <h3>School</h3>
+      <h3>Outstanding debt</h3>
+    </div>
+    <div class="info-white">
+      <p>{{school}}</p>
+      <p>&#8358;{{student.outstanding_fees}}</p>
+    </div>
+  </div>
+</section>
+{% endblock content %}

@@ -1,0 +1,88 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block head %}
+<title>Contact Us</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    
+    <script src="https://kit.fontawesome.com/f1061e8afa.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="{% static 'styles/contact.css' %}">
+{% endblock head %}
+{% block navbar %}{% include 'navbar.html' %}{% endblock navbar %}
+{% block content %}
+    <main>
+        <section class="cntact-bg-image">
+            <div class="header-img" style="background-image: url('{% static 'images/bgcntct1.png' %}');">
+
+            </div>
+
+              </section class="contact-team ">
+
+        <section>
+            <div class="contct-heading2">
+                <h2>Contact the Codebt Team</h2>
+            </div>
+            <div class="cntct-form">
+                <form method="post", action="">
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="Fullname" class="form-label">Fullname</label>
+                            <input type="text" class="form-control" id="fullname">
+                        </div>
+                        <div class="col-6">
+                            <label for="name of school" class="form-label">Name of school</label>
+                            <input type="text" class="form-control" id="schoolname">
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-6">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email">
+                        </div>
+                        <div class="col-6">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+
+                    </div>
+
+                    <div class="mb-3"></div>
+                        <textarea class="form-control" id="Textarea1" rows="3"> Comment</textarea>
+                </div>
+                    <button type="submit" class="btn btn-primary contact-btn">Contact Us</button>
+                </form>
+            </div>
+        </section>
+        <section class="debtor-locate-section">
+            <div class="locate-debtor1">
+                <h2>Trying to Locate a debtor</h2>
+            </div>
+            <div class="debtor-locator2">
+                <div class="email-client">
+                    <p class="icons"><i class="fa-regular fa-envelope icon-contact"></i></i></p>
+                    <h3>Email our Client Success team</h3>
+                    <p class="contact-text">Do you have Questions? we will respond within 24hrs,please contact support@Codebt.com</p>
+
+                </div>
+                <div class="check-guide">
+                    <p class="icons"><i class="fa-solid fa-globe icon-contact"></i></i></p>
+                    <h3>Check out our help guide</h3>
+                    <p class="contact-text">We have documentation for every aspect of the Codebt platform,you can see them here.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    {% endblock content %}
+    {% block footer %}{% include 'footer.html' %}{% endblock footer %}
+    {% block scripts %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+    {% endblock scripts %}

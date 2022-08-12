@@ -1,0 +1,61 @@
+{% extends 'main.html' %} {% load static %} {% block head%}
+<title>Sign Up</title>
+
+<link rel="stylesheet" href="{% static 'styles/register-guardian.css' %}" />
+<script
+  type="module"
+  src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+></script>
+<style>a {text-decoration: none;}</style>
+{% endblock head %} {% block content %}
+<div class="container">
+
+  <div class="content">
+      <div>
+          <img src="{% static 'images/CoDebtLogo.svg' %}" alt="logo" />
+      </div>
+      <div class="title">
+        Create An Account
+    </div>
+      <form class="box" action="" method="post">
+        {% csrf_token %}
+          <div class="user-details">
+            {% for field in form %}
+            <div class="input-box">{{field.label_tag}}{{field}}</div>
+            {% endfor %}
+          </div>
+          <label class="checkbox" for="myCheckboxId">
+            <input
+              class="checkbox__input"
+              type="checkbox"
+              name="myCheckboxName"
+              id="myCheckboxId"
+              required
+            />
+            <div class="checkbox__box"></div>
+            <small>
+              I have read and agree with the<a href="#"> terms of Services</a> and
+              <a href="#">privacy policy</a>
+            </small>
+          </label>
+          <div class="btn">
+            <button class="button">Create Account</button>
+          </div>
+      
+        </form>
+        <div class="last">
+          <small>
+            <strong>Already have an account?</strong>
+            <a href="{% url 'core:login' %}">Sign in</a>
+          </small>
+        </div>
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li style="list-style: none;"><strong style="color: red;">{{message}}</strong></li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+      </div>
+    </div>
+{% endblock content %}

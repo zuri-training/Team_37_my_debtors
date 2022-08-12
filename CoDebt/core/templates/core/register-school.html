@@ -1,0 +1,74 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block head %}
+<title>Sign Up</title>
+<link href="{% static 'styles/register-school.css' %}" rel="stylesheet" type="text/css" />
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
+rel="stylesheet">
+<script src="https://kit.fontawesome.com/f1061e8afa.js" crossorigin="anonymous"></script>
+{% endblock head %}
+{% block content %}
+<main>
+    <div class="wrapper">
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{message}}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <div class="form-container">
+            <img src="{% static 'images/CodebitLogo.jpg' %}" alt="Codebit Logo">
+            <h1>Create An Account (School)</h1>
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% for field in form %}
+                <div>
+                    {{field.label_tag}}{{field}}
+                </div>
+                {% endfor %}
+
+                <!-- <div class="copy">
+                    <label>Copy of CAC</label>
+                    <label for="cac" class="copyLabel">Copy of CAC
+                        <input type="file" name="file" id="my-file" required>
+                        
+                    </label>
+                </div> -->
+
+
+
+                <!-- {% for field in school_form %}
+                {% if field.label == 'Copy Of CAC' %}
+                <div>
+                    <label>Copy Of CAC</label>
+                    <label for="cac" class="copyLabel">{{field.label}}</label>
+                    {{field}}
+                </div>
+                {% else %}
+                <div>
+                {{field.label_tag}}
+                {{field}}
+                </div>
+                {% endif %}
+                {% endfor %} -->
+                {{school_form}}
+
+                <div class="privacy">
+                    <input type="checkbox" name="privacy" id="privacy" required>
+                    <span>I have read and agree with the terms of service and privacy policy</span>
+                </div>
+                <div class="create-account">
+                    <button>Create Account</button>
+                </div>
+            </form>
+
+            <div>
+                <p>Already have an account? <a href="{% url 'core:login' %}">Sign In</p>
+            </div>
+        </div>
+
+    </div>
+</main>
+{% endblock content %}
