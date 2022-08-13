@@ -34,7 +34,7 @@ def register_users(request):
             user.save()
             return redirect('core:home')
         else:
-            messages.info(request, 'An error occured, Please retry')
+            messages.info(request, 'An error occured, Please retry. Enter a strong password')
     return render(request, 'core/register-guardian.html', ctx)
 
 def register_school(request):
@@ -55,7 +55,7 @@ def register_school(request):
             )
             return redirect('core:login')
         else:
-            messages.error(request, 'An error occurred during registration, Please try again')
+            messages.error(request, 'An error occurred during registration, Please try again. Enter a strong password')
     ctx = {'form':form, 'school_form':school_form}
     return render(request, 'core/register-school.html',ctx)
 
