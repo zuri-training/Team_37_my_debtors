@@ -103,7 +103,7 @@ def dashboard(request):
         return redirect('core:home')
     all_time_debt = Debtor.all_objects.all().count()
     all_time_debt = all_time_debt if all_time_debt > 0 else 1
-    school = SchoolDetail.objects.get(school=user)
+    school = SchoolDetail.objects.get(school=user.id)
     recovered_debts = Debtor.all_objects.filter(posted_by=school, is_deleted=True).count()
     debt_count = Debtor.objects.filter(posted_by=school).count()
 

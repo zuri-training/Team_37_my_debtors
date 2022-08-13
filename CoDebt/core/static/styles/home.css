@@ -93,10 +93,6 @@ header nav{
     font-family: 'Poppins';
     color: #00112A;
 }
-.join {
-    width:50rem;
-}
-
 .wwd-boxes {
     padding: 50px 0 0 0;
     display: flex;
@@ -825,7 +821,7 @@ footer ul li {
         width: 100%;
         height: 480px;
         background: linear-gradient(90deg, var(--primary), var(--secondary)),
-            url('./img/landing-page-mobile.png') no-repeat center center / cover;
+            url('/static/images/landing-page-mobile.png') no-repeat center center / cover;
     }
 
     .main-content {
