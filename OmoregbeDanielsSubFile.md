@@ -14,6 +14,6 @@ https://github.com/zuri-training/Team_37_my_debtors/tree/static/frontend/admin-d
 
 ### 4. The Debtors list page
 
-... Still on local repo
+https://github.com/zuri-training/Team_37_my_debtors/tree/static/frontend/debtors-list
 
 
