@@ -18,5 +18,6 @@ urlpatterns = [
     path('search/', views.search, name='search'),
     path('search/<str:pk>/', views.resolve, name='resolve'),
     # path('testimonials/', views.testimonials, name='testimonials'),
-    path('debtors/add/', views.add_debtor, name='add_debtor')
+    path('debtors/add/', views.add_debtor, name='add_debtor'),
+    #path('dashboard/', views.guardiandashboard, name='guardiandashboard'),
 ]

@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth. forms import UserCreationForm
-from .models import CustomUser, SchoolDetail, Debtor
+from .models import CustomUser, SchoolDetail, Debtor, Contention
 
 
 class ContactForm(forms.Form):
@@ -70,3 +70,8 @@ class DebtorForm(forms.ModelForm):
             'student_picture':'Student Image',
             'outstanding_fees':'Outstanding Debt'
         }
+
+'''class ContentionForm(forms.ModelForm):
+    class Meta:
+        model = Contention
+        fields = ['']'''
