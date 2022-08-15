@@ -300,7 +300,7 @@
 
         </div>
 
-        <div class="svgtext">
+        <div class="svgtext"> 
           <p class="svgtext1">1000+ Schools</p>
           <p class="svgtext1">1700+<br>Debt Recovery</p>
           <p class="svgtext1">800+ <br> 5 star Review</p>
@@ -313,85 +313,34 @@
 
 
   <!-- ------------------------------------------------------- -->
-
-  <section class="contact-us">
-    <div class="container form-container">
-      <div class="row">
-        <div class="col-4 form-text">
-          <h3>Get in Touch</h3>
-          <p>
-            For further enquiries and question , you can always contact through the provided form
-          </p>
-        </div>
-        <div class="col-8">
-          <div class="contact-text text-center">
-            <h2>Contact Us</h2>
-            <p>Let's chat heart to heart</p>
-          </div>
-          <div class="mt-5">
-            <form action="">
-              <div class="row">
-                <div class=" col-6 mb-3">
-                  <input type="text" class="form-control" id="fullname" placeholder="Full Name" />
-                </div>
-                <div class="col-6 mb-3">
-                  <input type="email" class="form-control" id="email" placeholder="Email Address" />
-                </div>
-
-              </div>
-
-              <div class="mb-3">
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                  placeholder="Enter Your Message"></textarea>
-
-              </div>
-              <button type="submit" class="btn btn-contact p-2"><img src="{% static 'images/play.png' %}" alt="play-icon"
-                  class="mx-2">Send
-                Message</button>
-            </form>
-          </div>
-        </div>
-      </div>
-      <div class="contact-info mt-5">
-        <div>
-          <div class="contact-icon">
-            <img src="{% static 'images/address.png' %}" width="20px" alt="address-icon" class="img-icon"><strong> ADDRESS</strong>
-          </div>
-          <p class="contact-address">18 Brooks street, Alausa Lagos,Nigeria</p>
+  <section class="debtor-locate-section">
+    <div class="locate-debtor1">
+        <h2>How can we Help you</h2>
+        <p>Take your Customer Experience to the Next Level with our customer Engaging platform. <a style="text-decoration: none;" href="{% url 'core:contact' %}">Contact Us</a></p>
+    </div>
+    <div class="debtor-locator2">
+        <div class="email-client">
+            <p class="icons"> <img src="{% static 'images/message.jpg' %}" alt="message-icon" class="icon-contact"></p>
+            <!-- <h3>Email our Client Success team</h3> -->
+            <p class="contact-text">info@codebt.com</p>
 
         </div>
-        <div>
-          <div class="contact-icon">
-            <img src="{% static 'images/email.png' %}" width="20px" alt="Email Picture" class="img-icon "><strong> EMAIL</strong>
-          </div>
-          <p>
-          <ul class="contact-ul">
-            <li>info@gmail.com</li>
-            <li>support@gmail.com</li>
-          </ul>
-          </p>
+        <div class="check-guide">
+            <p class="icons"> <img src="{% static 'images/phone.jpg' %}" alt="phone-icon" class="icon-contact"></p>
+            <!-- <h3>Check out our help guide</h3> -->
+            <p class="contact-text">+23470392015</p>
         </div>
-        <div>
-          <div class="contact-icon">
-            <img src="{% static 'images/phone.png' %}" width="20px" alt="Phone Picture" class="img-icon"><strong>PHONE</strong>
-          </div>
-          <p>
-          <ul class="contact-ul">
-            <li>+234-0000876678</li>
-            <li>+234-0000876678</li>
-          </ul>
-          </p>
-        </div>
+        <div class="check-guide">
+          <p class="icons"> <img src="{% static 'images/globe.jpg' %}" alt="globe-icon" class="icon-contact"></p>
+          <!-- <h3>Check out our help guide</h3> -->
+          <p class="contact-text">Check our help guide</p>
       </div>
     </div>
+</section>
 
-  </section>
+  
 
-
-
-  <!-- ------------------------------------------------------- -->
-
-  <section class="faq">
+  <!-- ------------------------------------------------------- -->  <section class="faq">
     <div class="container">
 
       <h1>Frequently Asked Questions.</h1>
@@ -405,9 +354,9 @@
           </h2>
           <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
             data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, nulla
-              corrupti quod vitae, neque aliquid optio ratione nobis culpa magni totam sequi modi quis maxime eaque
-              dignissimos natus omnis velit.
+            <div class="accordion-body">Managing your debtors correctly will help you get paid faster and prevent bad
+               debts. Managing debtors (credit management) includes: 
+              collecting debts on time. setting credit limits and payment terms.
             </div>
           </div>
         </div>
@@ -415,12 +364,12 @@
           <h2 class="accordion-header" id="flush-headingTwo">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
               data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-              Accordion Item #2
+              Who Can Use Codebt
             </button>
           </h2>
           <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
             data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
+            <div class="accordion-body">Any schools public,Private institutions, primary ,Secondary even Training institute who is interested in tracking of their debtors,any organisation firm or New Enterprise
               <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being
               filled with some actual content.
             </div>
@@ -430,7 +379,23 @@
           <h2 class="accordion-header" id="flush-headingThree">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
               data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-              Accordion Item #3
+              Do I have to Pay to access this platform
+            </button>
+          </h2>
+          <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body"> All you need to do is register and provide proof of document of your registerde schools.
+              <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting
+              happening here in terms of content, but just filling up the space to make it look, at least at first
+              glance, a bit more representative of how this would look in a real-world application.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+              Does It matters the type of debt i have
             </button>
           </h2>
           <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
@@ -445,6 +410,7 @@
       </div>
     </div>
   </section>
+
 
   {% endblock content %}
   {% block footer %}{% include 'footer.html' %}{% endblock footer %}

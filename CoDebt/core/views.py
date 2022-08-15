@@ -4,10 +4,9 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import SchoolDetail, Debtor
-from .forms import RegistrationForm, SchoolRegistration, ContactForm, DebtorForm
+from .forms import RegistrationForm, SchoolRegistration, DebtorForm
 from django.core.mail import send_mail
 from django.conf import settings
-from django.views.generic import FormView
 
 # Create your views here.
 
@@ -119,6 +118,17 @@ def dashboard(request):
         'form': form,
         }
     return render(request, 'core/admin-dashboard.html',ctx)
+
+# def guardian_dashboard(request):
+#     user = request.user
+#     if not request.user.is_guardian:
+#         messages.info(request, 'Only guardians can access here!')
+#         return redirect('core:home')
+#     ward = Debtor.objects.get(guardian=user)
+#     ctx = {
+#         'ward':ward,
+#     } 
+#     return render(request, 'core/guardian-dashboard.html', ctx)
 
 def studentprofile(request, pk):
     student = Debtor.objects.get(id=pk)

@@ -447,6 +447,94 @@ flex-grow: 0;
     padding: 0.625rem 0px;
 }
 
+/*   Header styles comes below */
+
+header nav{
+    width: 90%;
+    margin: auto;
+  }
+  header .dropdown-menu{
+    margin-left: -20px;
+  }
+  .main-container{
+      height: 90vh;
+  }
+  
+  .debt-recovery{
+      width:40%;
+      margin: 1.25rem 3.75rem;
+      font-size: 4.375rem;
+      word-spacing: 3px;
+      line-height: 1em;
+  }
+  .underline{
+      text-decoration: none;
+      color:#fff ;
+  }
+  .debt-recovery-info{
+      width: 30%;
+      font-size: 1.5625rem;
+      word-spacing: 0.125rem;
+      color:#fff ;
+      margin: 0.9375rem 3.75rem;
+  }
+  .btn-debtors-track{
+      padding: 0.9375rem;
+      margin: 0.9375rem 3.75rem;
+      font-weight: 500;
+      font-size: 1.25rem;
+      /* word-spacing:1.875rem; */
+  }
+  
+  
+  
+  
+  /* Contact us styles comes  below*/
+  
+  
+  .debtor-locate-section{
+      height: 80vh;
+      margin-top: 3.75rem;
+  }
+  
+  .locate-debtor1 h2{
+      text-align: center;
+      margin-top: 3.125rem;
+      font-size: 2.875rem;
+      padding-bottom: 3.125rem;
+  
+  }
+  .locate-debtor1 p{
+      text-align: center;
+      margin: 1.125rem auto;
+      font-size: 1.575rem;
+      padding-bottom: 3.125rem;
+      width: 700px;
+  
+  }
+  .debtor-locator2{
+      display:flex;
+      align-items: center;
+      justify-content: space-between;
+      margin:4.375rem 12.5rem;
+  }
+  .email-client .check-guide{
+      width: 60%;
+  }
+   .icons .icon-contact{
+      margin-left: 2.5rem;
+      width: 1.875rem;
+  }
+  
+  .icons .icon-contact:hover{
+      color: #0056D2;
+  } 
+  
+  .contact-text{
+      width: 100%;
+  }
+  
+
 .fa-solid{
     border: 1px solid #80ABE9;
     background-color: #80ABE9;
@@ -900,3 +988,4 @@ footer ul li {
         font-size: 1rem;
     }
 }
+

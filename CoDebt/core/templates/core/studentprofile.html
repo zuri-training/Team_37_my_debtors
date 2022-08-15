@@ -33,7 +33,13 @@
       <p>
         <span class="bold">Academic Session:</span> {{student.academic_session}}
       </p>
-      <p><span class="bold">Gender:</span> {{student.get_gender_display}}</p>
+      <p><span class="bold">Gender:</span>
+        {% if student.gender == 'F' %}
+        Female
+        {% else %}
+        Male
+        {% endif %}
+      </p>
       <p><span class="bold">Address:</span> {{student.address}}</p>
       {% if student.guardian %}
       <p><span class="bold">Guardian:</span> {{student.guardian}}</p>

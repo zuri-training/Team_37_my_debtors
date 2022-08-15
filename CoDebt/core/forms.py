@@ -3,14 +3,6 @@ from django.contrib.auth. forms import UserCreationForm
 from .models import CustomUser, SchoolDetail, Debtor
 
 
-class ContactForm(forms.Form):
-    first_name = forms.CharField(max_length=50)
-    last_name = forms.CharField(max_length=50)
-    school_name = forms.CharField(max_length=50)
-    sender = forms.EmailField(max_length=255)
-    message = forms.CharField(widget=forms.Textarea)
-
-
 class RegistrationForm(UserCreationForm):
     class Meta:
         model = CustomUser

@@ -17,6 +17,7 @@ urlpatterns = [
     path('schools/profiles/<str:pk>/', views.schoolprofiles, name='school_profile'),
     path('search/', views.search, name='search'),
     path('search/<str:pk>/', views.resolve, name='resolve'),
-    # path('testimonials/', views.testimonials, name='testimonials'),
-    path('debtors/add/', views.add_debtor, name='add_debtor')
-]
+#     path('dashboard/', views.guardian_dashboard, name='guardian_dashboard'),
+#     # path('testimonials/', views.testimonials, name='testimonials'),
+     path('debtors/add/', views.add_debtor, name='add_debtor')
+ ]
