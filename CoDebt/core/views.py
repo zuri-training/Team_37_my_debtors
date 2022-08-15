@@ -121,23 +121,23 @@ def dashboard(request):
         }
     return render(request, 'core/admin-dashboard.html',ctx)
 
-'''def guardiandashboard(request):
-    user = request.user
-    if not request.user.is_guardian:
-        messages.info(request, 'Only guardians can access here!')
-        return redirect('core:home')
-    school = Debtor.objects.get(posted_by=school)
-    student_ID = Debtor.objects.filter(student_id=user.student_id)
-    student_class = Debtor.objects.get()
-    age = Debtor.objects.get(age=user.age)
-    school = SchoolDetail.objects.get(school=user.id)
-    ctx = {
-        'Student ID': student_ID,
-        'Class': student_class,
-        'Age': age,
-        'Current School': school
-    } 
-    return render(request, 'core/guardiandashboard.html', ctx)'''
+# def guardiandashboard(request):
+#     user = request.user
+#     if not request.user.is_guardian:
+#         messages.info(request, 'Only guardians can access here!')
+#         return redirect('core:home')
+#     school = Debtor.objects.get(posted_by=school)
+#     student_ID = Debtor.objects.filter(student_id=user.student_id)
+#     student_class = Debtor.objects.get()
+#     age = Debtor.objects.get(age=user.age)
+#     school = SchoolDetail.objects.get(school=user.id)
+#     ctx = {
+#         'Student ID': student_ID,
+#         'Class': student_class,
+#         'Age': age,
+#         'Current School': school
+#     } 
+#     return render(request, 'core/guardiandashboard.html', ctx)
 
 def studentprofile(request, pk):
     student = Debtor.objects.get(id=pk)

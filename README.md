@@ -54,6 +54,16 @@ pip install -r requirements.txt
 python manage.py runserver
 
 ```
+--> For local development server.
+In settings.py
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' 
+
+--> For production server
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 > ⚠ Then, the development server will be started at http://127.0.0.1:8000/
+
+
+
+
 
